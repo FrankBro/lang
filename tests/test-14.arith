@@ -1,0 +1,1 @@
+let x : int = (4 < 3) in 3 * x

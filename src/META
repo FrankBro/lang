@@ -1,0 +1,11 @@
+# OASIS_START
+# DO NOT EDIT (digest: d6720775f9719ed1308e844bed93e57e)
+version = "0.1"
+description = "A compiler for a toy programming language"
+archive(byte) = "lang.cma"
+archive(byte, plugin) = "lang.cma"
+archive(native) = "lang.cmxa"
+archive(native, plugin) = "lang.cmxs"
+exists_if = "lang.cma"
+# OASIS_STOP
+

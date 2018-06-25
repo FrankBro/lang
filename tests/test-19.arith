@@ -1,0 +1,5 @@
+let x : <int> = ref (1 + 3) in
+let y : <int> = ref (2 + !x) in
+x := !y / 2;
+let z : <bool> = ref (!x < !y) in
+!z

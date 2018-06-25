@@ -1,0 +1,1 @@
+Fatal error: exception Failure("Fun call typechecking failed, expected input type: bool, actual: int")

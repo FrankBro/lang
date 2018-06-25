@@ -1,0 +1,6 @@
+let list_sum : [int] -> int =
+  fix sum (l:[int]) : int ->
+    if (empty? l)
+      then 0
+      else (hd l) + (sum (tl l))
+in list_sum (1 :: (9 :: (3 :: (4 :: []:int))))

@@ -1,0 +1,1 @@
+Fatal error: exception Failure("Let typechecking failed, expected binding type: int, actual: bool")

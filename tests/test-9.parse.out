@@ -1,0 +1,1 @@
+(let x : int = 5 in (if (= (* 2 x) 10) x (* x x)))

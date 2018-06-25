@@ -1,0 +1,5 @@
+let x : <int> = (ref 0) in
+let y :  <int> = (ref !x) in
+let z :  <[int]> = (ref [] : int) in
+z := (!x :: !y :: !z);
+!z

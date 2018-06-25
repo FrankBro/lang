@@ -1,0 +1,1377 @@
+!_TAG_FILE_FORMAT	2	/extended format; --format=1 will not append ;" to lines/
+!_TAG_FILE_SORTED	1	/0=unsorted, 1=sorted, 2=foldcase/
+!_TAG_OUTPUT_MODE	u-ctags	/u-ctags or e-ctags/
+!_TAG_PROGRAM_AUTHOR	Universal Ctags Team	//
+!_TAG_PROGRAM_NAME	Universal Ctags	/Derived from Exuberant Ctags/
+!_TAG_PROGRAM_URL	https://ctags.io/	/official site/
+!_TAG_PROGRAM_VERSION	0.0.0	/bf8aa43e/
+()	setup.ml	/^  let () =$/;"	f	module:OASISFileSystem/PropList
+()	setup.ml	/^let () = setup ();;$/;"	f
+ARROW	_build/src/parser.ml	/^    | ARROW$/;"	C	type:MenhirBasics/token
+ARROW	_build/src/parser.mli	/^  | ARROW$/;"	C	type:token
+Alpha	setup.ml	/^  type stage = Alpha | Beta$/;"	C	type:stage
+Arch	setup.ml	/^    | Arch$/;"	C	type:OASISTypes/vcs
+BANG	_build/src/parser.ml	/^    | BANG$/;"	C	type:MenhirBasics/token
+BANG	_build/src/parser.mli	/^  | BANG$/;"	C	type:token
+BDoc	setup.ml	/^    | BDoc     (* Document *)$/;"	C	type:BaseBuilt/t
+BExec	setup.ml	/^    | BExec    (* Executable *)$/;"	C	type:BaseBuilt/t
+BExecLib	setup.ml	/^    | BExecLib (* Library coming with executable *)$/;"	C	type:BaseBuilt/t
+BLib	setup.ml	/^    | BLib     (* Library *)$/;"	C	type:BaseBuilt/t
+BOOL	_build/src/parser.ml	/^    | BOOL of ($/;"	C	type:MenhirBasics/token
+BOOL	_build/src/parser.mli	/^  | BOOL of (bool)$/;"	C	type:token
+BObj	setup.ml	/^    | BObj     (* Library *)$/;"	C	type:BaseBuilt/t
+BaseArgExt	setup.ml	/^module BaseArgExt = struct$/;"	M
+BaseBuilt	setup.ml	/^module BaseBuilt = struct$/;"	M
+BaseCheck	setup.ml	/^module BaseCheck = struct$/;"	M
+BaseCompat	setup.ml	/^module BaseCompat = struct$/;"	M
+BaseContext	setup.ml	/^module BaseContext = struct$/;"	M
+BaseCustom	setup.ml	/^module BaseCustom = struct$/;"	M
+BaseDoc	setup.ml	/^module BaseDoc = struct$/;"	M
+BaseDynVar	setup.ml	/^module BaseDynVar = struct$/;"	M
+BaseEnv	setup.ml	/^module BaseEnv = struct$/;"	M
+BaseEnvLight	_build/myocamlbuild.ml	/^module BaseEnvLight = struct$/;"	M
+BaseEnvLight	myocamlbuild.ml	/^module BaseEnvLight = struct$/;"	M
+BaseEnvLight	setup.ml	/^module BaseEnvLight = struct$/;"	M
+BaseFileAB	setup.ml	/^module BaseFileAB = struct$/;"	M
+BaseLog	setup.ml	/^module BaseLog = struct$/;"	M
+BaseMessage	setup.ml	/^module BaseMessage = struct$/;"	M
+BaseOCamlcConfig	setup.ml	/^module BaseOCamlcConfig = struct$/;"	M
+BaseSetup	setup.ml	/^    module BaseSetup =$/;"	M	module:BaseCompat/Compat_0_4
+BaseSetup	setup.ml	/^module BaseSetup = struct$/;"	M
+BaseStandardVar	setup.ml	/^module BaseStandardVar = struct$/;"	M
+BaseTest	setup.ml	/^module BaseTest = struct$/;"	M
+Best	setup.ml	/^    | Best$/;"	C	type:OASISTypes/compiled_object
+Beta	setup.ml	/^  type stage = Alpha | Beta$/;"	C	type:stage
+BlankLine	setup.ml	/^    | BlankLine$/;"	C	type:OASISText/elt
+Build	setup.ml	/^    | `Build$/;"	C	type:OASISTypes/plugin_data_purpose
+Build	setup.ml	/^    | `Build$/;"	C	type:OASISTypes/plugin_kind
+Build	setup.ml	/^  module Build =$/;"	M	module:CustomPlugin
+Build Instructions	README.md	/^### Build Instructions$/;"	S
+Building and Testing	README.md	/^## Building and Testing$/;"	s
+Byte	setup.ml	/^    | Byte$/;"	C	type:OASISTypes/compiled_object
+Bzr	setup.ml	/^    | Bzr$/;"	C	type:OASISTypes/vcs
+CLIAuto	setup.ml	/^    | CLIAuto$/;"	C	type:BaseEnv/cli_handle_t
+CLIEnable	setup.ml	/^    | CLIEnable$/;"	C	type:BaseEnv/cli_handle_t
+CLINone	setup.ml	/^    | CLINone$/;"	C	type:BaseEnv/cli_handle_t
+CLIUser	setup.ml	/^    | CLIUser of (Arg.key * Arg.spec * Arg.doc) list$/;"	C	type:BaseEnv/cli_handle_t
+CLIWith	setup.ml	/^    | CLIWith$/;"	C	type:BaseEnv/cli_handle_t
+COLON	_build/src/parser.ml	/^    | COLON$/;"	C	type:MenhirBasics/token
+COLON	_build/src/parser.mli	/^  | COLON$/;"	C	type:token
+COMMA	_build/src/parser.ml	/^    | COMMA$/;"	C	type:MenhirBasics/token
+COMMA	_build/src/parser.mli	/^  | COMMA$/;"	C	type:token
+CONS	_build/src/parser.ml	/^    | CONS$/;"	C	type:MenhirBasics/token
+CONS	_build/src/parser.mli	/^  | CONS$/;"	C	type:token
+CSection	setup.ml	/^  module CSection =$/;"	M	module:OASISSection
+Call	setup.ml	/^      | Call of string * expr$/;"	C	type:OASISSourcePatterns/Templater/expr
+Clean	setup.ml	/^    | `Clean$/;"	C	type:OASISTypes/plugin_data_purpose
+Compat_0_3	setup.ml	/^  module Compat_0_3 =$/;"	M	module:BaseCompat
+Compat_0_4	setup.ml	/^  module Compat_0_4 =$/;"	M	module:BaseCompat
+Compiler	README.md	/^# Compiler$/;"	c
+Compiler	_build/src/compiler.ml	/^(* compiler.ml*)$/;"	M
+Compiler	src/compiler.ml	/^(* compiler.ml*)$/;"	M
+Configure	setup.ml	/^    [  `Configure$/;"	C	type:OASISTypes/plugin_data_purpose
+Configure	setup.ml	/^    [  `Configure$/;"	C	type:OASISTypes/plugin_kind
+Container	setup.ml	/^    | Container of findlib_name * group_t list$/;"	C	type:OASISFindlib/group_t
+CustomPlugin	setup.ml	/^module CustomPlugin = struct$/;"	M
+Cvs	setup.ml	/^    | Cvs$/;"	C	type:OASISTypes/vcs
+DEP5And	setup.ml	/^    | DEP5And of license_dep_5 list$/;"	C	type:OASISFileSystem/OASISLicense/license_dep_5
+DEP5License	setup.ml	/^    | DEP5License of license_dep_5$/;"	C	type:OASISFileSystem/OASISLicense/t
+DEP5Or	setup.ml	/^    | DEP5Or of license_dep_5 list$/;"	C	type:OASISFileSystem/OASISLicense/license_dep_5
+DEP5Unit	setup.ml	/^    | DEP5Unit of license_dep_5_unit$/;"	C	type:OASISFileSystem/OASISLicense/license_dep_5
+DIVIDE	_build/src/parser.ml	/^    | DIVIDE$/;"	C	type:MenhirBasics/token
+DIVIDE	_build/src/parser.mli	/^  | DIVIDE$/;"	C	type:token
+DO	_build/src/parser.ml	/^    | DO$/;"	C	type:MenhirBasics/token
+DO	_build/src/parser.mli	/^  | DO$/;"	C	type:token
+DVI	setup.ml	/^    | DVI$/;"	C	type:OASISTypes/doc_format
+Darcs	setup.ml	/^    | Darcs$/;"	C	type:OASISTypes/vcs
+Data	setup.ml	/^  module Data =$/;"	M
+Data	setup.ml	/^  module Data =$/;"	M	module:OASISFileSystem/PropList
+Debug	setup.ml	/^    [ `Debug$/;"	C	type:OASISFileSystem/OASISContext/level
+Display	src/display.ml	/^(* display.ml *)$/;"	M
+Distclean	setup.ml	/^    | `Distclean$/;"	C	type:OASISTypes/plugin_data_purpose
+Doc	setup.ml	/^    [ `Library | `Object | `Executable | `Flag | `SrcRepo | `Test | `Doc ]$/;"	C	type:OASISTypes/section_kind
+Doc	setup.ml	/^    | Doc        of common_section * doc$/;"	C	type:OASISTypes/section
+Doc	setup.ml	/^    | `Doc$/;"	C	type:OASISTypes/plugin_data_purpose
+Doc	setup.ml	/^    | `Doc$/;"	C	type:OASISTypes/plugin_kind
+Doc	setup.ml	/^  module Doc =$/;"	M	module:CustomPlugin
+DocText	setup.ml	/^    | DocText$/;"	C	type:OASISTypes/doc_format
+EAnd	_build/myocamlbuild.ml	/^    | EAnd of t * t$/;"	C	type:OASISExpr/t
+EAnd	myocamlbuild.ml	/^    | EAnd of t * t$/;"	C	type:OASISExpr/t
+EAnd	setup.ml	/^    | EAnd of t * t$/;"	C	type:OASISFileSystem/OASISExpr/t
+EAssign	_build/src/lang.ml	/^    | EAssign of exp * exp$/;"	C	type:exp
+EAssign	src/lang.ml	/^    | EAssign of exp * exp$/;"	C	type:exp
+EBang	_build/src/lang.ml	/^    | EBang of exp$/;"	C	type:exp
+EBang	src/lang.ml	/^    | EBang of exp$/;"	C	type:exp
+EBinOp	_build/src/lang.ml	/^    | EBinOp of bin_op * exp * exp$/;"	C	type:exp
+EBinOp	src/lang.ml	/^    | EBinOp of bin_op * exp * exp$/;"	C	type:exp
+EBool	_build/myocamlbuild.ml	/^    | EBool of bool$/;"	C	type:OASISExpr/t
+EBool	myocamlbuild.ml	/^    | EBool of bool$/;"	C	type:OASISExpr/t
+EBool	setup.ml	/^    | EBool of bool$/;"	C	type:OASISFileSystem/OASISExpr/t
+EEmpty	_build/src/lang.ml	/^    | EEmpty of exp$/;"	C	type:exp
+EEmpty	src/lang.ml	/^    | EEmpty of exp$/;"	C	type:exp
+EFlag	_build/myocamlbuild.ml	/^    | EFlag of flag$/;"	C	type:OASISExpr/t
+EFlag	myocamlbuild.ml	/^    | EFlag of flag$/;"	C	type:OASISExpr/t
+EFlag	setup.ml	/^    | EFlag of flag$/;"	C	type:OASISFileSystem/OASISExpr/t
+EFunCall	_build/src/lang.ml	/^    | EFunCall of exp * exp$/;"	C	type:exp
+EFunCall	src/lang.ml	/^    | EFunCall of exp * exp$/;"	C	type:exp
+EHead	_build/src/lang.ml	/^    | EHead of exp$/;"	C	type:exp
+EHead	src/lang.ml	/^    | EHead of exp$/;"	C	type:exp
+EIf	_build/src/lang.ml	/^    | EIf of exp * exp * exp$/;"	C	type:exp
+EIf	src/lang.ml	/^    | EIf of exp * exp * exp$/;"	C	type:exp
+EInferLet	_build/src/lang.ml	/^    | EInferLet of exp * exp * exp$/;"	C	type:exp
+EInferLet	src/lang.ml	/^    | EInferLet of exp * exp * exp$/;"	C	type:exp
+ELSE	_build/src/parser.ml	/^    | ELSE$/;"	C	type:MenhirBasics/token
+ELSE	_build/src/parser.mli	/^  | ELSE$/;"	C	type:token
+ELet	_build/src/lang.ml	/^    | ELet of exp * exp * exp * typ$/;"	C	type:exp
+ELet	src/lang.ml	/^    | ELet of exp * exp * exp * typ$/;"	C	type:exp
+EMPTY	_build/src/parser.ml	/^    | EMPTY$/;"	C	type:MenhirBasics/token
+EMPTY	_build/src/parser.mli	/^  | EMPTY$/;"	C	type:token
+EMPTYLIST	_build/src/parser.ml	/^    | EMPTYLIST$/;"	C	type:MenhirBasics/token
+EMPTYLIST	_build/src/parser.mli	/^  | EMPTYLIST$/;"	C	type:token
+END	_build/src/parser.ml	/^    | END$/;"	C	type:MenhirBasics/token
+END	_build/src/parser.mli	/^  | END$/;"	C	type:token
+ENot	_build/myocamlbuild.ml	/^    | ENot of t$/;"	C	type:OASISExpr/t
+ENot	myocamlbuild.ml	/^    | ENot of t$/;"	C	type:OASISExpr/t
+ENot	setup.ml	/^    | ENot of t$/;"	C	type:OASISFileSystem/OASISExpr/t
+ENth	_build/src/lang.ml	/^    | ENth of exp * exp$/;"	C	type:exp
+ENth	src/lang.ml	/^    | ENth of exp * exp$/;"	C	type:exp
+EOF	_build/src/parser.ml	/^    | EOF$/;"	C	type:MenhirBasics/token
+EOF	_build/src/parser.mli	/^  | EOF$/;"	C	type:token
+EOr	_build/myocamlbuild.ml	/^    | EOr of t * t$/;"	C	type:OASISExpr/t
+EOr	myocamlbuild.ml	/^    | EOr of t * t$/;"	C	type:OASISExpr/t
+EOr	setup.ml	/^    | EOr of t * t$/;"	C	type:OASISFileSystem/OASISExpr/t
+EQUALS	_build/src/parser.ml	/^    | EQUALS$/;"	C	type:MenhirBasics/token
+EQUALS	_build/src/parser.mli	/^  | EQUALS$/;"	C	type:token
+ERef	_build/src/lang.ml	/^    | ERef of exp$/;"	C	type:exp
+ERef	src/lang.ml	/^    | ERef of exp$/;"	C	type:exp
+ESequence	_build/src/lang.ml	/^    | ESequence of exp * exp$/;"	C	type:exp
+ESequence	src/lang.ml	/^    | ESequence of exp * exp$/;"	C	type:exp
+ETail	_build/src/lang.ml	/^    | ETail of exp$/;"	C	type:exp
+ETail	src/lang.ml	/^    | ETail of exp$/;"	C	type:exp
+ETest	_build/myocamlbuild.ml	/^    | ETest of test * string$/;"	C	type:OASISExpr/t
+ETest	myocamlbuild.ml	/^    | ETest of test * string$/;"	C	type:OASISExpr/t
+ETest	setup.ml	/^    | ETest of test * string$/;"	C	type:OASISFileSystem/OASISExpr/t
+EVal	_build/src/lang.ml	/^    | EVal of value$/;"	C	type:exp
+EVal	src/lang.ml	/^    | EVal of value$/;"	C	type:exp
+EVar	_build/src/lang.ml	/^    | EVar of string$/;"	C	type:exp
+EVar	src/lang.ml	/^    | EVar of string$/;"	C	type:exp
+EWhile	_build/src/lang.ml	/^    | EWhile of exp * exp * exp$/;"	C	type:exp
+EWhile	src/lang.ml	/^    | EWhile of exp * exp * exp$/;"	C	type:exp
+Error	_build/src/parser.ml	/^  exception Error$/;"	e	module:MenhirBasics
+Error	_build/src/parser.mli	/^exception Error$/;"	e
+Error	setup.ml	/^    | `Error]$/;"	C	type:OASISFileSystem/OASISContext/level
+Executable	setup.ml	/^    [ `Library | `Object | `Executable | `Flag | `SrcRepo | `Test | `Doc ]$/;"	C	type:OASISTypes/section_kind
+Executable	setup.ml	/^    | Executable of common_section * build_section * executable$/;"	C	type:OASISTypes/section
+Execution Instructions	README.md	/^### Execution Instructions$/;"	S
+Expr	setup.ml	/^      | Expr of expr$/;"	C	type:OASISSourcePatterns/Templater/atom
+ExternalTool	setup.ml	/^    | ExternalTool of name$/;"	C	type:OASISTypes/tool
+Extra	setup.ml	/^    | `Extra$/;"	C	type:OASISTypes/plugin_data_purpose
+Extra	setup.ml	/^    | `Extra$/;"	C	type:OASISTypes/plugin_kind
+FIX	_build/src/parser.ml	/^    | FIX$/;"	C	type:MenhirBasics/token
+FIX	_build/src/parser.mli	/^  | FIX$/;"	C	type:token
+FLOAT	_build/src/parser.ml	/^    | FLOAT of ($/;"	C	type:MenhirBasics/token
+FLOAT	_build/src/parser.mli	/^  | FLOAT of (float)$/;"	C	type:token
+FUN	_build/src/parser.ml	/^    | FUN$/;"	C	type:MenhirBasics/token
+FUN	_build/src/parser.mli	/^  | FUN$/;"	C	type:token
+Field	setup.ml	/^    | Field of string * string$/;"	C	type:origin
+Field	setup.ml	/^  module Field =$/;"	M	module:OASISFileSystem/PropList
+FieldRO	setup.ml	/^  module FieldRO =$/;"	M	module:OASISFileSystem/PropList
+FindlibPackage	setup.ml	/^    | FindlibPackage of findlib_full * OASISVersion.comparator option$/;"	C	type:OASISTypes/dependency
+FindlibPackageNotFound	setup.ml	/^  exception FindlibPackageNotFound of findlib_name$/;"	e	module:OASISFindlib
+Flag	setup.ml	/^    [ `Library | `Object | `Executable | `Flag | `SrcRepo | `Test | `Doc ]$/;"	C	type:OASISTypes/section_kind
+Flag	setup.ml	/^    | Flag       of common_section * flag$/;"	C	type:OASISTypes/section
+GEQ	_build/src/parser.ml	/^    | GEQ$/;"	C	type:MenhirBasics/token
+GEQ	_build/src/parser.mli	/^  | GEQ$/;"	C	type:token
+GTTHN	_build/src/parser.ml	/^    | GTTHN$/;"	C	type:MenhirBasics/token
+GTTHN	_build/src/parser.mli	/^  | GTTHN$/;"	C	type:token
+Git	setup.ml	/^    | Git$/;"	C	type:OASISTypes/vcs
+HEAD	_build/src/parser.ml	/^    | HEAD$/;"	C	type:MenhirBasics/token
+HEAD	_build/src/parser.mli	/^  | HEAD$/;"	C	type:token
+HTML	setup.ml	/^    | HTML of unix_filename (* TODO: source filename. *)$/;"	C	type:OASISTypes/doc_format
+HashStringCsl	_build/myocamlbuild.ml	/^  module HashStringCsl =$/;"	M	module:OASISUtils
+HashStringCsl	myocamlbuild.ml	/^  module HashStringCsl =$/;"	M	module:OASISUtils
+HashStringCsl	setup.ml	/^  module HashStringCsl =$/;"	M	module:OASISUtils
+Hg	setup.ml	/^    | Hg$/;"	C	type:OASISTypes/vcs
+IF	_build/src/parser.ml	/^    | IF$/;"	C	type:MenhirBasics/token
+IF	_build/src/parser.mli	/^  | IF$/;"	C	type:token
+IN	_build/src/parser.ml	/^    | IN$/;"	C	type:MenhirBasics/token
+IN	_build/src/parser.mli	/^  | IN$/;"	C	type:token
+INT	_build/src/parser.ml	/^    | INT of ($/;"	C	type:MenhirBasics/token
+INT	_build/src/parser.mli	/^  | INT of (int)$/;"	C	type:token
+Ident	setup.ml	/^      | Ident of string$/;"	C	type:OASISSourcePatterns/Templater/expr
+InDev	setup.ml	/^  type publication = InDev of stage | SinceVersion of OASISVersion.t$/;"	C	type:publication
+Info	setup.ml	/^    | Info of unix_filename (* TODO: source filename. *)$/;"	C	type:OASISTypes/doc_format
+Info	setup.ml	/^    | `Info$/;"	C	type:OASISFileSystem/OASISContext/level
+Install	setup.ml	/^    | `Install$/;"	C	type:OASISTypes/plugin_data_purpose
+Install	setup.ml	/^    | `Install$/;"	C	type:OASISTypes/plugin_kind
+InternalConfigurePlugin	setup.ml	/^module InternalConfigurePlugin = struct$/;"	M
+InternalExecutable	setup.ml	/^    | InternalExecutable of name$/;"	C	type:OASISTypes/tool
+InternalInstallPlugin	setup.ml	/^module InternalInstallPlugin = struct$/;"	M
+InternalLibrary	setup.ml	/^    | InternalLibrary of name$/;"	C	type:OASISTypes/dependency
+InternalLibraryNotFound	setup.ml	/^  exception InternalLibraryNotFound of library_name$/;"	e	module:OASISFindlib
+LBool	_build/src/lang.ml	/^    | LBool of bool$/;"	C	type:lit
+LBool	src/lang.ml	/^    | LBool of bool$/;"	C	type:lit
+LEQ	_build/src/parser.ml	/^    | LEQ$/;"	C	type:MenhirBasics/token
+LEQ	_build/src/parser.mli	/^  | LEQ$/;"	C	type:token
+LET	_build/src/parser.ml	/^    | LET$/;"	C	type:MenhirBasics/token
+LET	_build/src/parser.mli	/^  | LET$/;"	C	type:token
+LFloat	_build/src/lang.ml	/^    | LFloat of float$/;"	C	type:lit
+LFloat	src/lang.ml	/^    | LFloat of float$/;"	C	type:lit
+LInt	_build/src/lang.ml	/^    | LInt of int$/;"	C	type:lit
+LInt	src/lang.ml	/^    | LInt of int$/;"	C	type:lit
+LPAREN	_build/src/parser.ml	/^    | LPAREN$/;"	C	type:MenhirBasics/token
+LPAREN	_build/src/parser.mli	/^  | LPAREN$/;"	C	type:token
+LSQUARE	_build/src/parser.ml	/^    | LSQUARE$/;"	C	type:MenhirBasics/token
+LSQUARE	_build/src/parser.mli	/^  | LSQUARE$/;"	C	type:token
+LSTHN	_build/src/parser.ml	/^    | LSTHN$/;"	C	type:MenhirBasics/token
+LSTHN	_build/src/parser.mli	/^  | LSTHN$/;"	C	type:token
+Lang	_build/src/lang.ml	/^open List$/;"	M
+Lang	src/lang.ml	/^open List$/;"	M
+Leaf	setup.ml	/^    | Leaf of data$/;"	C	type:OASISFindlib/tree
+Lexer	_build/src/lexer.ml	/^# 1 "src\/lexer.mll"$/;"	M
+Lexer_error	_build/src/lexer.ml	/^exception Lexer_error of string$/;"	e
+Lexing	_build/src/parser.ml	/^  _menhir_lexer: Lexing.lexbuf -> token;$/;"	t
+Library	setup.ml	/^    [ `Library | `Object | `Executable | `Flag | `SrcRepo | `Test | `Doc ]$/;"	C	type:OASISTypes/section_kind
+Library	setup.ml	/^    | Library    of common_section * build_section * library$/;"	C	type:OASISTypes/section
+MINUS	_build/src/parser.ml	/^    | MINUS$/;"	C	type:MenhirBasics/token
+MINUS	_build/src/parser.mli	/^  | MINUS$/;"	C	type:token
+Make	_build/myocamlbuild.ml	/^    module Make (Ord: Map.OrderedType) =$/;"	M	module:OASISUtils/MapExt
+Make	_build/myocamlbuild.ml	/^    module Make (Ord: Set.OrderedType) =$/;"	M	module:OASISUtils/SetExt
+Make	myocamlbuild.ml	/^    module Make (Ord: Map.OrderedType) =$/;"	M	module:OASISUtils/MapExt
+Make	myocamlbuild.ml	/^    module Make (Ord: Set.OrderedType) =$/;"	M	module:OASISUtils/SetExt
+Make	setup.ml	/^    module Make (Ord: Map.OrderedType) =$/;"	M	module:OASISUtils/MapExt
+Make	setup.ml	/^    module Make (Ord: Set.OrderedType) =$/;"	M	module:OASISUtils/SetExt
+MapExt	_build/myocamlbuild.ml	/^  module MapExt =$/;"	M	module:OASISUtils
+MapExt	myocamlbuild.ml	/^  module MapExt =$/;"	M	module:OASISUtils
+MapExt	setup.ml	/^  module MapExt =$/;"	M	module:OASISUtils
+MapPlugin	setup.ml	/^  module MapPlugin =$/;"	M	module:OASISFeatures
+MapSection	setup.ml	/^  module MapSection = Map.Make(CSection)$/;"	M	module:OASISSection
+MapString	_build/myocamlbuild.ml	/^  module MapString = Map.Make(String)$/;"	M	module:BaseEnvLight
+MapString	_build/myocamlbuild.ml	/^  module MapString = MapExt.Make(String)$/;"	M	module:OASISUtils
+MapString	myocamlbuild.ml	/^  module MapString = Map.Make(String)$/;"	M	module:BaseEnvLight
+MapString	myocamlbuild.ml	/^  module MapString = MapExt.Make(String)$/;"	M	module:OASISUtils
+MapString	setup.ml	/^  module MapString = BaseEnvLight.MapString$/;"	M	module:BaseEnv
+MapString	setup.ml	/^  module MapString = Map.Make(String)$/;"	M	module:BaseEnvLight
+MapString	setup.ml	/^  module MapString = MapExt.Make(String)$/;"	M	module:OASISUtils
+MenhirBasics	_build/src/parser.ml	/^module MenhirBasics = struct$/;"	M
+MenhirState122	_build/src/parser.ml	/^  | MenhirState122$/;"	t
+Mode	setup.ml	/^  module Mode =$/;"	M	class:OASISFileSystem/closer
+Monotone	setup.ml	/^    | Monotone$/;"	C	type:OASISTypes/vcs
+MyOCamlbuildBase	_build/myocamlbuild.ml	/^module MyOCamlbuildBase = struct$/;"	M
+MyOCamlbuildBase	myocamlbuild.ml	/^module MyOCamlbuildBase = struct$/;"	M
+MyOCamlbuildFindlib	_build/myocamlbuild.ml	/^module MyOCamlbuildFindlib = struct$/;"	M
+MyOCamlbuildFindlib	myocamlbuild.ml	/^module MyOCamlbuildFindlib = struct$/;"	M
+Myocamlbuild	_build/myocamlbuild.ml	/^(* OASIS_START *)$/;"	M
+Myocamlbuild	myocamlbuild.ml	/^(* OASIS_START *)$/;"	M
+NAME	_build/src/parser.ml	/^    | NAME of ($/;"	C	type:MenhirBasics/token
+NAME	_build/src/parser.mli	/^  | NAME of (string)$/;"	C	type:token
+Native	setup.ml	/^    | Native$/;"	C	type:OASISTypes/compiled_object
+NoOrigin	setup.ml	/^    | NoOrigin$/;"	C	type:origin
+NoVersion	setup.ml	/^    | NoVersion$/;"	C	type:OASISFileSystem/OASISLicense/license_version
+No_printer	setup.ml	/^  exception No_printer of name$/;"	e	module:OASISFileSystem/PropList
+Node	setup.ml	/^    | Node of (data option) * (tree MapString.t)$/;"	C	type:OASISFindlib/tree
+Not_set	setup.ml	/^  exception Not_set of name * string option$/;"	e	module:OASISFileSystem/PropList
+OASISBuildSection	setup.ml	/^module OASISBuildSection = struct$/;"	M
+OASISContext	setup.ml	/^module OASISContext = struct$/;"	M	module:OASISFileSystem
+OASISDocument	setup.ml	/^module OASISDocument = struct$/;"	M
+OASISExec	setup.ml	/^module OASISExec = struct$/;"	M
+OASISExecutable	setup.ml	/^module OASISExecutable = struct$/;"	M
+OASISExpr	_build/myocamlbuild.ml	/^module OASISExpr = struct$/;"	M
+OASISExpr	myocamlbuild.ml	/^module OASISExpr = struct$/;"	M
+OASISExpr	setup.ml	/^module OASISExpr = struct$/;"	M	module:OASISFileSystem
+OASISFeatures	setup.ml	/^module OASISFeatures = struct$/;"	M
+OASISFileSystem	setup.ml	/^module OASISFileSystem = struct$/;"	M
+OASISFileUtil	setup.ml	/^module OASISFileUtil = struct$/;"	M
+OASISFindlib	setup.ml	/^module OASISFindlib = struct$/;"	M
+OASISFlag	setup.ml	/^module OASISFlag = struct$/;"	M
+OASISGettext	_build/myocamlbuild.ml	/^module OASISGettext = struct$/;"	M
+OASISGettext	myocamlbuild.ml	/^module OASISGettext = struct$/;"	M
+OASISGettext	setup.ml	/^module OASISGettext = struct$/;"	M
+OASISHostPath	setup.ml	/^module OASISHostPath = struct$/;"	M
+OASISLibrary	setup.ml	/^module OASISLibrary = struct$/;"	M
+OASISLicense	setup.ml	/^module OASISLicense = struct$/;"	M	module:OASISFileSystem
+OASISMessage	setup.ml	/^module OASISMessage = struct$/;"	M	module:OASISFileSystem
+OASISObject	setup.ml	/^module OASISObject = struct$/;"	M
+OASISPackage	setup.ml	/^module OASISPackage = struct$/;"	M
+OASISSection	setup.ml	/^module OASISSection = struct$/;"	M
+OASISSourcePatterns	setup.ml	/^module OASISSourcePatterns = struct$/;"	M
+OASISSourceRepository	setup.ml	/^module OASISSourceRepository = struct$/;"	M
+OASISString	_build/myocamlbuild.ml	/^module OASISString = struct$/;"	M
+OASISString	myocamlbuild.ml	/^module OASISString = struct$/;"	M
+OASISString	setup.ml	/^module OASISString = struct$/;"	M
+OASISTest	setup.ml	/^module OASISTest = struct$/;"	M
+OASISText	setup.ml	/^module OASISText = struct$/;"	M
+OASISTypes	setup.ml	/^module OASISTypes = struct$/;"	M
+OASISUnixPath	setup.ml	/^module OASISUnixPath = struct$/;"	M
+OASISUtils	_build/myocamlbuild.ml	/^module OASISUtils = struct$/;"	M
+OASISUtils	myocamlbuild.ml	/^module OASISUtils = struct$/;"	M
+OASISUtils	setup.ml	/^module OASISUtils = struct$/;"	M
+OASISVersion	setup.ml	/^module OASISVersion = struct$/;"	M	module:OASISFileSystem
+OAdd	_build/src/lang.ml	/^    | OAdd$/;"	C	type:bin_op
+OAdd	src/lang.ml	/^    | OAdd$/;"	C	type:bin_op
+OC	_build/myocamlbuild.ml	/^  module OC = Ocamlbuild_pack.Ocaml_compiler$/;"	M	module:MyOCamlbuildBase
+OC	myocamlbuild.ml	/^  module OC = Ocamlbuild_pack.Ocaml_compiler$/;"	M	module:MyOCamlbuildBase
+OCamlbuildCommon	setup.ml	/^module OCamlbuildCommon = struct$/;"	M
+OCamlbuildDocPlugin	setup.ml	/^module OCamlbuildDocPlugin = struct$/;"	M
+OCamlbuildPlugin	setup.ml	/^module OCamlbuildPlugin = struct$/;"	M
+OCommandLine	setup.ml	/^    | OCommandLine$/;"	C	type:BaseEnv/origin_t
+ODefault	setup.ml	/^    | ODefault$/;"	C	type:BaseEnv/origin_t
+ODivide	_build/src/lang.ml	/^    | ODivide$/;"	C	type:bin_op
+ODivide	src/lang.ml	/^    | ODivide$/;"	C	type:bin_op
+OEquals	_build/src/lang.ml	/^    | OEquals$/;"	C	type:bin_op
+OEquals	src/lang.ml	/^    | OEquals$/;"	C	type:bin_op
+OFileLoad	setup.ml	/^    | OFileLoad$/;"	C	type:BaseEnv/origin_t
+OGetEnv	setup.ml	/^    | OGetEnv$/;"	C	type:BaseEnv/origin_t
+OGreaterThan	_build/src/lang.ml	/^    | OGreaterThan$/;"	C	type:bin_op
+OGreaterThan	src/lang.ml	/^    | OGreaterThan$/;"	C	type:bin_op
+OGreaterThanEq	_build/src/lang.ml	/^    | OGreaterThanEq$/;"	C	type:bin_op
+OGreaterThanEq	src/lang.ml	/^    | OGreaterThanEq$/;"	C	type:bin_op
+OLessThan	_build/src/lang.ml	/^    | OLessThan$/;"	C	type:bin_op
+OLessThan	src/lang.ml	/^    | OLessThan$/;"	C	type:bin_op
+OLessThanEq	_build/src/lang.ml	/^    | OLessThanEq$/;"	C	type:bin_op
+OLessThanEq	src/lang.ml	/^    | OLessThanEq$/;"	C	type:bin_op
+OMultiply	_build/src/lang.ml	/^    | OMultiply$/;"	C	type:bin_op
+OMultiply	src/lang.ml	/^    | OMultiply$/;"	C	type:bin_op
+OSubtract	_build/src/lang.ml	/^    | OSubtract$/;"	C	type:bin_op
+OSubtract	src/lang.ml	/^    | OSubtract$/;"	C	type:bin_op
+Object	setup.ml	/^                  [`Library of library | `Object of object_] *$/;"	C	type:OASISFindlib/group_t
+Object	setup.ml	/^      [`Library of library | `Object of object_]$/;"	C	type:OASISFindlib/data
+Object	setup.ml	/^    [ `Library | `Object | `Executable | `Flag | `SrcRepo | `Test | `Doc ]$/;"	C	type:OASISTypes/section_kind
+Object	setup.ml	/^    | Object     of common_section * build_section * object_$/;"	C	type:OASISTypes/section
+Original	setup.ml	/^      module Original = BaseSetup$/;"	M	module:BaseCompat/Compat_0_4/BaseSetup
+Other	setup.ml	/^    | `Other of string$/;"	C	type:OASISTypes/plugin_data_purpose
+OtherDoc	setup.ml	/^    | OtherDoc$/;"	C	type:OASISTypes/doc_format
+OtherLicense	setup.ml	/^    | OtherLicense of string (* URL *)$/;"	C	type:OASISFileSystem/OASISLicense/t
+OtherVCS	setup.ml	/^    | OtherVCS of url$/;"	C	type:OASISTypes/vcs
+Overview	README.md	/^## Overview$/;"	s
+PDF	setup.ml	/^    | PDF$/;"	C	type:OASISTypes/doc_format
+PLUS	_build/src/parser.ml	/^    | PLUS$/;"	C	type:MenhirBasics/token
+PLUS	_build/src/parser.mli	/^  | PLUS$/;"	C	type:token
+Package	setup.ml	/^    | Package of (findlib_name *$/;"	C	type:OASISFindlib/group_t
+Para	setup.ml	/^    | Para of string$/;"	C	type:OASISText/elt
+Parser	_build/src/parser.ml	/^$/;"	M
+Parser	_build/src/parser.mli	/^$/;"	M
+PostScript	setup.ml	/^    | PostScript$/;"	C	type:OASISTypes/doc_format
+PropList	setup.ml	/^module PropList = struct$/;"	M	module:OASISFileSystem
+REF	_build/src/parser.ml	/^    | REF$/;"	C	type:MenhirBasics/token
+REF	_build/src/parser.mli	/^  | REF$/;"	C	type:token
+RPAREN	_build/src/parser.ml	/^    | RPAREN$/;"	C	type:MenhirBasics/token
+RPAREN	_build/src/parser.mli	/^  | RPAREN$/;"	C	type:token
+RSQUARE	_build/src/parser.ml	/^    | RSQUARE$/;"	C	type:MenhirBasics/token
+RSQUARE	_build/src/parser.mli	/^  | RSQUARE$/;"	C	type:token
+S	_build/myocamlbuild.ml	/^    module type S =$/;"	M	module:OASISUtils/MapExt
+S	_build/myocamlbuild.ml	/^    module type S =$/;"	M	module:OASISUtils/SetExt
+S	myocamlbuild.ml	/^    module type S =$/;"	M	module:OASISUtils/MapExt
+S	myocamlbuild.ml	/^    module type S =$/;"	M	module:OASISUtils/SetExt
+S	setup.ml	/^    module type S =$/;"	M	module:OASISUtils/MapExt
+S	setup.ml	/^    module type S =$/;"	M	module:OASISUtils/SetExt
+SEMI	_build/src/parser.ml	/^    | SEMI$/;"	C	type:MenhirBasics/token
+SEMI	_build/src/parser.mli	/^  | SEMI$/;"	C	type:token
+SET	_build/src/parser.ml	/^    | SET$/;"	C	type:MenhirBasics/token
+SET	_build/src/parser.mli	/^  | SET$/;"	C	type:token
+SETUP	Makefile	/^SETUP = ocaml setup.ml$/;"	m
+SMap	setup.ml	/^  module SMap = Map.Make(String)$/;"	M	module:BaseOCamlcConfig
+Schema	setup.ml	/^  module Schema =$/;"	M	module:OASISFileSystem/PropList
+Section	setup.ml	/^    | Section of string$/;"	C	type:origin
+SetExt	_build/myocamlbuild.ml	/^  module SetExt  =$/;"	M	module:OASISUtils
+SetExt	myocamlbuild.ml	/^  module SetExt  =$/;"	M	module:OASISUtils
+SetExt	setup.ml	/^  module SetExt  =$/;"	M	module:OASISUtils
+SetSection	setup.ml	/^  module SetSection = Set.Make(CSection)$/;"	M	module:OASISSection
+SetString	_build/myocamlbuild.ml	/^  module SetString = SetExt.Make(String)$/;"	M	module:OASISUtils
+SetString	myocamlbuild.ml	/^  module SetString = SetExt.Make(String)$/;"	M	module:OASISUtils
+SetString	setup.ml	/^  module SetString = SetExt.Make(String)$/;"	M	module:OASISUtils
+SetStringCsl	_build/myocamlbuild.ml	/^  module SetStringCsl =$/;"	M
+SetStringCsl	myocamlbuild.ml	/^  module SetStringCsl =$/;"	M
+SetStringCsl	setup.ml	/^  module SetStringCsl =$/;"	M
+Setup	setup.ml	/^(* setup.ml generated for the first time by OASIS v0.4.5 *)$/;"	M
+Setup Instructions	README.md	/^### Setup Instructions$/;"	S
+SinceVersion	setup.ml	/^  type publication = InDev of stage | SinceVersion of OASISVersion.t$/;"	C	type:publication
+SrcRepo	setup.ml	/^    [ `Library | `Object | `Executable | `Flag | `SrcRepo | `Test | `Doc ]$/;"	C	type:OASISTypes/section_kind
+SrcRepo	setup.ml	/^    | SrcRepo    of common_section * source_repository$/;"	C	type:OASISTypes/section
+String	setup.ml	/^      | String of string$/;"	C	type:OASISSourcePatterns/Templater/expr
+Svn	setup.ml	/^    | Svn$/;"	C	type:OASISTypes/vcs
+TAIL	_build/src/parser.ml	/^    | TAIL$/;"	C	type:MenhirBasics/token
+TAIL	_build/src/parser.mli	/^  | TAIL$/;"	C	type:token
+TBOOL	_build/src/parser.ml	/^    | TBOOL$/;"	C	type:MenhirBasics/token
+TBOOL	_build/src/parser.mli	/^  | TBOOL$/;"	C	type:token
+TBool	_build/src/lang.ml	/^    | TBool$/;"	C	type:typ
+TBool	src/lang.ml	/^    | TBool$/;"	C	type:typ
+TDynamic	_build/src/lang.ml	/^    | TDynamic$/;"	C	type:typ
+TDynamic	src/lang.ml	/^    | TDynamic$/;"	C	type:typ
+TFLOAT	_build/src/parser.ml	/^    | TFLOAT$/;"	C	type:MenhirBasics/token
+TFLOAT	_build/src/parser.mli	/^  | TFLOAT$/;"	C	type:token
+TFloat	_build/src/lang.ml	/^    | TFloat$/;"	C	type:typ
+TFloat	src/lang.ml	/^    | TFloat$/;"	C	type:typ
+TFun	_build/src/lang.ml	/^    | TFun of typ * typ$/;"	C	type:typ
+TFun	src/lang.ml	/^    | TFun of typ * typ$/;"	C	type:typ
+THEN	_build/src/parser.ml	/^    | THEN$/;"	C	type:MenhirBasics/token
+THEN	_build/src/parser.mli	/^  | THEN$/;"	C	type:token
+TIMES	_build/src/parser.ml	/^    | TIMES$/;"	C	type:MenhirBasics/token
+TIMES	_build/src/parser.mli	/^  | TIMES$/;"	C	type:token
+TINT	_build/src/parser.ml	/^    | TINT$/;"	C	type:MenhirBasics/token
+TINT	_build/src/parser.mli	/^  | TINT$/;"	C	type:token
+TInt	_build/src/lang.ml	/^    | TInt$/;"	C	type:typ
+TInt	src/lang.ml	/^    | TInt$/;"	C	type:typ
+TList	_build/src/lang.ml	/^    | TList of typ$/;"	C	type:typ
+TList	src/lang.ml	/^    | TList of typ$/;"	C	type:typ
+TRef	_build/src/lang.ml	/^    | TRef of typ$/;"	C	type:typ
+TRef	src/lang.ml	/^    | TRef of typ$/;"	C	type:typ
+TTuple	_build/src/lang.ml	/^    | TTuple of typ list$/;"	C	type:typ
+TTuple	src/lang.ml	/^    | TTuple of typ list$/;"	C	type:typ
+TUNIT	_build/src/parser.ml	/^    | TUNIT$/;"	C	type:MenhirBasics/token
+TUNIT	_build/src/parser.mli	/^  | TUNIT$/;"	C	type:token
+TUnit	_build/src/lang.ml	/^    | TUnit$/;"	C	type:typ
+TUnit	src/lang.ml	/^    | TUnit$/;"	C	type:typ
+Templater	setup.ml	/^  module Templater =$/;"	M	module:OASISSourcePatterns
+Test	setup.ml	/^    [ `Library | `Object | `Executable | `Flag | `SrcRepo | `Test | `Doc ]$/;"	C	type:OASISTypes/section_kind
+Test	setup.ml	/^    | Test       of common_section * test$/;"	C	type:OASISTypes/section
+Test	setup.ml	/^    | `Test$/;"	C	type:OASISTypes/plugin_data_purpose
+Test	setup.ml	/^    | `Test$/;"	C	type:OASISTypes/plugin_kind
+Test	setup.ml	/^  module Test =$/;"	M	module:CustomPlugin
+Text	setup.ml	/^      | Text of string$/;"	C	type:OASISSourcePatterns/Templater/atom
+UNIT	_build/src/parser.ml	/^    | UNIT$/;"	C	type:MenhirBasics/token
+UNIT	_build/src/parser.mli	/^  | UNIT$/;"	C	type:token
+Uninstall	setup.ml	/^    | `Uninstall$/;"	C	type:OASISTypes/plugin_data_purpose
+Unix	setup.ml	/^  module Unix = OASISUnixPath$/;"	M	module:OASISHostPath
+Unknown_field	setup.ml	/^  exception Unknown_field of name * name$/;"	e	module:OASISFileSystem/PropList
+VAnd	setup.ml	/^    | VAnd of comparator * comparator$/;"	C	type:OASISFileSystem/OASISVersion/comparator
+VEqual	setup.ml	/^    | VEqual of t$/;"	C	type:OASISFileSystem/OASISVersion/comparator
+VGreater	setup.ml	/^    | VGreater of t$/;"	C	type:OASISFileSystem/OASISVersion/comparator
+VGreaterEqual	setup.ml	/^    | VGreaterEqual of t$/;"	C	type:OASISFileSystem/OASISVersion/comparator
+VLesser	setup.ml	/^    | VLesser of t$/;"	C	type:OASISFileSystem/OASISVersion/comparator
+VLesserEqual	setup.ml	/^    | VLesserEqual of t$/;"	C	type:OASISFileSystem/OASISVersion/comparator
+VLit	_build/src/lang.ml	/^    | VLit of lit$/;"	t
+VLit	src/lang.ml	/^    | VLit of lit$/;"	t
+VOr	setup.ml	/^    | VOr of  comparator * comparator$/;"	C	type:OASISFileSystem/OASISVersion/comparator
+Verbatim	setup.ml	/^    | Verbatim of string$/;"	C	type:OASISText/elt
+Version	setup.ml	/^    | Version of OASISVersion.t$/;"	C	type:OASISFileSystem/OASISLicense/license_version
+VersionOrLater	setup.ml	/^    | VersionOrLater of OASISVersion.t$/;"	C	type:OASISFileSystem/OASISLicense/license_version
+WHILE	_build/src/parser.ml	/^    | WHILE$/;"	C	type:MenhirBasics/token
+WHILE	_build/src/parser.mli	/^  | WHILE$/;"	C	type:token
+Warning	setup.ml	/^    | `Warning$/;"	C	type:OASISFileSystem/OASISContext/level
+_	_build/src/compiler.ml	/^let _ = if !Sys.interactive then () else main ()$/;"	f
+_	src/compiler.ml	/^let _ = if !Sys.interactive then () else main ()$/;"	f
+__ocaml_lex_tables	_build/src/lexer.ml	/^let __ocaml_lex_tables = {$/;"	f
+__ocaml_lex_token_rec	_build/src/lexer.ml	/^and __ocaml_lex_token_rec lexbuf __ocaml_lex_state =$/;"	f
+_eRR	_build/src/parser.ml	/^let _eRR =$/;"	f
+_menhir_discard	_build/src/parser.ml	/^and _menhir_discard : _menhir_env -> _menhir_env =$/;"	f
+_menhir_env	_build/src/parser.ml	/^    let _menhir_env = let _tok = Obj.magic () in$/;"	f
+_menhir_errorcase	_build/src/parser.ml	/^and _menhir_errorcase : _menhir_env -> 'ttv_tail -> _menhir_state -> 'ttv_return =$/;"	f
+_menhir_fail	_build/src/parser.ml	/^and _menhir_fail : unit -> 'a =$/;"	f
+_menhir_goto_base_exp	_build/src/parser.ml	/^and _menhir_goto_base_exp : _menhir_env -> 'ttv_tail -> _menhir_state -> (Lang.exp) -> 'ttv_retu/;"	f
+_menhir_goto_exp	_build/src/parser.ml	/^and _menhir_goto_exp : _menhir_env -> 'ttv_tail -> _menhir_state -> (Lang.exp) -> 'ttv_return =$/;"	f
+_menhir_goto_ttyp	_build/src/parser.ml	/^and _menhir_goto_ttyp : _menhir_env -> 'ttv_tail -> _menhir_state -> (Lang.typ list) -> 'ttv_ret/;"	f
+_menhir_goto_tuple	_build/src/parser.ml	/^and _menhir_goto_tuple : _menhir_env -> 'ttv_tail -> _menhir_state -> (Lang.exp list) -> 'ttv_re/;"	f
+_menhir_goto_typ	_build/src/parser.ml	/^and _menhir_goto_typ : _menhir_env -> 'ttv_tail -> _menhir_state -> (Lang.typ) -> 'ttv_return =$/;"	f
+_menhir_run1	_build/src/parser.ml	/^and _menhir_run1 : _menhir_env -> 'ttv_tail -> _menhir_state -> 'ttv_return =$/;"	f
+_menhir_run10	_build/src/parser.ml	/^and _menhir_run10 : _menhir_env -> 'ttv_tail -> _menhir_state -> ($/;"	f
+_menhir_run11	_build/src/parser.ml	/^and _menhir_run11 : _menhir_env -> 'ttv_tail -> _menhir_state -> 'ttv_return =$/;"	f
+_menhir_run12	_build/src/parser.ml	/^and _menhir_run12 : _menhir_env -> 'ttv_tail -> _menhir_state -> 'ttv_return =$/;"	f
+_menhir_run13	_build/src/parser.ml	/^and _menhir_run13 : _menhir_env -> 'ttv_tail -> _menhir_state -> 'ttv_return =$/;"	f
+_menhir_run17	_build/src/parser.ml	/^and _menhir_run17 : _menhir_env -> 'ttv_tail -> _menhir_state -> 'ttv_return =$/;"	f
+_menhir_run18	_build/src/parser.ml	/^and _menhir_run18 : _menhir_env -> 'ttv_tail -> _menhir_state -> 'ttv_return =$/;"	f
+_menhir_run19	_build/src/parser.ml	/^and _menhir_run19 : _menhir_env -> 'ttv_tail -> _menhir_state -> 'ttv_return =$/;"	f
+_menhir_run2	_build/src/parser.ml	/^and _menhir_run2 : _menhir_env -> 'ttv_tail -> _menhir_state -> 'ttv_return =$/;"	f
+_menhir_run20	_build/src/parser.ml	/^and _menhir_run20 : _menhir_env -> 'ttv_tail -> _menhir_state -> 'ttv_return =$/;"	f
+_menhir_run21	_build/src/parser.ml	/^and _menhir_run21 : _menhir_env -> 'ttv_tail -> _menhir_state -> 'ttv_return =$/;"	f
+_menhir_run22	_build/src/parser.ml	/^and _menhir_run22 : _menhir_env -> 'ttv_tail -> _menhir_state -> 'ttv_return =$/;"	f
+_menhir_run23	_build/src/parser.ml	/^and _menhir_run23 : _menhir_env -> 'ttv_tail -> _menhir_state -> 'ttv_return =$/;"	f
+_menhir_run29	_build/src/parser.ml	/^and _menhir_run29 : _menhir_env -> 'ttv_tail * _menhir_state * (Lang.typ) -> 'ttv_return =$/;"	f
+_menhir_run3	_build/src/parser.ml	/^and _menhir_run3 : _menhir_env -> 'ttv_tail -> _menhir_state -> 'ttv_return =$/;"	f
+_menhir_run4	_build/src/parser.ml	/^and _menhir_run4 : _menhir_env -> 'ttv_tail -> _menhir_state -> 'ttv_return =$/;"	f
+_menhir_run43	_build/src/parser.ml	/^let rec _menhir_run43 : _menhir_env -> 'ttv_tail -> _menhir_state -> 'ttv_return =$/;"	f
+_menhir_run44	_build/src/parser.ml	/^and _menhir_run44 : _menhir_env -> 'ttv_tail -> _menhir_state -> ($/;"	f
+_menhir_run45	_build/src/parser.ml	/^and _menhir_run45 : _menhir_env -> 'ttv_tail -> _menhir_state -> 'ttv_return =$/;"	f
+_menhir_run5	_build/src/parser.ml	/^and _menhir_run5 : _menhir_env -> 'ttv_tail -> _menhir_state -> ($/;"	f
+_menhir_run55	_build/src/parser.ml	/^and _menhir_run55 : _menhir_env -> 'ttv_tail -> _menhir_state -> 'ttv_return =$/;"	f
+_menhir_run58	_build/src/parser.ml	/^and _menhir_run58 : _menhir_env -> 'ttv_tail -> _menhir_state -> 'ttv_return =$/;"	f
+_menhir_run59	_build/src/parser.ml	/^and _menhir_run59 : _menhir_env -> 'ttv_tail -> _menhir_state -> ($/;"	f
+_menhir_run6	_build/src/parser.ml	/^and _menhir_run6 : _menhir_env -> 'ttv_tail -> _menhir_state -> 'ttv_return =$/;"	f
+_menhir_run60	_build/src/parser.ml	/^and _menhir_run60 : _menhir_env -> 'ttv_tail -> _menhir_state -> 'ttv_return =$/;"	f
+_menhir_run64	_build/src/parser.ml	/^and _menhir_run64 : _menhir_env -> 'ttv_tail * _menhir_state * (Lang.exp) -> 'ttv_return =$/;"	f
+_menhir_run66	_build/src/parser.ml	/^and _menhir_run66 : _menhir_env -> 'ttv_tail * _menhir_state * (Lang.exp) -> 'ttv_return =$/;"	f
+_menhir_run68	_build/src/parser.ml	/^and _menhir_run68 : _menhir_env -> 'ttv_tail * _menhir_state * (Lang.exp) -> 'ttv_return =$/;"	f
+_menhir_run7	_build/src/parser.ml	/^and _menhir_run7 : _menhir_env -> 'ttv_tail -> _menhir_state -> 'ttv_return =$/;"	f
+_menhir_run70	_build/src/parser.ml	/^and _menhir_run70 : _menhir_env -> 'ttv_tail * _menhir_state * (Lang.exp) -> 'ttv_return =$/;"	f
+_menhir_run72	_build/src/parser.ml	/^and _menhir_run72 : _menhir_env -> 'ttv_tail * _menhir_state * (Lang.exp) -> 'ttv_return =$/;"	f
+_menhir_run74	_build/src/parser.ml	/^and _menhir_run74 : _menhir_env -> 'ttv_tail * _menhir_state * (Lang.exp) -> 'ttv_return =$/;"	f
+_menhir_run76	_build/src/parser.ml	/^and _menhir_run76 : _menhir_env -> 'ttv_tail * _menhir_state * (Lang.exp) -> 'ttv_return =$/;"	f
+_menhir_run78	_build/src/parser.ml	/^and _menhir_run78 : _menhir_env -> 'ttv_tail * _menhir_state * (Lang.exp) -> 'ttv_return =$/;"	f
+_menhir_run80	_build/src/parser.ml	/^and _menhir_run80 : _menhir_env -> 'ttv_tail * _menhir_state * (Lang.exp) -> 'ttv_return =$/;"	f
+_menhir_run82	_build/src/parser.ml	/^and _menhir_run82 : _menhir_env -> 'ttv_tail * _menhir_state * (Lang.exp) -> 'ttv_return =$/;"	f
+_menhir_run84	_build/src/parser.ml	/^and _menhir_run84 : _menhir_env -> 'ttv_tail * _menhir_state * (Lang.exp) -> 'ttv_return =$/;"	f
+_menhir_run86	_build/src/parser.ml	/^and _menhir_run86 : _menhir_env -> 'ttv_tail * _menhir_state * (Lang.exp) -> 'ttv_return =$/;"	f
+_menhir_run88	_build/src/parser.ml	/^and _menhir_run88 : _menhir_env -> 'ttv_tail * _menhir_state * (Lang.exp) -> 'ttv_return =$/;"	f
+adapt_setup_t	setup.ml	/^    let adapt_setup_t setup_t =$/;"	f	module:BaseCompat/Compat_0_4
+add	setup.ml	/^    let add t nm set get extra help =$/;"	f	module:OASISFileSystem/PropList/Schema
+add_list	_build/myocamlbuild.ml	/^      let rec add_list t =$/;"	f	module:OASISUtils/MapExt/Make
+add_list	_build/myocamlbuild.ml	/^      let rec add_list t =$/;"	f	module:OASISUtils/SetExt/Make
+add_list	_build/myocamlbuild.ml	/^      val add_list: 'a t -> (key * 'a) list -> 'a t$/;"	p	module:OASISUtils/MapExt/S
+add_list	_build/myocamlbuild.ml	/^      val add_list: t -> elt list -> t$/;"	p	module:OASISUtils/SetExt/S
+add_list	myocamlbuild.ml	/^      let rec add_list t =$/;"	f	module:OASISUtils/MapExt/Make
+add_list	myocamlbuild.ml	/^      let rec add_list t =$/;"	f	module:OASISUtils/SetExt/Make
+add_list	myocamlbuild.ml	/^      val add_list: 'a t -> (key * 'a) list -> 'a t$/;"	p	module:OASISUtils/MapExt/S
+add_list	myocamlbuild.ml	/^      val add_list: t -> elt list -> t$/;"	p	module:OASISUtils/SetExt/S
+add_list	setup.ml	/^      let rec add_list t =$/;"	f	module:OASISUtils/MapExt/Make
+add_list	setup.ml	/^      let rec add_list t =$/;"	f	module:OASISUtils/SetExt/Make
+add_list	setup.ml	/^      val add_list: 'a t -> (key * 'a) list -> 'a t$/;"	p	module:OASISUtils/MapExt/S
+add_list	setup.ml	/^      val add_list: t -> elt list -> t$/;"	p	module:OASISUtils/SetExt/S
+add_plugin	setup.ml	/^    let add_plugin (plugin_kind, plugin_name, plugin_version) t =$/;"	f	module:Data
+all	Makefile	/^all:$/;"	t
+all	setup.ml	/^  let all ~ctxt t args =$/;"	v	module:BaseSetup
+all_features	setup.ml	/^  let all_features = Hashtbl.create 13$/;"	v
+all_plugin	setup.ml	/^  type all_plugin = plugin_kind plugin$/;"	t	module:OASISTypes
+all_possible_files	setup.ml	/^  let all_possible_files lst ~path ~modul =$/;"	f	module:OASISSourcePatterns
+alpha	setup.ml	/^  let alpha = InDev Alpha$/;"	v
+alpha_features	setup.ml	/^        alpha_features: string list;$/;"	r	type:Data/t
+alpha_features	setup.ml	/^      alpha_features:         string list;$/;"	r	type:OASISTypes/package
+architecture	setup.ml	/^  let architecture   = c "architecture"$/;"	v	module:BaseStandardVar
+arg	setup.ml	/^  type arg           = string$/;"	t	module:OASISTypes
+arg_help	setup.ml	/^      arg_help:   string option;$/;"	r	type:BaseEnv/definition_t
+arg_list	_build/src/compiler.ml	/^let arg_list =$/;"	v
+arg_list	src/compiler.ml	/^let arg_list =$/;"	v
+args	setup.ml	/^      args: args;$/;"	r	type:OCamlbuildDocPlugin/run_t
+args	setup.ml	/^  let args () = fst (fspecs ())$/;"	f	module:BaseContext
+args	setup.ml	/^  let args () =$/;"	f
+args	setup.ml	/^  type args          = string list$/;"	t	module:OASISTypes
+args	setup.ml	/^  type args =$/;"	t	module:OCamlbuildCommon
+atom	setup.ml	/^    and atom =$/;"	t	module:OASISSourcePatterns/Templater
+atoms	setup.ml	/^        atoms: atom list;$/;"	r	type:OASISSourcePatterns/Templater/t
+authors	setup.ml	/^      authors:                string list;$/;"	r	type:OASISTypes/package
+basename	setup.ml	/^  let basename f =$/;"	f	module:OASISUnixPath
+before_space	_build/myocamlbuild.ml	/^  let before_space s =$/;"	f	module:MyOCamlbuildFindlib
+before_space	myocamlbuild.ml	/^  let before_space s =$/;"	f	module:MyOCamlbuildFindlib
+beta	setup.ml	/^  let beta = InDev Beta$/;"	v
+beta_features	setup.ml	/^        beta_features: string list;$/;"	r	type:Data/t
+beta_features	setup.ml	/^      beta_features:          string list;$/;"	r	type:OASISTypes/package
+bin_op	_build/src/lang.ml	/^type bin_op =$/;"	t
+bin_op	src/lang.ml	/^type bin_op =$/;"	t
+binary_in	setup.ml	/^    let binary_in = Open_binary :: default_in$/;"	v	module:OASISFileSystem/closer#Mode
+binary_in	setup.ml	/^  let binary_in = Mode.binary_in$/;"	v	class:OASISFileSystem/closer
+binary_out	setup.ml	/^    let binary_out = Open_binary :: default_out$/;"	v	module:OASISFileSystem/closer#Mode
+binary_out	setup.ml	/^  let binary_out = Mode.binary_out$/;"	v	class:OASISFileSystem/closer
+blank_sep_strings	_build/myocamlbuild.ml	/^  let blank_sep_strings = Ocamlbuild_pack.Lexers.blank_sep_strings$/;"	v	module:MyOCamlbuildFindlib
+blank_sep_strings	myocamlbuild.ml	/^  let blank_sep_strings = Ocamlbuild_pack.Lexers.blank_sep_strings$/;"	v	module:MyOCamlbuildFindlib
+bs_build	setup.ml	/^      bs_build:                   bool conditional;$/;"	r	type:OASISTypes/build_section
+bs_build_depends	setup.ml	/^      bs_build_depends:           dependency list;$/;"	r	type:OASISTypes/build_section
+bs_build_tools	setup.ml	/^      bs_build_tools:             tool list;$/;"	r	type:OASISTypes/build_section
+bs_byteopt	setup.ml	/^      bs_byteopt:                 args conditional;$/;"	r	type:OASISTypes/build_section
+bs_c_sources	setup.ml	/^      bs_c_sources:               unix_filename list;$/;"	r	type:OASISTypes/build_section
+bs_cclib	setup.ml	/^      bs_cclib:                   args conditional;$/;"	r	type:OASISTypes/build_section
+bs_ccopt	setup.ml	/^      bs_ccopt:                   args conditional;$/;"	r	type:OASISTypes/build_section
+bs_compiled_object	setup.ml	/^      bs_compiled_object:         compiled_object;$/;"	r	type:OASISTypes/build_section
+bs_data_files	setup.ml	/^      bs_data_files:              (unix_filename * unix_filename option) list;$/;"	r	type:OASISTypes/build_section
+bs_dlllib	setup.ml	/^      bs_dlllib:                  args conditional;$/;"	r	type:OASISTypes/build_section
+bs_dllpath	setup.ml	/^      bs_dllpath:                 args conditional;$/;"	r	type:OASISTypes/build_section
+bs_findlib_extra_files	setup.ml	/^      bs_findlib_extra_files:     unix_filename list;$/;"	r	type:OASISTypes/build_section
+bs_implementation_patterns	setup.ml	/^      bs_implementation_patterns: OASISSourcePatterns.t list;$/;"	r	type:OASISTypes/build_section
+bs_install	setup.ml	/^      bs_install:                 bool conditional;$/;"	r	type:OASISTypes/build_section
+bs_interface_patterns	setup.ml	/^      bs_interface_patterns:      OASISSourcePatterns.t list;$/;"	r	type:OASISTypes/build_section
+bs_nativeopt	setup.ml	/^      bs_nativeopt:               args conditional;$/;"	r	type:OASISTypes/build_section
+bs_path	setup.ml	/^      bs_path:                    unix_dirname;$/;"	r	type:OASISTypes/build_section
+bugreports	setup.ml	/^      bugreports:             url option;$/;"	r	type:OASISTypes/package
+build	Makefile	/^build: setup.data$/;"	t
+build	setup.ml	/^          build:            std_args_fun;$/;"	r	type:BaseCompat/Compat_0_4/BaseSetup/t
+build	setup.ml	/^      build:            std_args_fun;$/;"	r	type:BaseSetup/t
+build	setup.ml	/^  let build ~ctxt args pkg argv =$/;"	v	module:OCamlbuildPlugin
+build	setup.ml	/^  let build ~ctxt t args =$/;"	v	module:BaseSetup
+build_custom	setup.ml	/^      build_custom:           custom;$/;"	r	type:OASISTypes/package
+build_dir	setup.ml	/^  let build_dir extra_argv =$/;"	f	module:OCamlbuildCommon
+build_section	setup.ml	/^  type build_section =$/;"	t	module:OASISTypes
+build_type	setup.ml	/^      build_type:             [`Build] plugin;$/;"	r	type:OASISTypes/package
+bytecomp_c_compiler	setup.ml	/^  let bytecomp_c_compiler      = c "bytecomp_c_compiler"$/;"	v	module:BaseStandardVar
+c	setup.ml	/^  let c = BaseOCamlcConfig.var_define$/;"	v	module:BaseStandardVar
+capitalize_ascii	_build/myocamlbuild.ml	/^  let capitalize_ascii s =$/;"	f	module:OASISString
+capitalize_ascii	myocamlbuild.ml	/^  let capitalize_ascii s =$/;"	f	module:OASISString
+capitalize_ascii	setup.ml	/^  let capitalize_ascii s =$/;"	f	module:OASISString
+capitalize_file	setup.ml	/^  let capitalize_file f =$/;"	f	module:OASISUnixPath
+categories	setup.ml	/^      categories:             url list;$/;"	r	type:OASISTypes/package
+ccomp_type	setup.ml	/^  let ccomp_type     = c "ccomp_type"$/;"	v	module:BaseStandardVar
+check_feature	setup.ml	/^    let check_feature features stage =$/;"	f
+choices	_build/myocamlbuild.ml	/^  type 'a choices = (t * 'a) list$/;"	t	module:OASISExpr
+choices	myocamlbuild.ml	/^  type 'a choices = (t * 'a) list$/;"	t	module:OASISExpr
+choices	setup.ml	/^  type 'a choices = (t * 'a) list$/;"	t	module:OASISFileSystem/OASISExpr
+choose	_build/myocamlbuild.ml	/^  let choose ?printer ?name var_get lst =$/;"	v
+choose	myocamlbuild.ml	/^  let choose ?printer ?name var_get lst =$/;"	v
+choose	setup.ml	/^  let choose ?printer ?name var_get lst =$/;"	v
+chop	setup.ml	/^  let chop t =$/;"	f	module:OASISFileSystem/OASISVersion
+chop_extension	setup.ml	/^  let chop_extension f =$/;"	f	module:OASISUnixPath
+clean	Makefile	/^clean:$/;"	t
+clean	setup.ml	/^          clean:            std_args_fun list;$/;"	r	type:BaseCompat/Compat_0_4/BaseSetup/t
+clean	setup.ml	/^      clean:            std_args_fun list;$/;"	r	type:BaseSetup/t
+clean	setup.ml	/^    let clean ~ctxt t args =$/;"	v
+clean	setup.ml	/^    let clean ~ctxt t pkg (cs, _) extra_args =$/;"	v	module:CustomPlugin/Doc
+clean	setup.ml	/^    let clean ~ctxt t pkg _ extra_args = clean ~ctxt t pkg extra_args$/;"	v	module:CustomPlugin/Test
+clean	setup.ml	/^    let clean ~ctxt t pkg extra_args =$/;"	v	module:CustomPlugin/Build
+clean	setup.ml	/^  let clean ~ctxt pkg args  =$/;"	v	module:OCamlbuildPlugin
+clean	setup.ml	/^  let clean ~ctxt:_ t _ extra_args =$/;"	v	module:CustomPlugin
+clean	setup.ml	/^  let clean, distclean =$/;"	v	module:BaseSetup
+clean_custom	setup.ml	/^      clean_custom:           custom;$/;"	r	type:OASISTypes/package
+clean_doc	setup.ml	/^          clean_doc:        (doc, unit) section_args_fun list;$/;"	r	type:BaseCompat/Compat_0_4/BaseSetup/t
+clean_doc	setup.ml	/^      clean_doc:        (doc, unit) section_args_fun list;$/;"	r	type:BaseSetup/t
+clean_test	setup.ml	/^          clean_test:       (test, unit) section_args_fun list;$/;"	r	type:BaseCompat/Compat_0_4/BaseSetup/t
+clean_test	setup.ml	/^      clean_test:       (test, unit) section_args_fun list;$/;"	r	type:BaseSetup/t
+clear	setup.ml	/^    let clear t =$/;"	f	module:OASISFileSystem/PropList/Data
+cli	setup.ml	/^      cli:        cli_handle_t;$/;"	r	type:BaseEnv/definition_t
+cli_handle_t	setup.ml	/^  type cli_handle_t =$/;"	t	module:BaseEnv
+close	setup.ml	/^          method close = close_in chn$/;"	m	method:OASISFileSystem/closer#host_fs#open_in
+close	setup.ml	/^          method close = close_out chn$/;"	m	method:OASISFileSystem/closer#host_fs#open_out
+close	setup.ml	/^      method close: unit$/;"	m	class:OASISFileSystem/closer
+closer	setup.ml	/^  class type closer =$/;"	c	module:OASISFileSystem
+cmd_clean	setup.ml	/^      cmd_clean:     (command_line option) conditional;$/;"	r	type:CustomPlugin/t
+cmd_distclean	setup.ml	/^      cmd_distclean: (command_line option) conditional;$/;"	r	type:CustomPlugin/t
+cmd_main	setup.ml	/^      cmd_main:      command_line conditional;$/;"	r	type:CustomPlugin/t
+cmxs	setup.ml	/^    let cmxs =$/;"	v
+command_line	setup.ml	/^  type command_line  = (prog * arg list)$/;"	t	module:OASISTypes
+common_section	setup.ml	/^  type common_section =$/;"	t	module:OASISTypes
+comparator	setup.ml	/^  type comparator =$/;"	t	module:OASISFileSystem/OASISVersion
+comparator_apply	setup.ml	/^  let rec comparator_apply v op =$/;"	f	module:OASISFileSystem/OASISVersion
+compare	_build/myocamlbuild.ml	/^         let compare = compare_csl$/;"	v
+compare	myocamlbuild.ml	/^         let compare = compare_csl$/;"	v
+compare	setup.ml	/^          let compare (s11, s12) (s21, s22) =$/;"	f	module:BaseLog
+compare	setup.ml	/^         let compare = compare_csl$/;"	v
+compare	setup.ml	/^        let compare = Pervasives.compare$/;"	v	module:OASISFeatures
+compare	setup.ml	/^    let compare t1 t2 =$/;"	f	module:OASISSection/CSection
+compare_csl	_build/myocamlbuild.ml	/^  let compare_csl s1 s2 =$/;"	f	module:OASISUtils
+compare_csl	myocamlbuild.ml	/^  let compare_csl s1 s2 =$/;"	f	module:OASISUtils
+compare_csl	setup.ml	/^  let compare_csl s1 s2 =$/;"	f	module:OASISUtils
+compiled_object	setup.ml	/^  type compiled_object =$/;"	t	module:OASISTypes
+compiled_setup_ml	setup.ml	/^  let compiled_setup_ml =$/;"	v
+concat	setup.ml	/^  let concat f1 f2 =$/;"	f	module:OASISUnixPath
+cond_targets_hook	setup.ml	/^  let cond_targets_hook = ref (fun lst -> lst)$/;"	v	module:OCamlbuildPlugin
+conditional	setup.ml	/^  type 'a conditional = 'a OASISExpr.choices$/;"	t	module:OASISTypes
+conf	_build/myocamlbuild.ml	/^  type conf = {no_automatic_syntax: bool}$/;"	t	module:MyOCamlbuildFindlib
+conf	_build/myocamlbuild.ml	/^let conf = {MyOCamlbuildFindlib.no_automatic_syntax = false}$/;"	v
+conf	myocamlbuild.ml	/^  type conf = {no_automatic_syntax: bool}$/;"	t	module:MyOCamlbuildFindlib
+conf	myocamlbuild.ml	/^let conf = {MyOCamlbuildFindlib.no_automatic_syntax = false}$/;"	v
+conf_custom	setup.ml	/^      conf_custom:            custom;$/;"	r	type:OASISTypes/package
+conf_type	setup.ml	/^      conf_type:              [`Configure] plugin;$/;"	r	type:OASISTypes/package
+configure	Makefile	/^configure:$/;"	t
+configure	setup.ml	/^          configure:        std_args_fun;$/;"	r	type:BaseCompat/Compat_0_4/BaseSetup/t
+configure	setup.ml	/^      configure:        std_args_fun;$/;"	r	type:BaseSetup/t
+configure	setup.ml	/^  let configure ~ctxt t args =$/;"	v	module:BaseSetup
+configure	setup.ml	/^  let configure ~ctxt:_ pkg argv =$/;"	v	module:InternalConfigurePlugin
+copyrights	setup.ml	/^      copyrights:             string list;$/;"	r	type:OASISTypes/package
+cp	setup.ml	/^  let cp ~ctxt ?(recurse=false) src tgt =$/;"	v	module:OASISFileUtil
+create	setup.ml	/^    let create () =$/;"	f	module:OASISFileSystem/PropList/Data
+create	setup.ml	/^    let create ?(case_insensitive=false) nm =$/;"	v	module:OASISFileSystem/PropList/Schema
+create	setup.ml	/^    let create ?schema ?name ?parse ?print ?default ?update ?help extra =$/;"	v	module:OASISFileSystem/PropList/Field
+create	setup.ml	/^    let create ?schema ?name ?parse ?print ?default ?update ?help extra =$/;"	v	module:OASISFileSystem/PropList/FieldRO
+create	setup.ml	/^    let create oasis_version alpha_features beta_features =$/;"	f	module:Data
+create	setup.ml	/^  let create ?plugin name publication description =$/;"	v
+create_symbol	_build/src/lexer.ml	/^let create_symbol lexbuf =$/;"	f
+create_var	_build/src/lexer.ml	/^let create_var lexbuf =$/;"	f
+cs_data	setup.ml	/^      cs_data: PropList.Data.t;$/;"	r	type:OASISTypes/common_section
+cs_name	setup.ml	/^      cs_name: name;$/;"	r	type:OASISTypes/common_section
+cs_plugin_data	setup.ml	/^      cs_plugin_data: plugin_data;$/;"	r	type:OASISTypes/common_section
+current_dir_name	setup.ml	/^  let current_dir_name = "."$/;"	v	module:OASISUnixPath
+custom	setup.ml	/^  type custom =$/;"	t	module:OASISTypes
+data	setup.ml	/^  type data = common_section *$/;"	t	module:OASISFindlib
+data_test	setup.ml	/^  let data_test t data =$/;"	f
+debug	setup.ml	/^      debug:                 bool;$/;"	r	type:OASISFileSystem/OASISContext/t
+debug	setup.ml	/^  let debug fmt   = debug ~ctxt:!default fmt$/;"	f	module:BaseMessage
+debug	setup.ml	/^  let debug ~ctxt fmt =$/;"	v	module:OASISFileSystem/OASISMessage
+default	setup.ml	/^  let default = default$/;"	v	module:BaseContext
+default	setup.ml	/^  let default =$/;"	v	module:OASISFileSystem/OASISContext
+default_executable_name	setup.ml	/^  let default_executable_name  = c "default_executable_name"$/;"	v	module:BaseStandardVar
+default_filename	_build/myocamlbuild.ml	/^  let default_filename = Filename.concat (Sys.getcwd ()) "setup.data"$/;"	v	module:BaseEnvLight
+default_filename	myocamlbuild.ml	/^  let default_filename = Filename.concat (Sys.getcwd ()) "setup.data"$/;"	v	module:BaseEnvLight
+default_filename	setup.ml	/^  let default_filename = Filename.concat (Sys.getcwd ()) "setup.data"$/;"	v	module:BaseEnvLight
+default_filename	setup.ml	/^  let default_filename = in_srcdir "setup.data"$/;"	v	module:BaseEnv
+default_filename	setup.ml	/^  let default_filename = in_srcdir "setup.log"$/;"	v	module:BaseLog
+default_in	setup.ml	/^    let default_in = [Open_rdonly]$/;"	v	module:OASISFileSystem/closer#Mode
+default_oasis_fn	setup.ml	/^  let default_oasis_fn = "_oasis"$/;"	v
+default_out	setup.ml	/^    let default_out = [Open_wronly; Open_creat; Open_trunc]$/;"	v	module:OASISFileSystem/closer#Mode
+defer_close	setup.ml	/^  let defer_close o f =$/;"	f	class:OASISFileSystem/closer
+definition_t	setup.ml	/^  type definition_t =$/;"	t	module:BaseEnv
+dependency	setup.ml	/^  type dependency =$/;"	t	module:OASISTypes
+description	setup.ml	/^      description:            OASISText.t option;$/;"	r	type:OASISTypes/package
+description	setup.ml	/^      description: unit -> string;$/;"	r	type:t
+dir	_build/myocamlbuild.ml	/^  type dir = string$/;"	t	module:MyOCamlbuildBase
+dir	myocamlbuild.ml	/^  type dir = string$/;"	t	module:MyOCamlbuildBase
+dirname	setup.ml	/^  let dirname f =$/;"	f	module:OASISUnixPath
+disable_oasis_section	setup.ml	/^      disable_oasis_section:  unix_filename list; (* TODO: source filename. *)$/;"	r	type:OASISTypes/package
+disable_oasis_section	setup.ml	/^  let disable_oasis_section =$/;"	v
+dispatch	_build/myocamlbuild.ml	/^  let dispatch conf =$/;"	f	module:MyOCamlbuildFindlib
+dispatch	_build/myocamlbuild.ml	/^  let dispatch t e =$/;"	f	module:MyOCamlbuildBase
+dispatch	myocamlbuild.ml	/^  let dispatch conf =$/;"	f	module:MyOCamlbuildFindlib
+dispatch	myocamlbuild.ml	/^  let dispatch t e =$/;"	f	module:MyOCamlbuildBase
+dispatch_combine	_build/myocamlbuild.ml	/^  let dispatch_combine lst =$/;"	f	module:MyOCamlbuildBase
+dispatch_combine	myocamlbuild.ml	/^  let dispatch_combine lst =$/;"	f	module:MyOCamlbuildBase
+dispatch_default	_build/myocamlbuild.ml	/^  let dispatch_default conf t =$/;"	f
+dispatch_default	_build/myocamlbuild.ml	/^let dispatch_default = MyOCamlbuildBase.dispatch_default conf package_default;;$/;"	v
+dispatch_default	myocamlbuild.ml	/^  let dispatch_default conf t =$/;"	f
+dispatch_default	myocamlbuild.ml	/^let dispatch_default = MyOCamlbuildBase.dispatch_default conf package_default;;$/;"	v
+distclean	Makefile	/^distclean:$/;"	t
+distclean	setup.ml	/^          distclean:        std_args_fun list;$/;"	r	type:BaseCompat/Compat_0_4/BaseSetup/t
+distclean	setup.ml	/^      distclean:        std_args_fun list;$/;"	r	type:BaseSetup/t
+distclean	setup.ml	/^    let distclean ~ctxt t pkg _ extra_args = distclean ~ctxt t pkg extra_args$/;"	v	module:CustomPlugin/Doc
+distclean	setup.ml	/^    let distclean ~ctxt t pkg _ extra_args = distclean ~ctxt t pkg extra_args$/;"	v	module:CustomPlugin/Test
+distclean	setup.ml	/^    let distclean ~ctxt t pkg extra_args = distclean ~ctxt t pkg extra_args$/;"	v	module:CustomPlugin/Build
+distclean	setup.ml	/^  let distclean ~ctxt:_ t _ extra_args =$/;"	v	module:CustomPlugin
+distclean_custom	setup.ml	/^      distclean_custom:       custom;$/;"	r	type:OASISTypes/package
+distclean_doc	setup.ml	/^          distclean_doc:    (doc, unit) section_args_fun list;$/;"	r	type:BaseCompat/Compat_0_4/BaseSetup/t
+distclean_doc	setup.ml	/^      distclean_doc:    (doc, unit) section_args_fun list;$/;"	r	type:BaseSetup/t
+distclean_test	setup.ml	/^          distclean_test:   (test, unit) section_args_fun list;$/;"	r	type:BaseCompat/Compat_0_4/BaseSetup/t
+distclean_test	setup.ml	/^      distclean_test:   (test, unit) section_args_fun list;$/;"	r	type:BaseSetup/t
+doc	Makefile	/^doc: setup.data build$/;"	t
+doc	setup.ml	/^          doc:              ((doc, unit)  section_args_fun) list;$/;"	r	type:BaseCompat/Compat_0_4/BaseSetup/t
+doc	setup.ml	/^      doc:              ((doc, unit)  section_args_fun) list;$/;"	r	type:BaseSetup/t
+doc	setup.ml	/^  let doc ~ctxt lst pkg extra_args =$/;"	v	module:BaseDoc
+doc	setup.ml	/^  let doc ~ctxt t args =$/;"	v	module:BaseSetup
+doc	setup.ml	/^  type doc =$/;"	t	module:OASISTypes
+doc_abstract	setup.ml	/^      doc_abstract:    string option;$/;"	r	type:OASISTypes/doc
+doc_authors	setup.ml	/^      doc_authors:     string list;$/;"	r	type:OASISTypes/doc
+doc_build	setup.ml	/^      doc_build:       bool conditional;$/;"	r	type:OASISTypes/doc
+doc_build	setup.ml	/^  let doc_build ~ctxt run _ (cs, _) argv =$/;"	v	module:OCamlbuildDocPlugin
+doc_build_tools	setup.ml	/^      doc_build_tools: tool list;$/;"	r	type:OASISTypes/doc
+doc_custom	setup.ml	/^      doc_custom:      custom;$/;"	r	type:OASISTypes/doc
+doc_data_files	setup.ml	/^      doc_data_files:  (unix_filename * unix_filename option) list;$/;"	r	type:OASISTypes/doc
+doc_format	setup.ml	/^      doc_format:      doc_format;$/;"	r	type:OASISTypes/doc
+doc_format	setup.ml	/^  type doc_format =$/;"	t	module:OASISTypes
+doc_hook	setup.ml	/^  let doc_hook  = ref (fun (cs, doc) -> cs, doc)$/;"	v	module:InternalInstallPlugin
+doc_install	setup.ml	/^      doc_install:     bool conditional;$/;"	r	type:OASISTypes/doc
+doc_install_dir	setup.ml	/^      doc_install_dir: unix_filename; (* TODO: dest filename ?. *)$/;"	r	type:OASISTypes/doc
+doc_title	setup.ml	/^      doc_title:       string;$/;"	r	type:OASISTypes/doc
+doc_type	setup.ml	/^      doc_type:        [`Doc] plugin;$/;"	r	type:OASISTypes/doc
+dump	setup.ml	/^      dump:       bool;$/;"	r	type:BaseEnv/definition_t
+dump	setup.ml	/^  let dump ~ctxt ?(filename=default_filename) () =$/;"	v
+dynrun_for_release	setup.ml	/^  let dynrun_for_release =$/;"	v
+elt	setup.ml	/^  type elt =$/;"	t	module:OASISText
+ends_with	_build/myocamlbuild.ml	/^  let ends_with ~what ?(offset=0) str =$/;"	v	module:OASISString
+ends_with	myocamlbuild.ml	/^  let ends_with ~what ?(offset=0) str =$/;"	v	module:OASISString
+ends_with	setup.ml	/^  let ends_with ~what ?(offset=0) str =$/;"	v	module:OASISString
+env	setup.ml	/^    type env =$/;"	t	module:OASISSourcePatterns/Templater
+env	setup.ml	/^  let env = Data.create ()$/;"	v	module:BaseEnv
+env	setup.ml	/^  let env ~modul () =$/;"	v	module:OASISSourcePatterns
+env_filename	_build/myocamlbuild.ml	/^  let env_filename = Pathname.basename BaseEnvLight.default_filename$/;"	v	module:MyOCamlbuildBase
+env_filename	myocamlbuild.ml	/^  let env_filename = Pathname.basename BaseEnvLight.default_filename$/;"	v	module:MyOCamlbuildBase
+env_from_file	setup.ml	/^  let env_from_file = ref MapString.empty$/;"	v	module:BaseEnv
+equal	_build/myocamlbuild.ml	/^         let equal s1 s2 = (compare_csl s1 s2) = 0$/;"	f	module:OASISUtils
+equal	myocamlbuild.ml	/^         let equal s1 s2 = (compare_csl s1 s2) = 0$/;"	f	module:OASISUtils
+equal	setup.ml	/^         let equal s1 s2 = (compare_csl s1 s2) = 0$/;"	f	module:OASISUtils
+equal	setup.ml	/^    let equal t1 t2 =$/;"	f	module:OASISSection/CSection
+error	setup.ml	/^  let error fmt = error ~ctxt:!default fmt$/;"	f	module:BaseMessage
+error	setup.ml	/^  let error ~ctxt fmt =$/;"	v	module:OASISFileSystem/OASISMessage
+eval	_build/myocamlbuild.ml	/^  let eval var_get t =$/;"	f	module:OASISExpr
+eval	_build/src/lang.ml	/^let eval (expr: exp) : value =$/;"	f
+eval	myocamlbuild.ml	/^  let eval var_get t =$/;"	f	module:OASISExpr
+eval	setup.ml	/^    let eval env t =$/;"	f	module:OASISSourcePatterns/Templater
+eval	setup.ml	/^  let eval var_get t =$/;"	f	module:OASISFileSystem/OASISExpr
+eval	src/lang.ml	/^let eval (expr: exp) : value =$/;"	f
+eval_print	_build/src/lang.ml	/^let eval_print (expr: exp) : unit =$/;"	f
+eval_print	src/lang.ml	/^let eval_print (expr: exp) : unit =$/;"	f
+evs	setup.ml	/^    let evs =$/;"	v
+excption	setup.ml	/^      excption:  license_exception option;$/;"	r	type:OASISFileSystem/OASISLicense/license_dep_5_unit
+exec_custom	setup.ml	/^      exec_custom:          bool;$/;"	r	type:OASISTypes/executable
+exec_from_conf	_build/myocamlbuild.ml	/^  let exec_from_conf exec =$/;"	f	module:MyOCamlbuildFindlib
+exec_from_conf	myocamlbuild.ml	/^  let exec_from_conf exec =$/;"	f	module:MyOCamlbuildFindlib
+exec_hook	setup.ml	/^  let exec_hook = ref (fun (cs, bs, exec) -> cs, bs, exec)$/;"	v	module:InternalInstallPlugin
+exec_main_is	setup.ml	/^      exec_main_is:         unix_filename;$/;"	r	type:OASISTypes/executable
+executable	setup.ml	/^  type executable =$/;"	t	module:OASISTypes
+exists	setup.ml	/^  let exists ~ctxt event data =$/;"	v
+exp	_build/src/lang.ml	/^and exp =$/;"	t
+exp	src/lang.ml	/^and exp =$/;"	t
+exp_to_value	_build/src/lang.ml	/^let exp_to_value (e: exp) : value =$/;"	f
+exp_to_value	src/lang.ml	/^let exp_to_value (e: exp) : value =$/;"	f
+explode	src/display.ml	/^let explode str =$/;"	f
+expr	setup.ml	/^    and expr =$/;"	t	module:OASISSourcePatterns/Templater
+ext_asm	setup.ml	/^  let ext_asm                  = c "ext_asm"$/;"	v	module:BaseStandardVar
+ext_dll	setup.ml	/^  let ext_dll                  = c "ext_dll"$/;"	v	module:BaseStandardVar
+ext_lib	setup.ml	/^  let ext_lib                  = c "ext_lib"$/;"	v	module:BaseStandardVar
+ext_obj	setup.ml	/^  let ext_obj                  = c "ext_obj"$/;"	v	module:BaseStandardVar
+ext_program	setup.ml	/^  let ext_program =$/;"	v	module:BaseStandardVar
+extra	setup.ml	/^        extra:  'extra;$/;"	r	type:OASISFileSystem/PropList/Field/t
+extra	setup.ml	/^      extra: string list;$/;"	r	type:OCamlbuildCommon/args
+f	setup.ml	/^                 let f =$/;"	v	module:BaseSetup
+f_	_build/myocamlbuild.ml	/^  let f_ (str: ('a, 'b, 'c, 'd) format4) = str$/;"	f	module:OASISGettext
+f_	myocamlbuild.ml	/^  let f_ (str: ('a, 'b, 'c, 'd) format4) = str$/;"	f	module:OASISGettext
+f_	setup.ml	/^  let f_ (str: ('a, 'b, 'c, 'd) format4) = str$/;"	f	module:OASISGettext
+failed	setup.ml	/^    let failed, n = List.fold_left one_test (0.0, 0) lst in$/;"	v
+failwithf	_build/myocamlbuild.ml	/^  let failwithf fmt = Printf.ksprintf failwith fmt$/;"	f
+failwithf	myocamlbuild.ml	/^  let failwithf fmt = Printf.ksprintf failwith fmt$/;"	f
+failwithf	setup.ml	/^  let failwithf fmt = Printf.ksprintf failwith fmt$/;"	f
+failwithpf	_build/myocamlbuild.ml	/^  let failwithpf ?pos1 ?pos2 ?lexbuf fmt =$/;"	v
+failwithpf	myocamlbuild.ml	/^  let failwithpf ?pos1 ?pos2 ?lexbuf fmt =$/;"	v
+failwithpf	setup.ml	/^  let failwithpf ?pos1 ?pos2 ?lexbuf fmt =$/;"	v
+features	setup.ml	/^  let features =$/;"	v
+fget	setup.ml	/^    let fget data t =$/;"	f	module:OASISFileSystem/PropList/Field
+fgets	setup.ml	/^    let fgets data t =$/;"	f	module:OASISFileSystem/PropList/Field
+field_of_stage	setup.ml	/^  let field_of_stage =$/;"	v
+fields	setup.ml	/^        fields:    (name, ('ctxt, 'extra) value) Hashtbl.t;$/;"	r	type:OASISFileSystem/PropList/Schema/t
+file	_build/myocamlbuild.ml	/^  type file = string$/;"	t	module:MyOCamlbuildBase
+file	myocamlbuild.ml	/^  type file = string$/;"	t	module:MyOCamlbuildBase
+file_exists	setup.ml	/^      method file_exists fn = Sys.file_exists (self#host_filename fn)$/;"	m	class:OASISFileSystem/closer#host_fs
+file_exists	setup.ml	/^      method file_exists: 'a filename -> bool$/;"	m	class:OASISFileSystem/closer#fs
+file_exists_case	setup.ml	/^  let file_exists_case fn =$/;"	f	module:OASISFileUtil
+file_location	_build/myocamlbuild.ml	/^  let rec file_location ?pos1 ?pos2 ?lexbuf () =$/;"	v
+file_location	myocamlbuild.ml	/^  let rec file_location ?pos1 ?pos2 ?lexbuf () =$/;"	v
+file_location	setup.ml	/^  let rec file_location ?pos1 ?pos2 ?lexbuf () =$/;"	v
+filename	setup.ml	/^  type 'a filename = string$/;"	t	module:OASISFileSystem
+files_ab	setup.ml	/^      files_ab:               unix_filename list; (* TODO: source filename. *)$/;"	r	type:OASISTypes/package
+files_of_build_section	setup.ml	/^      let files_of_build_section (f_data, new_files) typ cs bs =$/;"	f
+filter	setup.ml	/^  let filter ~ctxt events =$/;"	v
+find	_build/myocamlbuild.ml	/^  let find ~what ?(offset=0) str =$/;"	v	module:OASISString
+find	myocamlbuild.ml	/^  let find ~what ?(offset=0) str =$/;"	v	module:OASISString
+find	setup.ml	/^    let find t nm =$/;"	f	module:OASISFileSystem/PropList/Schema
+find	setup.ml	/^  let find ~what ?(offset=0) str =$/;"	v	module:OASISString
+find_file	setup.ml	/^  let find_file ?(case_sensitive=true) paths exts =$/;"	v	module:OASISFileUtil
+find_module	setup.ml	/^  let find_module source_file_exists bs modul =$/;"	f	module:OASISBuildSection
+find_module	setup.ml	/^  let find_module ~ctxt source_file_exists cs bs modul =$/;"	v	module:OASISLibrary
+find_module	setup.ml	/^  let find_module ~ctxt source_file_exists cs bs modul =$/;"	v	module:OASISObject
+find_packages	_build/myocamlbuild.ml	/^  let find_packages () =$/;"	f	module:MyOCamlbuildFindlib
+find_packages	myocamlbuild.ml	/^  let find_packages () =$/;"	f	module:MyOCamlbuildFindlib
+find_syntaxes	_build/myocamlbuild.ml	/^  let find_syntaxes () = ["camlp4o"; "camlp4r"]$/;"	f	module:MyOCamlbuildFindlib
+find_syntaxes	myocamlbuild.ml	/^  let find_syntaxes () = ["camlp4o"; "camlp4r"]$/;"	f	module:MyOCamlbuildFindlib
+findlib_extra_files	setup.ml	/^  let findlib_extra_files =$/;"	v
+findlib_full	setup.ml	/^  type findlib_full = string$/;"	t	module:OASISTypes
+findlib_ge_132	setup.ml	/^                      let findlib_ge_132 =$/;"	v	module:InternalInstallPlugin
+findlib_mapping	setup.ml	/^  let findlib_mapping pkg =$/;"	f	module:OASISFindlib
+findlib_name	setup.ml	/^  type findlib_name = string$/;"	t	module:OASISTypes
+findlib_of_group	setup.ml	/^  let findlib_of_group =$/;"	v	module:OASISFindlib
+findlib_part_name	setup.ml	/^  type findlib_part_name = name$/;"	t	module:OASISFindlib
+findlib_version	setup.ml	/^      findlib_version:        OASISVersion.comparator option;$/;"	r	type:OASISTypes/package
+fix_args	setup.ml	/^  let fix_args args extra_argv =$/;"	f	module:OCamlbuildCommon
+fix_dir	setup.ml	/^  let rec fix_dir dn =$/;"	f	module:OASISFileUtil
+flag	_build/myocamlbuild.ml	/^  type flag = string$/;"	t	module:OASISExpr
+flag	myocamlbuild.ml	/^  type flag = string$/;"	t	module:OASISExpr
+flag	setup.ml	/^  type flag = string$/;"	t	module:OASISFileSystem/OASISExpr
+flag	setup.ml	/^  type flag =$/;"	t	module:OASISTypes
+flag_default	setup.ml	/^      flag_default:      bool conditional;$/;"	r	type:OASISTypes/flag
+flag_description	setup.ml	/^      flag_description:  string option;$/;"	r	type:OASISTypes/flag
+flag_docs	setup.ml	/^  let flag_docs =$/;"	v
+flag_tests	setup.ml	/^  let flag_tests =$/;"	v
+flags	_build/myocamlbuild.ml	/^        flags:     (tag list * (spec OASISExpr.choices)) list;$/;"	r	type:MyOCamlbuildBase/t
+flags	myocamlbuild.ml	/^        flags:     (tag list * (spec OASISExpr.choices)) list;$/;"	r	type:MyOCamlbuildBase/t
+flexdll_version	setup.ml	/^  let flexdll_version =$/;"	v	module:BaseStandardVar
+flexlink	setup.ml	/^  let flexlink =$/;"	v	module:BaseStandardVar
+fn_	_build/myocamlbuild.ml	/^  let fn_ fmt1 fmt2 n =$/;"	f	module:OASISGettext
+fn_	myocamlbuild.ml	/^  let fn_ fmt1 fmt2 n =$/;"	f	module:OASISGettext
+fn_	setup.ml	/^  let fn_ fmt1 fmt2 n =$/;"	f	module:OASISGettext
+fold	setup.ml	/^    let fold f acc t =$/;"	f	module:OASISFileSystem/PropList/Schema
+fold	setup.ml	/^  let fold ~ctxt t nm f acc =$/;"	v	module:BaseBuilt
+fs	setup.ml	/^  class type ['a] fs =$/;"	c	class:OASISFileSystem/closer
+fset	setup.ml	/^    let fset data t ?context x =$/;"	f	module:OASISFileSystem/PropList/Field
+fsets	setup.ml	/^    let fsets data t ?context s =$/;"	f	module:OASISFileSystem/PropList/Field
+fspecs	setup.ml	/^  let fspecs () =$/;"	f	module:OASISFileSystem/OASISContext
+functions	setup.ml	/^        functions: (string -> string) MapString.t;$/;"	r	type:OASISSourcePatterns/Templater/env
+generic_message	setup.ml	/^  let generic_message ~ctxt lvl fmt =$/;"	v	module:OASISFileSystem/OASISMessage
+get	setup.ml	/^        get:    Data.t -> 'value;$/;"	r	type:OASISFileSystem/PropList/Field/t
+get	setup.ml	/^        get:   Data.t -> string;$/;"	t	module:OASISFileSystem/PropList/Schema
+get	setup.ml	/^    let get t data nm =$/;"	f	module:OASISFileSystem/PropList/Schema
+get_stage	setup.ml	/^  let get_stage name =$/;"	f
+gets	setup.ml	/^        gets:   Data.t -> string;$/;"	r	type:OASISFileSystem/PropList/Field/t
+group	setup.ml	/^      group:      string option;$/;"	r	type:BaseEnv/definition_t
+group_t	setup.ml	/^  type group_t =$/;"	t	module:OASISFindlib
+hash	_build/myocamlbuild.ml	/^         let hash s = Hashtbl.hash (OASISString.lowercase_ascii s)$/;"	f	module:OASISUtils
+hash	myocamlbuild.ml	/^         let hash s = Hashtbl.hash (OASISString.lowercase_ascii s)$/;"	f	module:OASISUtils
+hash	setup.ml	/^         let hash s = Hashtbl.hash (OASISString.lowercase_ascii s)$/;"	f	module:OASISUtils
+hash	setup.ml	/^    let hash t =$/;"	f	module:OASISSection/CSection
+help	setup.ml	/^        help:   (unit -> string) option;$/;"	r	type:OASISFileSystem/PropList/Field/t
+hide	setup.ml	/^      hide:       bool;$/;"	r	type:BaseEnv/definition_t
+homepage	setup.ml	/^      homepage:               url option;$/;"	r	type:OASISTypes/package
+hook	setup.ml	/^  let hook ?(failsafe=false) cstm f e =$/;"	v	module:BaseCustom
+host_dirname	setup.ml	/^  type host_dirname  = string (* TODO: replace everywhere. *)$/;"	t	module:OASISTypes
+host_dirname	setup.ml	/^  type host_dirname = string$/;"	t	module:OASISUnixPath
+host_filename	setup.ml	/^  type host_filename = string (* TODO: replace everywhere. *)$/;"	t	module:OASISTypes
+host_filename	setup.ml	/^  type host_filename = string$/;"	t	module:OASISUnixPath
+host_fs	setup.ml	/^  class ['a] host_fs rootdir : ['a] fs =$/;"	c	class:OASISFileSystem/closer
+id	setup.ml	/^    let id = section_id$/;"	v	module:OASISSection/CSection
+ignore_plugins	setup.ml	/^      ignore_plugins:        bool;$/;"	r	type:OASISFileSystem/OASISContext/t
+ignore_unknown_fields	setup.ml	/^      ignore_unknown_fields: bool;$/;"	r	type:OASISFileSystem/OASISContext/t
+implode	src/display.ml	/^let rec implode chars =$/;"	f
+in_srcdir	setup.ml	/^  let in_srcdir ufn = OASISFileSystem.of_unix_filename ufn$/;"	f	module:OASISFileSystem/OASISContext
+includes	_build/myocamlbuild.ml	/^        includes:  (dir * dir list) list;$/;"	r	type:MyOCamlbuildBase/t
+includes	myocamlbuild.ml	/^        includes:  (dir * dir list) list;$/;"	r	type:MyOCamlbuildBase/t
+info	setup.ml	/^      info:                  bool;$/;"	r	type:OASISFileSystem/OASISContext/t
+info	setup.ml	/^  let info fmt    = info ~ctxt:!default fmt$/;"	f	module:BaseMessage
+info	setup.ml	/^  let info ~ctxt fmt =$/;"	v	module:OASISFileSystem/OASISMessage
+init	_build/myocamlbuild.ml	/^  let init = []$/;"	v	module:OASISGettext
+init	myocamlbuild.ml	/^  let init = []$/;"	v	module:OASISGettext
+init	setup.ml	/^  let init = []$/;"	v	module:OASISGettext
+init	setup.ml	/^  let init pkg =$/;"	f	module:BaseStandardVar
+init	setup.ml	/^  let init ~ctxt pkg =$/;"	v	module:BaseDynVar
+input	setup.ml	/^          method input buf len =$/;"	m	method:OASISFileSystem/closer#host_fs#open_in
+input	setup.ml	/^      method input: Buffer.t -> int -> unit$/;"	m	method:OASISFileSystem/closer#close
+install	Makefile	/^install: setup.data$/;"	t
+install	setup.ml	/^          install:          std_args_fun;$/;"	r	type:BaseCompat/Compat_0_4/BaseSetup/t
+install	setup.ml	/^      install:          std_args_fun;$/;"	r	type:BaseSetup/t
+install	setup.ml	/^  let install =$/;"	v
+install_custom	setup.ml	/^      install_custom:         custom;$/;"	r	type:OASISTypes/package
+install_dir_ev	setup.ml	/^  let install_dir_ev     = "install-dir"$/;"	v	module:InternalInstallPlugin
+install_file_ev	setup.ml	/^  let install_file_ev    = "install-file"$/;"	v	module:InternalInstallPlugin
+install_findlib_ev	setup.ml	/^  let install_findlib_ev = "install-findlib"$/;"	v	module:InternalInstallPlugin
+install_type	setup.ml	/^      install_type:           [`Install] plugin;$/;"	r	type:OASISTypes/package
+interpret_bin_exp	_build/src/lang.ml	/^let interpret_bin_exp (op: bin_op) (v1: value) (v2: value) : value =$/;"	f
+interpret_bin_exp	src/lang.ml	/^let interpret_bin_exp (op: bin_op) (v1: value) (v2: value) : value =$/;"	f
+interpret_float_bin_exp	_build/src/lang.ml	/^let interpret_float_bin_exp (op: bin_op) (v1: value) (v2: value) : value =$/;"	f
+interpret_float_bin_exp	src/lang.ml	/^let interpret_float_bin_exp (op: bin_op) (v1: value) (v2: value) : value =$/;"	f
+interpret_int_bin_exp	_build/src/lang.ml	/^let interpret_int_bin_exp (op: bin_op) (v1: value) (v2: value) : value =$/;"	f
+interpret_int_bin_exp	src/lang.ml	/^let interpret_int_bin_exp (op: bin_op) (v1: value) (v2: value) : value =$/;"	f
+is_alpha	setup.ml	/^  let is_alpha c = ('a' <= c && c <= 'z') || ('A' <= c && c <= 'Z')$/;"	f	module:OASISFileSystem/OASISVersion
+is_built	setup.ml	/^  let is_built ~ctxt t nm =$/;"	v	module:BaseBuilt
+is_current_dir	setup.ml	/^  let is_current_dir fn =$/;"	f	module:OASISUnixPath
+is_digit	setup.ml	/^  let is_digit c = '0' <= c && c <= '9'$/;"	f	module:OASISFileSystem/OASISVersion
+is_special	setup.ml	/^  let is_special = function | '.' | '+' | '-' | '~' -> true | _ -> false$/;"	v	module:OASISFileSystem/OASISVersion
+is_value	_build/src/lang.ml	/^let rec is_value (e: exp) : bool =$/;"	f
+is_value	src/lang.ml	/^let rec is_value (e: exp) : bool =$/;"	f
+is_varname	_build/myocamlbuild.ml	/^  let is_varname str =$/;"	f
+is_varname	myocamlbuild.ml	/^  let is_varname str =$/;"	f
+is_varname	setup.ml	/^  let is_varname str =$/;"	f
+iter	setup.ml	/^    let iter f t =$/;"	f	module:OASISFileSystem/PropList/Schema
+join_plugin_sections	setup.ml	/^  let join_plugin_sections filter_map lst =$/;"	f	module:BaseSetup
+level	setup.ml	/^  type level =$/;"	t	module:OASISFileSystem/OASISContext
+lib_c	_build/myocamlbuild.ml	/^        lib_c:     (name * dir * file list) list;$/;"	r	type:MyOCamlbuildBase/t
+lib_c	myocamlbuild.ml	/^        lib_c:     (name * dir * file list) list;$/;"	r	type:MyOCamlbuildBase/t
+lib_findlib_containers	setup.ml	/^      lib_findlib_containers: findlib_name list;$/;"	r	type:OASISTypes/library
+lib_findlib_directory	setup.ml	/^      lib_findlib_directory:  unix_dirname option;$/;"	r	type:OASISTypes/library
+lib_findlib_name	setup.ml	/^      lib_findlib_name:       findlib_name option;$/;"	r	type:OASISTypes/library
+lib_findlib_parent	setup.ml	/^      lib_findlib_parent:     findlib_name option;$/;"	r	type:OASISTypes/library
+lib_hook	setup.ml	/^  let lib_hook  = ref (fun (cs, bs, dn, lib) -> cs, bs, dn, lib, [])$/;"	v	module:InternalInstallPlugin
+lib_internal_modules	setup.ml	/^      lib_internal_modules:   string list;$/;"	r	type:OASISTypes/library
+lib_modules	setup.ml	/^      lib_modules:            string list;$/;"	r	type:OASISTypes/library
+lib_ocaml	_build/myocamlbuild.ml	/^        lib_ocaml: (name * dir list * string list) list;$/;"	r	type:MyOCamlbuildBase/t
+lib_ocaml	myocamlbuild.ml	/^        lib_ocaml: (name * dir list * string list) list;$/;"	r	type:MyOCamlbuildBase/t
+lib_pack	setup.ml	/^      lib_pack:               bool;$/;"	r	type:OASISTypes/library
+library	setup.ml	/^  type library =$/;"	t	module:OASISTypes
+library_name	setup.ml	/^  type library_name = name$/;"	t	module:OASISFindlib
+license	setup.ml	/^      license:                OASISLicense.t;$/;"	r	type:OASISTypes/package
+license	setup.ml	/^      license:   license;$/;"	r	type:OASISFileSystem/OASISLicense/license_dep_5_unit
+license	setup.ml	/^  type license = string$/;"	t	module:OASISFileSystem/OASISLicense
+license_dep_5	setup.ml	/^  type license_dep_5 =$/;"	t	module:OASISFileSystem/OASISLicense
+license_dep_5_unit	setup.ml	/^  type license_dep_5_unit =$/;"	t	module:OASISFileSystem/OASISLicense
+license_exception	setup.ml	/^  type license_exception = string$/;"	t	module:OASISFileSystem/OASISLicense
+license_file	setup.ml	/^      license_file:           unix_filename option; (* TODO: source filename. *)$/;"	r	type:OASISTypes/package
+license_version	setup.ml	/^  type license_version =$/;"	t	module:OASISFileSystem/OASISLicense
+line	setup.ml	/^           let line = ref 1 in$/;"	v
+list	setup.ml	/^  let list () =$/;"	f
+lit	_build/src/lang.ml	/^type lit =$/;"	t
+lit	src/lang.ml	/^type lit =$/;"	t
+load	_build/myocamlbuild.ml	/^  let load ?(allow_empty=false) ?(filename=default_filename) ?stream () =$/;"	v	module:BaseEnvLight
+load	myocamlbuild.ml	/^  let load ?(allow_empty=false) ?(filename=default_filename) ?stream () =$/;"	v	module:BaseEnvLight
+load	setup.ml	/^  let load ?(allow_empty=false) ?(filename=default_filename) ?stream () =$/;"	v	module:BaseEnvLight
+load	setup.ml	/^  let load ~ctxt () =$/;"	v	module:BaseLog
+load	setup.ml	/^  let load ~ctxt ?(allow_empty=false) ?(filename=default_filename) () =$/;"	v	module:BaseEnv
+load_oasis_plugin	setup.ml	/^      load_oasis_plugin:     string -> bool;$/;"	r	type:OASISFileSystem/OASISContext/t
+lowercase_ascii	_build/myocamlbuild.ml	/^  let lowercase_ascii =$/;"	v	module:OASISString
+lowercase_ascii	myocamlbuild.ml	/^  let lowercase_ascii =$/;"	v	module:OASISString
+lowercase_ascii	setup.ml	/^  let lowercase_ascii =$/;"	v	module:OASISString
+main	_build/src/compiler.ml	/^let main () =$/;"	f
+main	setup.ml	/^    let main ~ctxt t pkg (cs, _) extra_args =$/;"	v	module:CustomPlugin/Doc
+main	setup.ml	/^    let main ~ctxt t pkg (cs, _) extra_args =$/;"	v	module:CustomPlugin/Test
+main	setup.ml	/^    let main ~ctxt t pkg extra_args =$/;"	v	module:CustomPlugin/Build
+main	setup.ml	/^  let main ~ctxt:_ t _ extra_args =$/;"	v	module:CustomPlugin
+main	src/compiler.ml	/^let main () =$/;"	f
+maintainers	setup.ml	/^      maintainers:            string list;$/;"	r	type:OASISTypes/package
+make	setup.ml	/^  let make =$/;"	v	module:OASISHostPath
+make	setup.ml	/^  let make =$/;"	v	module:OASISUnixPath
+map_of_findlib_part_name	setup.ml	/^  type 'a map_of_findlib_part_name = 'a OASISUtils.MapString.t$/;"	t	module:OASISFindlib
+mem	setup.ml	/^    let mem t nm =$/;"	f	module:OASISFileSystem/PropList/Schema
+model	setup.ml	/^  let model                    = c "model"$/;"	v	module:BaseStandardVar
+name	_build/myocamlbuild.ml	/^  type name = string$/;"	t	module:MyOCamlbuildBase
+name	myocamlbuild.ml	/^  type name = string$/;"	t	module:MyOCamlbuildBase
+name	setup.ml	/^        name:      name;$/;"	r	type:OASISFileSystem/PropList/Schema/t
+name	setup.ml	/^      name:                   package_name;$/;"	r	type:OASISTypes/package
+name	setup.ml	/^      name: string;$/;"	r	type:t
+name	setup.ml	/^    let name t =$/;"	f	module:OASISFileSystem/PropList/Schema
+name	setup.ml	/^  type name          = string$/;"	t	module:OASISTypes
+name	setup.ml	/^  type name = string$/;"	t	module:OASISFileSystem/PropList
+name_norm	setup.ml	/^        name_norm: string -> string;$/;"	r	type:OASISFileSystem/PropList/Schema/t
+native_c_compiler	setup.ml	/^  let native_c_compiler        = c "native_c_compiler"$/;"	v	module:BaseStandardVar
+new_id	setup.ml	/^    let new_id =$/;"	v	module:OASISFileSystem/PropList/Field
+nm_libstubs	_build/myocamlbuild.ml	/^  let nm_libstubs nm =$/;"	f	module:MyOCamlbuildBase
+nm_libstubs	myocamlbuild.ml	/^  let nm_libstubs nm =$/;"	f	module:MyOCamlbuildBase
+no_automatic_syntax	_build/myocamlbuild.ml	/^  type conf = {no_automatic_syntax: bool}$/;"	r	type:MyOCamlbuildFindlib/conf
+no_automatic_syntax	myocamlbuild.ml	/^  type conf = {no_automatic_syntax: bool}$/;"	r	type:MyOCamlbuildFindlib/conf
+no_automatic_syntax	setup.ml	/^  let no_automatic_syntax =$/;"	v
+ns_	_build/myocamlbuild.ml	/^  let ns_ str = str$/;"	f	module:OASISGettext
+ns_	myocamlbuild.ml	/^  let ns_ str = str$/;"	f	module:OASISGettext
+ns_	setup.ml	/^  let ns_ str = str$/;"	f	module:OASISGettext
+nsplit	_build/myocamlbuild.ml	/^  let nsplit str c =$/;"	f	module:OASISString
+nsplit	myocamlbuild.ml	/^  let nsplit str c =$/;"	f	module:OASISString
+nsplit	setup.ml	/^  let nsplit str c =$/;"	f	module:OASISString
+nsplitf	_build/myocamlbuild.ml	/^  let nsplitf str f =$/;"	f	module:OASISString
+nsplitf	myocamlbuild.ml	/^  let nsplitf str f =$/;"	f	module:OASISString
+nsplitf	setup.ml	/^  let nsplitf str f =$/;"	f	module:OASISString
+oasis_digest	setup.ml	/^          oasis_digest:     Digest.t option;$/;"	r	type:BaseCompat/Compat_0_4/BaseSetup/t
+oasis_digest	setup.ml	/^      oasis_digest:     Digest.t option;$/;"	r	type:BaseSetup/t
+oasis_exec	setup.ml	/^          oasis_exec:       string option;$/;"	r	type:BaseCompat/Compat_0_4/BaseSetup/t
+oasis_exec	setup.ml	/^      oasis_exec:       string option;$/;"	r	type:BaseSetup/t
+oasis_fn	setup.ml	/^          oasis_fn:         string option;$/;"	r	type:BaseCompat/Compat_0_4/BaseSetup/t
+oasis_fn	setup.ml	/^      oasis_fn:         string option;$/;"	r	type:BaseSetup/t
+oasis_setup_args	setup.ml	/^          oasis_setup_args: string list;$/;"	r	type:BaseCompat/Compat_0_4/BaseSetup/t
+oasis_setup_args	setup.ml	/^      oasis_setup_args: string list;$/;"	r	type:BaseSetup/t
+oasis_version	setup.ml	/^          oasis_version:    string;$/;"	r	type:BaseCompat/Compat_0_4/BaseSetup/t
+oasis_version	setup.ml	/^        oasis_version: OASISVersion.t;$/;"	r	type:Data/t
+oasis_version	setup.ml	/^      oasis_version:          OASISVersion.t;$/;"	r	type:OASISTypes/package
+oasis_version	setup.ml	/^      oasis_version:    string;$/;"	r	type:BaseSetup/t
+obj_findlib_directory	setup.ml	/^      obj_findlib_directory:  unix_dirname option;$/;"	r	type:OASISTypes/object_
+obj_findlib_fullname	setup.ml	/^      obj_findlib_fullname:   findlib_name list option;$/;"	r	type:OASISTypes/object_
+obj_hook	setup.ml	/^  let obj_hook  = ref (fun (cs, bs, dn, obj) -> cs, bs, dn, obj, [])$/;"	v	module:InternalInstallPlugin
+obj_modules	setup.ml	/^      obj_modules:            string list;$/;"	r	type:OASISTypes/object_
+object_	setup.ml	/^  type object_ =$/;"	t	module:OASISTypes
+ocaml_version	setup.ml	/^      ocaml_version:          OASISVersion.comparator option;$/;"	r	type:OASISTypes/package
+ocaml_version	setup.ml	/^  let ocaml_version  = c "ocaml_version"$/;"	v	module:BaseStandardVar
+ocamlbuild	setup.ml	/^  let ocamlbuild = prog "ocamlbuild"$/;"	v	module:BaseStandardVar
+ocamlbuild_clean_ev	setup.ml	/^  let ocamlbuild_clean_ev = "ocamlbuild-clean"$/;"	v	module:OCamlbuildCommon
+ocamlbuildflags	setup.ml	/^  let ocamlbuildflags =$/;"	v	module:OCamlbuildCommon
+ocamlc	setup.ml	/^  let ocamlc     = BaseOCamlcConfig.ocamlc$/;"	v	module:BaseStandardVar
+ocamlc	setup.ml	/^  let ocamlc =$/;"	v	module:BaseOCamlcConfig
+ocamlc_config_map	setup.ml	/^  let ocamlc_config_map =$/;"	v	module:BaseOCamlcConfig
+ocamlfind	_build/myocamlbuild.ml	/^  let ocamlfind x = S[Sh (exec_from_conf "ocamlfind"); x]$/;"	f	module:MyOCamlbuildFindlib
+ocamlfind	myocamlbuild.ml	/^  let ocamlfind x = S[Sh (exec_from_conf "ocamlfind"); x]$/;"	f	module:MyOCamlbuildFindlib
+ocamlfind	setup.ml	/^  let ocamlfind  = BaseCheck.ocamlfind$/;"	v	module:BaseStandardVar
+ocamlopt	setup.ml	/^  let ocamlopt   = prog_opt "ocamlopt"$/;"	v	module:BaseStandardVar
+of_library	setup.ml	/^  let of_library ffn (cs, bs, lib) =$/;"	f
+of_list	_build/myocamlbuild.ml	/^      let of_list lst = add_list empty lst$/;"	f	module:OASISUtils/MapExt/Make
+of_list	_build/myocamlbuild.ml	/^      let of_list lst = add_list empty lst$/;"	f	module:OASISUtils/SetExt/Make
+of_list	_build/myocamlbuild.ml	/^      val of_list: (key * 'a) list -> 'a t$/;"	p	module:OASISUtils/MapExt/S
+of_list	_build/myocamlbuild.ml	/^      val of_list: elt list -> t$/;"	p	module:OASISUtils/SetExt/S
+of_list	myocamlbuild.ml	/^      let of_list lst = add_list empty lst$/;"	f	module:OASISUtils/MapExt/Make
+of_list	myocamlbuild.ml	/^      let of_list lst = add_list empty lst$/;"	f	module:OASISUtils/SetExt/Make
+of_list	myocamlbuild.ml	/^      val of_list: (key * 'a) list -> 'a t$/;"	p	module:OASISUtils/MapExt/S
+of_list	myocamlbuild.ml	/^      val of_list: elt list -> t$/;"	p	module:OASISUtils/SetExt/S
+of_list	setup.ml	/^      let of_list lst = add_list empty lst$/;"	f	module:OASISUtils/MapExt/Make
+of_list	setup.ml	/^      let of_list lst = add_list empty lst$/;"	f	module:OASISUtils/SetExt/Make
+of_list	setup.ml	/^      val of_list: (key * 'a) list -> 'a t$/;"	p	module:OASISUtils/MapExt/S
+of_list	setup.ml	/^      val of_list: elt list -> t$/;"	p	module:OASISUtils/SetExt/S
+of_object	setup.ml	/^  let of_object ffn (cs, bs, obj) =$/;"	f
+of_package	setup.ml	/^    let of_package pkg =$/;"	f	module:Data
+of_unix	setup.ml	/^  let of_unix ufn =$/;"	f	module:OASISHostPath
+of_unix_filename	setup.ml	/^  let of_unix_filename ufn = (ufn: 'a filename)$/;"	f	class:OASISFileSystem/closer
+open_in	setup.ml	/^      method open_in ?(mode=Mode.text_in) ?(perm=0o666) fn =$/;"	m	class:OASISFileSystem/closer#host_fs
+open_in	setup.ml	/^      method open_in: ?mode:(open_flag list) -> ?perm:int -> 'a filename -> reader$/;"	m	class:OASISFileSystem/closer#fs
+open_out	setup.ml	/^      method open_out ?(mode=Mode.text_out)  ?(perm=0o666) fn =$/;"	m	class:OASISFileSystem/closer#host_fs
+open_out	setup.ml	/^      method open_out: ?mode:(open_flag list) -> ?perm:int -> 'a filename -> writer$/;"	m	class:OASISFileSystem/closer#fs
+order	setup.ml	/^        order:     name Queue.t;$/;"	r	type:OASISFileSystem/PropList/Schema/t
+origin	setup.ml	/^        origin: string$/;"	r	type:OASISSourcePatterns/Templater/t
+origin	setup.ml	/^  type origin =$/;"	t
+origin_t	setup.ml	/^  type origin_t =$/;"	t	module:BaseEnv
+os_type	setup.ml	/^  let os_type        = c "os_type"$/;"	v	module:BaseStandardVar
+output	setup.ml	/^          method output buf = Buffer.output_buffer chn buf$/;"	m	method:OASISFileSystem/closer#host_fs#open_out
+output	setup.ml	/^      method output: Buffer.t -> unit$/;"	m	class:OASISFileSystem/closer#writer
+pack	setup.ml	/^  let pack =$/;"	v
+package	setup.ml	/^          package:          package;$/;"	r	type:BaseCompat/Compat_0_4/BaseSetup/t
+package	setup.ml	/^      package:          package;$/;"	r	type:BaseSetup/t
+package	setup.ml	/^  let package ?version_comparator pkg () =$/;"	v
+package	setup.ml	/^  type package =$/;"	t	module:OASISTypes
+package_default	_build/myocamlbuild.ml	/^let package_default =$/;"	v
+package_default	myocamlbuild.ml	/^let package_default =$/;"	v
+package_name	setup.ml	/^  type package_name  = string$/;"	t	module:OASISTypes
+package_test	setup.ml	/^  let package_test t pkg =$/;"	f
+package_version	setup.ml	/^  let package_version pkg =$/;"	f
+parent_dir_name	setup.ml	/^  let parent_dir_name = ".."$/;"	v	module:OASISUnixPath
+parse	setup.ml	/^    let parse env s =$/;"	f	module:OASISSourcePatterns/Templater
+parse	setup.ml	/^  let parse argv args =$/;"	f	module:BaseArgExt
+pkg_get	setup.ml	/^  let pkg_get () =$/;"	f	module:BaseStandardVar
+pkg_name	setup.ml	/^  let pkg_name =$/;"	v	module:BaseStandardVar
+pkg_version	setup.ml	/^  let pkg_version =$/;"	v	module:BaseStandardVar
+plugin	setup.ml	/^      plugin: all_plugin option;$/;"	r	type:t
+plugin	setup.ml	/^  type 'a plugin = 'a * name * OASISVersion.t option$/;"	t	module:OASISTypes
+plugin_data	setup.ml	/^      plugin_data:            plugin_data;$/;"	r	type:OASISTypes/package
+plugin_data	setup.ml	/^  type plugin_data = (all_plugin * plugin_data_purpose * (unit -> unit)) list$/;"	t	module:OASISTypes
+plugin_data_purpose	setup.ml	/^  type plugin_data_purpose =$/;"	t	module:OASISTypes
+plugin_kind	setup.ml	/^  type plugin_kind =$/;"	t	module:OASISTypes
+plugin_tags	setup.ml	/^      plugin_tags: string option;$/;"	r	type:OCamlbuildCommon/args
+plugin_version	setup.ml	/^    let plugin_version plugin_kind plugin_name t =$/;"	f	module:Data
+plugin_versions	setup.ml	/^        plugin_versions: OASISVersion.t option MapPlugin.t;$/;"	r	type:Data/t
+plugins	setup.ml	/^      plugins:                [`Extra] plugin list;$/;"	r	type:OASISTypes/package
+post_command	setup.ml	/^      post_command: (command_line option) conditional;$/;"	r	type:OASISTypes/custom
+pre_command	setup.ml	/^      pre_command:  (command_line option) conditional;$/;"	r	type:OASISTypes/custom
+print	setup.ml	/^  let print () =$/;"	f
+print_hidden	setup.ml	/^  let print_hidden =$/;"	v	module:BaseEnv
+printf	setup.ml	/^      printf:                level -> string -> unit;$/;"	r	type:OASISFileSystem/OASISContext/t
+printf	setup.ml	/^  let printf lvl str =$/;"	f	module:OASISFileSystem/OASISContext
+private	setup.ml	/^      method private host_filename fn = Filename.concat rootdir fn$/;"	m	class:OASISFileSystem/closer#host_fs
+prog	_build/src/parser.ml	/^and prog : (Lexing.lexbuf -> token) -> Lexing.lexbuf -> ($/;"	v
+prog	_build/src/parser.mli	/^val prog: (Lexing.lexbuf -> token) -> Lexing.lexbuf -> (Lang.exp)$/;"	p
+prog	setup.ml	/^  type prog          = string$/;"	t	module:OASISTypes
+prog_best	setup.ml	/^  let prog_best prg prg_lst =$/;"	f	module:BaseCheck
+publication	setup.ml	/^      publication: publication;$/;"	r	type:t
+publication	setup.ml	/^  type publication = InDev of stage | SinceVersion of OASISVersion.t$/;"	t
+q	setup.ml	/^  let q = Filename.quote$/;"	v	module:OASISFileUtil
+quiet	setup.ml	/^      quiet:                 bool;$/;"	r	type:OASISFileSystem/OASISContext/t
+quiet	setup.ml	/^  let quiet =$/;"	v	module:OASISFileSystem/OASISContext
+rctxt	setup.ml	/^    let rctxt = ref !BaseContext.default$/;"	v	module:BaseCompat/Compat_0_4
+read_all	setup.ml	/^  let read_all buf rdr =$/;"	f	class:OASISFileSystem/closer
+register	setup.ml	/^  let register ~ctxt event data =$/;"	v
+reinstall	Makefile	/^reinstall: setup.data$/;"	t
+reinstall	setup.ml	/^  let reinstall ~ctxt t args =$/;"	v	module:BaseSetup
+remove	setup.ml	/^      method remove fn = Sys.remove (self#host_filename fn)$/;"	m	class:OASISFileSystem/closer#host_fs
+remove	setup.ml	/^      method remove: 'a filename -> unit$/;"	m	class:OASISFileSystem/closer#fs
+replace	setup.ml	/^  let replace ~ctxt fn_lst =$/;"	v	module:BaseFileAB
+replace_chars	_build/myocamlbuild.ml	/^  let replace_chars f s =$/;"	f	module:OASISString
+replace_chars	myocamlbuild.ml	/^  let replace_chars f s =$/;"	f	module:OASISString
+replace_chars	setup.ml	/^  let replace_chars f s =$/;"	f	module:OASISString
+repr_filename	setup.ml	/^      let repr_filename = ctxt.srcfs#string_of_filename filename in$/;"	v	module:BaseEnv
+rmdir	setup.ml	/^  let rmdir ~ctxt tgt =$/;"	v
+root_of_group	setup.ml	/^  let root_of_group grp =$/;"	f	module:OASISFindlib
+rpkg	setup.ml	/^  let rpkg =$/;"	v	module:BaseStandardVar
+run	setup.ml	/^  let run  = BaseCustom.run$/;"	v	module:CustomPlugin
+run	setup.ml	/^  let run cmd args extra_args =$/;"	f	module:BaseCustom
+run	setup.ml	/^  let run ~ctxt ?f_exit_code ?(quote=true) cmd args =$/;"	v	module:OASISExec
+run_and_read	_build/myocamlbuild.ml	/^  let run_and_read = Ocamlbuild_pack.My_unix.run_and_read$/;"	v	module:MyOCamlbuildFindlib
+run_and_read	myocamlbuild.ml	/^  let run_and_read = Ocamlbuild_pack.My_unix.run_and_read$/;"	v	module:MyOCamlbuildFindlib
+run_clean	setup.ml	/^  let run_clean ~ctxt extra_argv =$/;"	v	module:OCamlbuildCommon
+run_path	setup.ml	/^      run_path: unix_filename;$/;"	r	type:OCamlbuildDocPlugin/run_t
+run_read_one_line	setup.ml	/^  let run_read_one_line ~ctxt ?f_exit_code cmd args =$/;"	v
+run_read_output	setup.ml	/^  let run_read_output ~ctxt ?f_exit_code cmd args =$/;"	v	module:OASISExec
+run_t	setup.ml	/^  type run_t =$/;"	t	module:OCamlbuildDocPlugin
+s_	_build/myocamlbuild.ml	/^  let s_ str = str$/;"	f	module:OASISGettext
+s_	myocamlbuild.ml	/^  let s_ str = str$/;"	f	module:OASISGettext
+s_	setup.ml	/^  let s_ str = str$/;"	f	module:OASISGettext
+schema	setup.ml	/^  let schema = Schema.create "environment"$/;"	v	module:BaseEnv
+schema_data	setup.ml	/^      schema_data:            PropList.Data.t;$/;"	r	type:OASISTypes/package
+section	setup.ml	/^  type section =$/;"	t	module:OASISTypes
+section_args_fun	setup.ml	/^      type ('a, 'b) section_args_fun =$/;"	t	module:BaseCompat/Compat_0_4/BaseSetup
+section_args_fun	setup.ml	/^  type ('a, 'b) section_args_fun =$/;"	t	module:BaseSetup
+section_common	setup.ml	/^  let section_common sct =$/;"	f	module:OASISSection
+section_common_set	setup.ml	/^  let section_common_set cs =$/;"	f	module:OASISSection
+section_find	setup.ml	/^  let section_find id scts =$/;"	f	module:OASISSection
+section_id	setup.ml	/^  let section_id sct =$/;"	f	module:OASISSection
+section_kind	setup.ml	/^  type section_kind =$/;"	t	module:OASISTypes
+section_kind_common	setup.ml	/^  let section_kind_common =$/;"	v	module:OASISSection
+section_object	setup.ml	/^  let section_object =$/;"	v
+sections	setup.ml	/^      sections:               section list;$/;"	r	type:OASISTypes/package
+set	setup.ml	/^        set:    Data.t -> ?context:'ctxt -> 'value -> unit;$/;"	r	type:OASISFileSystem/PropList/Field/t
+set	setup.ml	/^    let set t data nm ?context x =$/;"	f	module:OASISFileSystem/PropList/Schema
+sets	setup.ml	/^        sets:   Data.t -> ?context:'ctxt -> string -> unit;$/;"	r	type:OASISFileSystem/PropList/Field/t
+setup	setup.ml	/^      let setup t =$/;"	f	module:BaseCompat/Compat_0_4/BaseSetup
+setup	setup.ml	/^  let setup t =$/;"	f
+setup	setup.ml	/^let setup () = BaseSetup.setup setup_t;;$/;"	f
+setup.data	Makefile	/^setup.data:$/;"	t
+setup_t	setup.ml	/^let setup_t = BaseCompat.Compat_0_4.adapt_setup_t setup_t$/;"	v
+setup_t	setup.ml	/^let setup_t =$/;"	v
+setup_update	setup.ml	/^          setup_update:     bool;$/;"	r	type:BaseCompat/Compat_0_4/BaseSetup/t
+setup_update	setup.ml	/^      setup_update:     bool;$/;"	r	type:BaseSetup/t
+since_version	setup.ml	/^  let since_version ver_str = SinceVersion (version_of_string ver_str)$/;"	f
+source	setup.ml	/^  type source$/;"	t	module:OASISFileSystem/OASISContext
+source_filename	setup.ml	/^  type source_filename = source OASISFileSystem.filename$/;"	t	module:OASISFileSystem/OASISContext
+source_patterns	setup.ml	/^  let source_patterns =$/;"	v
+source_repository	setup.ml	/^  type source_repository =$/;"	t	module:OASISTypes
+split	_build/myocamlbuild.ml	/^  let split s ch =$/;"	f	module:MyOCamlbuildFindlib
+split	myocamlbuild.ml	/^  let split s ch =$/;"	f	module:MyOCamlbuildFindlib
+split_install_command	setup.ml	/^  let split_install_command ocamlfind findlib_name meta files =$/;"	f	module:InternalInstallPlugin
+split_nl	_build/myocamlbuild.ml	/^  let split_nl s = split s '\\n'$/;"	f	module:MyOCamlbuildFindlib
+split_nl	myocamlbuild.ml	/^  let split_nl s = split s '\\n'$/;"	f	module:MyOCamlbuildFindlib
+src_repo_branch	setup.ml	/^      src_repo_branch:      string option;$/;"	r	type:OASISTypes/source_repository
+src_repo_browser	setup.ml	/^      src_repo_browser:     url option;$/;"	r	type:OASISTypes/source_repository
+src_repo_location	setup.ml	/^      src_repo_location:    url;$/;"	r	type:OASISTypes/source_repository
+src_repo_module	setup.ml	/^      src_repo_module:      string option;$/;"	r	type:OASISTypes/source_repository
+src_repo_subdir	setup.ml	/^      src_repo_subdir:      unix_filename option;$/;"	r	type:OASISTypes/source_repository
+src_repo_tag	setup.ml	/^      src_repo_tag:         string option;$/;"	r	type:OASISTypes/source_repository
+src_repo_type	setup.ml	/^      src_repo_type:        vcs;$/;"	r	type:OASISTypes/source_repository
+srcfs	setup.ml	/^      srcfs:                 source OASISFileSystem.fs;$/;"	r	type:OASISFileSystem/OASISContext/t
+stage	setup.ml	/^  type stage = Alpha | Beta$/;"	t
+standard_library	setup.ml	/^  let standard_library         = c "standard_library"$/;"	v	module:BaseStandardVar
+standard_library_default	setup.ml	/^  let standard_library_default = c "standard_library_default"$/;"	v	module:BaseStandardVar
+standard_runtime	setup.ml	/^  let standard_runtime         = c "standard_runtime"$/;"	v	module:BaseStandardVar
+starts_with	_build/myocamlbuild.ml	/^  let starts_with ~what ?(offset=0) str =$/;"	v	module:OASISString
+starts_with	myocamlbuild.ml	/^  let starts_with ~what ?(offset=0) str =$/;"	v	module:OASISString
+starts_with	setup.ml	/^  let starts_with ~what ?(offset=0) str =$/;"	v	module:OASISString
+std_args_fun	setup.ml	/^      type std_args_fun = package -> string array -> unit$/;"	t	module:BaseCompat/Compat_0_4/BaseSetup
+std_args_fun	setup.ml	/^  type std_args_fun =$/;"	t	module:BaseSetup
+std_length	setup.ml	/^  let std_length = 4096 (* Standard buffer\/read length. *)$/;"	v	class:OASISFileSystem/closer
+step	_build/src/lang.ml	/^let rec step (env: (int * value) list) (e: exp) : (int * value) list * exp =$/;"	f
+step	src/lang.ml	/^let rec step (env: (int * value) list) (e: exp) : (int * value) list * exp =$/;"	f
+str_lst	_build/myocamlbuild.ml	/^            let str_lst =$/;"	v
+str_lst	myocamlbuild.ml	/^            let str_lst =$/;"	v
+str_lst	setup.ml	/^            let str_lst =$/;"	v
+stream_of_reader	setup.ml	/^  let stream_of_reader rdr =$/;"	f	class:OASISFileSystem/closer
+string_of_bin_op	_build/src/lang.ml	/^let string_of_bin_op (op: bin_op) =$/;"	f
+string_of_bin_op	src/display.ml	/^let string_of_bin_op (op: bin_op) =$/;"	f
+string_of_bin_op	src/lang.ml	/^let string_of_bin_op (op: bin_op) =$/;"	f
+string_of_comparator	setup.ml	/^  let rec string_of_comparator =$/;"	v	module:OASISFileSystem/OASISVersion
+string_of_exp	_build/src/lang.ml	/^let rec string_of_exp (e: exp) : string =$/;"	f
+string_of_exp	src/display.ml	/^let rec string_of_exp (e: exp) : string =$/;"	f
+string_of_exp	src/lang.ml	/^let rec string_of_exp (e: exp) : string =$/;"	f
+string_of_exp_parsed	_build/src/lang.ml	/^let rec string_of_exp_parsed (e: exp) : string =$/;"	f
+string_of_exp_parsed	src/lang.ml	/^let rec string_of_exp_parsed (e: exp) : string =$/;"	f
+string_of_filename	setup.ml	/^      method string_of_filename = self#host_filename$/;"	m	class:OASISFileSystem/closer#host_fs
+string_of_filename	setup.ml	/^      method string_of_filename: 'a filename -> string$/;"	m	class:OASISFileSystem/closer#fs
+string_of_op	_build/src/lang.ml	/^let string_of_op (op: bin_op) : string =$/;"	f
+string_of_op	src/display.ml	/^let string_of_op (op: bin_op) : string =$/;"	f
+string_of_op	src/lang.ml	/^let string_of_op (op: bin_op) : string =$/;"	f
+string_of_section	setup.ml	/^  let string_of_section sct =$/;"	f	module:OASISSection
+string_of_section_kind	setup.ml	/^  let string_of_section_kind =$/;"	v	module:OASISSection
+string_of_stage	setup.ml	/^  let string_of_stage =$/;"	v
+string_of_token	src/display.ml	/^let string_of_token (t: token) : string =$/;"	f
+string_of_token_list	src/display.ml	/^let string_of_token_list (tlist: token list) : string =$/;"	f
+string_of_type	_build/src/lang.ml	/^let rec string_of_type (t: typ) : string =$/;"	f
+string_of_type	src/lang.ml	/^let rec string_of_type (t: typ) : string =$/;"	f
+string_of_value	_build/src/lang.ml	/^and string_of_value (v: value) : string =$/;"	f
+string_of_value	src/display.ml	/^let string_of_value (v: value) : string =$/;"	f
+string_of_value	src/lang.ml	/^and string_of_value (v: value) : string =$/;"	f
+string_of_value_parsed	_build/src/lang.ml	/^and string_of_value_parsed (v: value) : string =$/;"	f
+string_of_value_parsed	src/lang.ml	/^and string_of_value_parsed (v: value) : string =$/;"	f
+string_of_version	setup.ml	/^  let string_of_version t = t$/;"	f	module:OASISFileSystem/OASISVersion
+strip_ends_with	_build/myocamlbuild.ml	/^  let strip_ends_with ~what str =$/;"	v	module:OASISString
+strip_ends_with	myocamlbuild.ml	/^  let strip_ends_with ~what str =$/;"	v	module:OASISString
+strip_ends_with	setup.ml	/^  let strip_ends_with ~what str =$/;"	v	module:OASISString
+strip_starts_with	_build/myocamlbuild.ml	/^  let strip_starts_with ~what str =$/;"	v	module:OASISString
+strip_starts_with	myocamlbuild.ml	/^  let strip_starts_with ~what str =$/;"	v	module:OASISString
+strip_starts_with	setup.ml	/^  let strip_starts_with ~what str =$/;"	v	module:OASISString
+sub_end	_build/myocamlbuild.ml	/^  let sub_end ?(offset=0) str len =$/;"	v	module:OASISString
+sub_end	myocamlbuild.ml	/^  let sub_end ?(offset=0) str len =$/;"	v	module:OASISString
+sub_end	setup.ml	/^  let sub_end ?(offset=0) str len =$/;"	v	module:OASISString
+sub_start	_build/myocamlbuild.ml	/^  let sub_start str len =$/;"	f	module:OASISString
+sub_start	myocamlbuild.ml	/^  let sub_start str len =$/;"	f	module:OASISString
+sub_start	setup.ml	/^  let sub_start str len =$/;"	f	module:OASISString
+subst	_build/src/lang.ml	/^let rec subst (v: value) (s: string) (e: exp) : exp =$/;"	f
+subst	src/lang.ml	/^let rec subst (v: value) (s: string) (e: exp) : exp =$/;"	f
+symbols	_build/src/lexer.ml	/^let symbols : (string * Parser.token) list =$/;"	v
+synopsis	setup.ml	/^      synopsis:               string;$/;"	r	type:OASISTypes/package
+system	setup.ml	/^  let system         = c "system"$/;"	v	module:BaseStandardVar
+systhread_supported	setup.ml	/^  let systhread_supported      = c "systhread_supported"$/;"	v	module:BaseStandardVar
+t	_build/myocamlbuild.ml	/^         type t = string$/;"	t
+t	_build/myocamlbuild.ml	/^         type t = string$/;"	t	module:OASISUtils
+t	_build/myocamlbuild.ml	/^  type t = string MapString.t$/;"	t	module:BaseEnvLight
+t	_build/myocamlbuild.ml	/^  type t =$/;"	t	module:MyOCamlbuildBase
+t	_build/myocamlbuild.ml	/^  type t =$/;"	t	module:OASISExpr
+t	myocamlbuild.ml	/^         type t = string$/;"	t
+t	myocamlbuild.ml	/^         type t = string$/;"	t	module:OASISUtils
+t	myocamlbuild.ml	/^  type t = string MapString.t$/;"	t	module:BaseEnvLight
+t	myocamlbuild.ml	/^  type t =$/;"	t	module:MyOCamlbuildBase
+t	myocamlbuild.ml	/^  type t =$/;"	t	module:OASISExpr
+t	setup.ml	/^          type t = string * string$/;"	t	module:BaseLog
+t	setup.ml	/^         type t = string$/;"	t
+t	setup.ml	/^         type t = string$/;"	t	module:OASISUtils
+t	setup.ml	/^        type t = plugin_kind * name$/;"	t	module:OASISFeatures
+t	setup.ml	/^      let t = {atoms = parse s; origin = s} in$/;"	v	module:OASISSourcePatterns/Templater
+t	setup.ml	/^      type t =$/;"	t	module:BaseCompat/Compat_0_4/BaseSetup
+t	setup.ml	/^    type ('ctxt, 'extra) t =$/;"	t	module:OASISFileSystem/PropList/Schema
+t	setup.ml	/^    type ('ctxt, 'value, 'extra) t =$/;"	t	module:OASISFileSystem/PropList/Field
+t	setup.ml	/^    type t = section$/;"	t	module:OASISSection/CSection
+t	setup.ml	/^    type t =$/;"	t	module:Data
+t	setup.ml	/^    type t =$/;"	t	module:OASISFileSystem/PropList/Data
+t	setup.ml	/^    type t =$/;"	t	module:OASISSourcePatterns/Templater
+t	setup.ml	/^  type t = Templater.t$/;"	t	module:OASISSourcePatterns
+t	setup.ml	/^  type t = elt list$/;"	t	module:OASISText
+t	setup.ml	/^  type t = string MapString.t$/;"	t	module:BaseEnvLight
+t	setup.ml	/^  type t = string$/;"	t	module:OASISFileSystem/OASISVersion
+t	setup.ml	/^  type t =$/;"	t
+t	setup.ml	/^  type t =$/;"	t	module:BaseBuilt
+t	setup.ml	/^  type t =$/;"	t	module:BaseSetup
+t	setup.ml	/^  type t =$/;"	t	module:CustomPlugin
+t	setup.ml	/^  type t =$/;"	t	module:OASISFileSystem/OASISContext
+t	setup.ml	/^  type t =$/;"	t	module:OASISFileSystem/OASISExpr
+t	setup.ml	/^  type t =$/;"	t	module:OASISFileSystem/OASISLicense
+tag	_build/myocamlbuild.ml	/^  type tag = string$/;"	t	module:MyOCamlbuildBase
+tag	myocamlbuild.ml	/^  type tag = string$/;"	t	module:MyOCamlbuildBase
+tag_libstubs	_build/myocamlbuild.ml	/^  let tag_libstubs nm =$/;"	f	module:MyOCamlbuildBase
+tag_libstubs	myocamlbuild.ml	/^  let tag_libstubs nm =$/;"	f	module:MyOCamlbuildBase
+tags	setup.ml	/^      tags:                   string list;$/;"	r	type:OASISTypes/package
+test	Makefile	/^test: setup.data build$/;"	t
+test	_build/myocamlbuild.ml	/^  type test = string$/;"	t	module:OASISExpr
+test	myocamlbuild.ml	/^  type test = string$/;"	t	module:OASISExpr
+test	setup.ml	/^          test:             ((test, float) section_args_fun) list;$/;"	r	type:BaseCompat/Compat_0_4/BaseSetup/t
+test	setup.ml	/^      test:             ((test, float) section_args_fun) list;$/;"	r	type:BaseSetup/t
+test	setup.ml	/^  let test ~ctxt lst pkg extra_args =$/;"	v	module:BaseTest
+test	setup.ml	/^  let test ~ctxt t args =$/;"	v	module:BaseSetup
+test	setup.ml	/^  type test = string$/;"	t	module:OASISFileSystem/OASISExpr
+test	setup.ml	/^  type test =$/;"	t	module:OASISTypes
+test_command	setup.ml	/^      test_command:            command_line conditional;$/;"	r	type:OASISTypes/test
+test_custom	setup.ml	/^      test_custom:             custom;$/;"	r	type:OASISTypes/test
+test_run	setup.ml	/^      test_run:                bool conditional;$/;"	r	type:OASISTypes/test
+test_tools	setup.ml	/^      test_tools:              tool list;$/;"	r	type:OASISTypes/test
+test_type	setup.ml	/^      test_type:               [`Test] plugin;$/;"	r	type:OASISTypes/test
+test_working_directory	setup.ml	/^      test_working_directory:  unix_filename option;$/;"	r	type:OASISTypes/test
+text_in	setup.ml	/^    let text_in = Open_text :: default_in$/;"	v	module:OASISFileSystem/closer#Mode
+text_out	setup.ml	/^    let text_out = Open_text :: default_out$/;"	v	module:OASISFileSystem/closer#Mode
+to_filename	setup.ml	/^  let to_filename fn =$/;"	f	module:BaseFileAB
+to_list	_build/myocamlbuild.ml	/^      let to_list = elements$/;"	v	module:OASISUtils/SetExt/Make
+to_list	_build/myocamlbuild.ml	/^      let to_list t = fold (fun k v acc -> (k, v) :: acc) t []$/;"	f	module:OASISUtils/MapExt/Make
+to_list	_build/myocamlbuild.ml	/^      val to_list: 'a t -> (key * 'a) list$/;"	p	module:OASISUtils/MapExt/S
+to_list	_build/myocamlbuild.ml	/^      val to_list: t -> elt list$/;"	p	module:OASISUtils/SetExt/S
+to_list	myocamlbuild.ml	/^      let to_list = elements$/;"	v	module:OASISUtils/SetExt/Make
+to_list	myocamlbuild.ml	/^      let to_list t = fold (fun k v acc -> (k, v) :: acc) t []$/;"	f	module:OASISUtils/MapExt/Make
+to_list	myocamlbuild.ml	/^      val to_list: 'a t -> (key * 'a) list$/;"	p	module:OASISUtils/MapExt/S
+to_list	myocamlbuild.ml	/^      val to_list: t -> elt list$/;"	p	module:OASISUtils/SetExt/S
+to_list	setup.ml	/^      let to_list = elements$/;"	v	module:OASISUtils/SetExt/Make
+to_list	setup.ml	/^      let to_list t = fold (fun k v acc -> (k, v) :: acc) t []$/;"	f	module:OASISUtils/MapExt/Make
+to_list	setup.ml	/^      val to_list: 'a t -> (key * 'a) list$/;"	p	module:OASISUtils/MapExt/S
+to_list	setup.ml	/^      val to_list: t -> elt list$/;"	p	module:OASISUtils/SetExt/S
+to_log_event_file	setup.ml	/^  let to_log_event_file t nm =$/;"	f	module:BaseBuilt
+to_string	setup.ml	/^    let to_string t =$/;"	f	module:Data
+to_string	setup.ml	/^  let to_string t = t.Templater.origin$/;"	f	module:OASISSourcePatterns
+to_string	setup.ml	/^  let to_string t =$/;"	f
+to_unix_filename	setup.ml	/^  let to_unix_filename fn = (fn: string)$/;"	f	class:OASISFileSystem/closer
+token	_build/src/lexer.ml	/^let rec token lexbuf =$/;"	f
+token	_build/src/parser.ml	/^  type token = $/;"	t	module:MenhirBasics
+token	_build/src/parser.mli	/^type token = $/;"	t
+tool	setup.ml	/^  type tool =$/;"	t	module:OASISTypes
+tree	setup.ml	/^  type tree =$/;"	t	module:OASISFindlib
+typ	_build/src/lang.ml	/^type typ =$/;"	t
+typ	src/lang.ml	/^type typ =$/;"	t
+type_equals	_build/src/lang.ml	/^let rec type_equals (t1: typ) (t2: typ) : bool =$/;"	f
+type_equals	src/lang.ml	/^let rec type_equals (t1: typ) (t2: typ) : bool =$/;"	f
+type_of_bin_op_in	_build/src/lang.ml	/^let type_of_bin_op_in (op: bin_op) (t1: typ) (t2: typ) : typ =$/;"	f
+type_of_bin_op_in	src/lang.ml	/^let type_of_bin_op_in (op: bin_op) (t1: typ) (t2: typ) : typ =$/;"	f
+type_of_bin_op_out	_build/src/lang.ml	/^let type_of_bin_op_out (op: bin_op) (t1: typ) (t2: typ) : typ =$/;"	f
+type_of_bin_op_out	src/lang.ml	/^let type_of_bin_op_out (op: bin_op) (t1: typ) (t2: typ) : typ =$/;"	f
+typecheck	_build/src/lang.ml	/^let rec typecheck (ctx: (string * typ) list) (e: exp) : typ =$/;"	f
+typecheck	src/lang.ml	/^let rec typecheck (ctx: (string * typ) list) (e: exp) : typ =$/;"	f
+uncapitalize_ascii	_build/myocamlbuild.ml	/^  let uncapitalize_ascii s =$/;"	f	module:OASISString
+uncapitalize_ascii	myocamlbuild.ml	/^  let uncapitalize_ascii s =$/;"	f	module:OASISString
+uncapitalize_ascii	setup.ml	/^  let uncapitalize_ascii s =$/;"	f	module:OASISString
+uncapitalize_file	setup.ml	/^  let uncapitalize_file f =$/;"	f	module:OASISUnixPath
+uninstall	Makefile	/^uninstall: setup.data$/;"	t
+uninstall	setup.ml	/^          uninstall:        std_args_fun;$/;"	r	type:BaseCompat/Compat_0_4/BaseSetup/t
+uninstall	setup.ml	/^      uninstall:        std_args_fun;$/;"	r	type:BaseSetup/t
+uninstall	setup.ml	/^  let uninstall ~ctxt _ _ =$/;"	v
+uninstall	setup.ml	/^  let uninstall ~ctxt t args =$/;"	v	module:BaseSetup
+uninstall_custom	setup.ml	/^      uninstall_custom:       custom;$/;"	r	type:OASISTypes/package
+unix_dirname	setup.ml	/^  type unix_dirname  = string$/;"	t	module:OASISTypes
+unix_dirname	setup.ml	/^  type unix_dirname = string$/;"	t	module:OASISUnixPath
+unix_exec_is	setup.ml	/^  let unix_exec_is (cs, bs, exec) is_native ext_dll suffix_program =$/;"	f	module:OASISExecutable
+unix_filename	setup.ml	/^  type unix_filename = string (* TODO: replace everywhere. *)$/;"	t	module:OASISTypes
+unix_filename	setup.ml	/^  type unix_filename = string$/;"	t	module:OASISUnixPath
+unpack_bool_val	_build/src/lang.ml	/^let unpack_bool_val v =$/;"	f
+unpack_bool_val	src/lang.ml	/^let unpack_bool_val v =$/;"	f
+unpack_float_val	_build/src/lang.ml	/^let unpack_float_val v =$/;"	f
+unpack_float_val	src/lang.ml	/^let unpack_float_val v =$/;"	f
+unpack_int_val	_build/src/lang.ml	/^let unpack_int_val v =$/;"	f
+unpack_int_val	src/lang.ml	/^let unpack_int_val v =$/;"	f
+unregister	setup.ml	/^  let unregister ~ctxt event data =$/;"	v
+unregister	setup.ml	/^  let unregister ~ctxt t nm =$/;"	v	module:BaseBuilt
+update_setup_ml	setup.ml	/^  let update_setup_ml t =$/;"	f
+update_setup_ml	setup.ml	/^  let update_setup_ml, no_update_setup_ml_cli =$/;"	v
+uppercase_ascii	_build/myocamlbuild.ml	/^  let uppercase_ascii =$/;"	v	module:OASISString
+uppercase_ascii	myocamlbuild.ml	/^  let uppercase_ascii =$/;"	v	module:OASISString
+uppercase_ascii	setup.ml	/^  let uppercase_ascii =$/;"	v	module:OASISString
+url	setup.ml	/^  type url           = string$/;"	t	module:OASISTypes
+usage_msg	_build/src/compiler.ml	/^let usage_msg =$/;"	v
+usage_msg	src/compiler.ml	/^let usage_msg =$/;"	v
+v	_build/myocamlbuild.ml	/^            let v =$/;"	v
+v	_build/myocamlbuild.ml	/^            let v =$/;"	v	module:OASISExpr
+v	myocamlbuild.ml	/^            let v =$/;"	v
+v	myocamlbuild.ml	/^            let v =$/;"	v	module:OASISExpr
+v	setup.ml	/^            let v =$/;"	v	module:OASISFileSystem
+v	setup.ml	/^            let v =$/;"	v	module:OASISFileSystem/OASISExpr
+var_all	setup.ml	/^  let var_all () =$/;"	f	module:BaseEnv
+var_choose	setup.ml	/^  let var_choose ?printer ?name lst =$/;"	v	module:BaseEnv
+var_cond	setup.ml	/^  let var_cond = ref []$/;"	v	module:BaseStandardVar
+var_define	setup.ml	/^  let var_define nm =$/;"	f
+var_define	setup.ml	/^  let var_define$/;"	v	module:BaseEnv
+var_define_cond	setup.ml	/^  let var_define_cond ~since_version f dflt =$/;"	v	module:BaseStandardVar
+var_expand	setup.ml	/^  let rec var_expand str =$/;"	f	module:BaseEnv
+var_lxr	setup.ml	/^  let var_lxr = Genlex.make_lexer []$/;"	v	module:BaseEnv
+var_protect	setup.ml	/^  let var_protect vl =$/;"	f	module:BaseEnv
+var_redefine	setup.ml	/^  let var_redefine$/;"	v	module:BaseEnv
+variables	setup.ml	/^        variables: string MapString.t;$/;"	r	type:OASISSourcePatterns/Templater/env
+varname_of_comparator	setup.ml	/^  let rec varname_of_comparator =$/;"	v	module:OASISFileSystem/OASISVersion
+varname_of_string	_build/myocamlbuild.ml	/^  let varname_of_string ?(hyphen='_') s =$/;"	v
+varname_of_string	myocamlbuild.ml	/^  let varname_of_string ?(hyphen='_') s =$/;"	v
+varname_of_string	setup.ml	/^  let varname_of_string ?(hyphen='_') s =$/;"	v
+vcs	setup.ml	/^  type vcs =$/;"	t	module:OASISTypes
+version	setup.ml	/^      version:                OASISVersion.t;$/;"	r	type:OASISTypes/package
+version	setup.ml	/^      version:   license_version;$/;"	r	type:OASISFileSystem/OASISLicense/license_dep_5_unit
+version	setup.ml	/^  let version ~ctxt:_ (t: t) _ = print_endline t.oasis_version$/;"	v
+version_str	setup.ml	/^         let version_str =$/;"	v
+warning	setup.ml	/^  let warning fmt = warning ~ctxt:!default fmt$/;"	f	module:BaseMessage
+warning	setup.ml	/^  let warning ~ctxt fmt =$/;"	v	module:OASISFileSystem/OASISMessage
+well_known_syntax	_build/myocamlbuild.ml	/^  let well_known_syntax = [$/;"	v	module:MyOCamlbuildFindlib
+well_known_syntax	myocamlbuild.ml	/^  let well_known_syntax = [$/;"	v	module:MyOCamlbuildFindlib
+which	setup.ml	/^  let which ~ctxt prg =$/;"	v	module:OASISFileUtil
+win32_max_command_line_length	setup.ml	/^  let win32_max_command_line_length = 8000$/;"	v	module:InternalInstallPlugin
+writer	setup.ml	/^  class type writer =$/;"	c	class:OASISFileSystem/closer

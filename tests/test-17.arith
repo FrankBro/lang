@@ -1,0 +1,3 @@
+let l1 : [int] = [] : int in
+let l2 : [bool] = (empty? l1) :: ([] : bool) in
+hd l2

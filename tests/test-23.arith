@@ -1,0 +1,5 @@
+let x = 33 in
+let y = x < 0 in
+let z = (ref x) in
+let f = (fun (x: (int * int)) : int -> (x[0] + x[1])) in
+(f (41, 1))

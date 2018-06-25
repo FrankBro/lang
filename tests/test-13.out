@@ -1,0 +1,1 @@
+Fatal error: exception Failure("Binary op typechecking failed, expected input type: int, actual: int and bool")
