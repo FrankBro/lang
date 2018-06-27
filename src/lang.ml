@@ -1,5 +1,7 @@
 open List
 
+ type name = string
+
 type lit =
     | LInt of int
     | LBool of bool
@@ -16,16 +18,18 @@ type bin_op =
     | OGreaterThan
     | OEquals
 
+ type id = int
+ type level = int
+
 type typ =
-    | TInt
-    | TBool
-    | TFloat
-    | TFun of typ * typ
-    | TUnit
-    | TTuple of typ list
-    | TList of typ
-    | TRef of typ
-    | TDynamic
+    | TConst of name (* type constants: `unit`, `int`, `float` or `bool` *)
+    | TApp of typ * typ list (* type application: `list`, `tuple` or `ref` *)
+    | TArrow of typ * typ (* function type: `int -> int` *)
+    | TVar of tvar ref (* type variable *)
+and tvar =
+    | Unbound of id * level
+    | Link of typ
+    | Generic of id
 
 type value =
     | VLit of lit
@@ -66,18 +70,57 @@ let string_of_op (op: bin_op) : string =
     | OGreaterThan -> ">"
     | OEquals -> "="
 
-let rec string_of_type (t: typ) : string =
-    match t with
-    | TInt -> "int"
-    | TBool -> "bool"
-    | TFloat -> "float"
-    | TFun (t1, t2) -> ((string_of_type t1) ^ " -> " ^ (string_of_type t2))
-    | TUnit -> "unit"
-    | TTuple [] -> failwith "Unexpected case"
-    | TTuple (t :: rest) -> ("(" ^ (string_of_type t) ^ (String.concat "" (map (fun x -> " * " ^ x) (map string_of_type rest)) ^ ")"))
-    | TList t -> ("[" ^ (string_of_type t) ^ "]")
-    | TRef t -> ("<" ^ (string_of_type t) ^ ">")
-    | TDynamic -> ("dynamic")
+let string_of_type (ty: typ) : string =
+	let id_name_map = Hashtbl.create 10 in
+	let count = ref 0 in
+	let next_name () =
+		let i = !count in
+		incr count ;
+		let name = String.make 1 (Char.chr (97 + i mod 26)) ^
+			if i >= 26 then string_of_int (i / 26) else ""
+		in
+		name
+	in
+	let rec f is_simple x = 
+        match x with
+		| TConst name -> name
+		| TApp (ty, ty_arg_list) ->
+            begin
+                match ty_arg_list with
+                | [ty_arg] -> f true ty_arg ^ " " ^ f false ty
+                | _ ->
+                    let xs = String.concat ", " (List.map (f false) ty_arg_list) in
+                    let x = 
+                        match f false ty with
+                        | "tuple" -> ""
+                        | x -> x
+                    in
+                    "(" ^ xs ^ ")" ^ x
+            end
+		| TArrow (in_ty, out_ty) ->
+            begin
+                let in_str = f true in_ty in
+                let out_str = f true out_ty in
+                in_str ^ " -> " ^ out_str
+            end
+		| TVar {contents = Generic id} -> 
+            begin
+                try
+                    Hashtbl.find id_name_map id
+                with Not_found ->
+                    let name = next_name () in
+                    Hashtbl.add id_name_map id name ;
+                    name
+            end
+		| TVar {contents = Unbound(id, _)} -> "_" ^ string_of_int id
+		| TVar {contents = Link ty} -> f is_simple ty
+	in
+	let ty_str = f false ty in
+	if !count > 0 then
+		let var_names = Hashtbl.fold (fun _ value acc -> value :: acc) id_name_map [] in
+		"forall[" ^ String.concat " " (List.sort String.compare var_names) ^ "] " ^ ty_str
+	else
+		ty_str
 
 let string_of_bin_op (op: bin_op) =
     match op with
@@ -178,31 +221,28 @@ and string_of_value (v: value) : string =
 
 let rec type_equals (t1: typ) (t2: typ) : bool =
     match t1, t2 with
-    | TInt, TInt -> true
-    | TBool, TBool -> true
-    | TFloat, TFloat -> true
-    | TFun (t1, t2), TFun (t3, t4) -> (type_equals t1 t3) && (type_equals t2 t4)
-    | TUnit, TUnit -> true
-    | TTuple [], TTuple [] -> true
-    | TTuple (t1 :: rest1), TTuple (t2 :: rest2) -> (type_equals t1 t2) && (type_equals (TTuple rest1) (TTuple rest2))
-    | TList t1, TList t2 -> (type_equals t1 t2)
-    | TRef t1, TRef t2 -> (type_equals t1 t2)
+    | TConst n1, TConst n2 -> n1 = n2
+    | TApp (ty1, tys1), TApp (ty2, tys2) -> type_equals ty1 ty2 && List.for_all (fun (t1, t2) -> type_equals t1 t2) (List.combine tys1 tys2)
+    | TArrow (ta1, ta2), TArrow (tb1, tb2) -> type_equals ta1 tb1 && type_equals ta2 tb2
+    | TVar {contents = Unbound (i1, l1)}, TVar {contents = Unbound (i2, l2)} -> i1 = i2 && l1 = l2
+    | TVar {contents = Link t1}, TVar {contents = Link t2} -> type_equals t1 t2
+    | TVar {contents = Generic id1}, TVar {contents = Generic id2} -> id1 = id2
     | _ -> false
 
 let type_of_bin_op_in (op: bin_op) (t1: typ) (t2: typ) : typ =
     match op, t1, t2 with
-    | _, TInt, TInt -> TInt
-    | _, TFloat, TFloat -> TFloat
+    | _, TConst "int", TConst "int" -> TConst "int"
+    | _, TConst "float", TConst "float" -> TConst "float"
     | _ -> failwith "Error, type_of_bin_op_in does not have two matching types"
 
 let type_of_bin_op_out (op: bin_op) (t1: typ) (t2: typ) : typ =
     match op with
     | OAdd | OSubtract | OMultiply | ODivide -> 
-            (match t1, t2 with
-            | TInt, TInt -> TInt
-            | TFloat, TFloat -> TFloat
-            | _ -> failwith "Error, type_of_bin_op_out does not have two matching types")
-    | _ -> TBool
+        (match t1, t2 with
+        | TConst "int", TConst "int" -> TConst "int"
+        | TConst "float", TConst "float" -> TConst "float"
+        | _ -> failwith "Error, type_of_bin_op_out does not have two matching types")
+    | _ -> TConst "bool"
 
 let unpack_int_val v =
     match v with
@@ -227,36 +267,36 @@ let exp_to_value (e: exp) : value =
 let rec typecheck (ctx: (string * typ) list) (e: exp) : typ =
     match e with
     | ESequence (e1, e2) ->
-            let _  = (typecheck ctx e1) in
-            (typecheck ctx e2)
-    | EVal (VLit (LInt _)) -> TInt
-    | EVal (VLit (LBool _)) -> TBool
-    | EVal (VLit (LFloat _)) -> TFloat
+        let _  = (typecheck ctx e1) in
+        (typecheck ctx e2)
+    | EVal (VLit (LInt _)) -> TConst "int"
+    | EVal (VLit (LBool _)) -> TConst "bool"
+    | EVal (VLit (LFloat _)) -> TConst "float"
     | EVal (VFun (EVar s, e', t1, t2)) ->
         let e_type = typecheck (cons (s, t1) ctx) e' in
-        if type_equals e_type t2 then TFun (t1, t2)
+        if type_equals e_type t2 then TArrow (t1, t2)
         else failwith ("Function typechecking failed, expected return type: "
-        ^ (string_of_type (TFun (t1, t2))) ^ ", actual: " ^ (string_of_type (TFun (t1, e_type))))
+        ^ (string_of_type (TArrow (t1, t2))) ^ ", actual: " ^ (string_of_type (TArrow (t1, e_type))))
     | EVal (VFix (EVar f, EVar s, e, t1, t2)) ->
-        let e_type = typecheck (cons (f, TFun(t1,t2)) (cons (s, t1) ctx)) e in
-        if type_equals e_type t2 then TFun (t1, t2)
+        let e_type = typecheck (cons (f, TArrow(t1,t2)) (cons (s, t1) ctx)) e in
+        if type_equals e_type t2 then TArrow (t1, t2)
         else failwith ("Fixpoint typechecking failed, expected return type: "
-        ^ (string_of_type (TFun (t1, t2))) ^ ", actual: " ^ (string_of_type (TFun (t1, e_type))))
-    | EVal (VUnit) -> TUnit
-    | EVal (VTuple []) -> TTuple ([])
+        ^ (string_of_type (TArrow (t1, t2))) ^ ", actual: " ^ (string_of_type (TArrow (t1, e_type))))
+    | EVal (VUnit) -> TConst "unit"
+    | EVal (VTuple []) -> TApp (TConst "tuple", [])
     | EVal (VTuple (ex :: rest)) ->
         begin
             match (typecheck ctx (EVal (VTuple rest))) with
-            | TTuple (rest') -> (TTuple ((typecheck ctx ex) :: rest'))
+            | TApp (TConst "tuple", rest') -> (TApp (TConst "tuple", (typecheck ctx ex) :: rest'))
             | _ -> failwith "Typechecking missed tuples"
         end
-    | EVal (VEmptyList t) -> TList t
+    | EVal (VEmptyList t) -> TApp (TConst "list", [t])
     | EVal (VCons (e1, e2)) ->
         begin
         let e1_type = (typecheck ctx e1) in
         let e2_type = (typecheck ctx e2) in
         match e1_type, e2_type with
-        | t1, TList t2 -> (if (type_equals t1 t2) then TList t1
+        | t1, TApp (TConst "list", [t2]) -> (if (type_equals t1 t2) then TApp (TConst "list", [t1])
             else failwith ("Cons typechecking failed, e1 should have type of contents"
             ^ " of e2, actual: " ^ (string_of_type e1_type) ^ ", " ^ (string_of_type e2_type)))
         | _ -> failwith ("Cons typechecking failed, e2 should have type list, "
@@ -275,7 +315,7 @@ let rec typecheck (ctx: (string * typ) list) (e: exp) : typ =
         let e1_type = typecheck ctx e1 in
         let e2_type = typecheck ctx e2 in
         let e3_type = typecheck ctx e3 in
-        if (type_equals e1_type TBool) && (type_equals e2_type e3_type)
+        if (type_equals e1_type (TConst "bool")) && (type_equals e2_type e3_type)
         then e2_type
         else failwith
         ("If typechecking failed, expected format: if <bool> then <t> else <t>, "
@@ -293,7 +333,7 @@ let rec typecheck (ctx: (string * typ) list) (e: exp) : typ =
         let e1_type = typecheck ctx e1 in
         let e2_type = typecheck ctx e2 in
         match e1_type with
-        | TFun (t1, t2) ->
+        | TArrow (t1, t2) ->
             begin
                 if type_equals t1 e2_type then t2
                 else failwith ("Fun call typechecking failed, expected input type: "
@@ -306,7 +346,7 @@ let rec typecheck (ctx: (string * typ) list) (e: exp) : typ =
         begin
         let e_type = (typecheck ctx ex) in
         match e_type with
-        | TList t -> t
+        | TApp (TConst "list", [t]) -> t
         | _ -> failwith ("Head typechecking failed, exp should be of type list, "
             ^ "actual: " ^ (string_of_type e_type))
         end
@@ -314,7 +354,7 @@ let rec typecheck (ctx: (string * typ) list) (e: exp) : typ =
         begin
         let e_type = (typecheck ctx ex) in
         match e_type with
-        | TList t -> TList t
+        | TApp (TConst "list", [t]) -> TApp (TConst "list", [t])
         | _ -> failwith ("Tail typechecking failed, exp should be of type list, "
             ^ "actual: " ^ (string_of_type e_type))
         end
@@ -322,17 +362,17 @@ let rec typecheck (ctx: (string * typ) list) (e: exp) : typ =
         begin
         let e_type = (typecheck ctx ex) in
         match e_type with
-        | TList t -> TBool
+        | TApp (TConst "list", [t]) -> TConst "bool"
         | _ -> failwith ("empty? typechecking failed, exp should be of type list, "
             ^ "actual: " ^ (string_of_type e_type))
         end
-    | ERef ex -> TRef (typecheck ctx ex)
+    | ERef ex -> TApp (TConst "ref", [typecheck ctx ex])
     | EAssign (e1, e2) ->
         begin
         let e1_type = (typecheck ctx e1) in
         let e2_type = (typecheck ctx e2) in
         match e1_type, e2_type with
-        | TRef t1, t2 -> if (type_equals t1 t2) then TUnit
+        | TApp (TConst "ref", [t1]), t2 -> if (type_equals t1 t2) then TConst "unit"
             else failwith ("Assignment typechecking failed, type of ref should be same as "
             ^ "type of value, actual: " ^ (string_of_type t1) ^ ", " ^ (string_of_type t2))
         | t, _ -> failwith ("Assignment typechecking failed, first value should "
@@ -342,7 +382,7 @@ let rec typecheck (ctx: (string * typ) list) (e: exp) : typ =
         begin
         let e_type = (typecheck ctx ex) in
         match e_type with
-        | TRef t -> t
+        | TApp (TConst "ref", [t]) -> t
         | _ -> failwith ("Bang typechecking failed, should take ref type, actual "
             ^ (string_of_type e_type))
         end
@@ -350,16 +390,16 @@ let rec typecheck (ctx: (string * typ) list) (e: exp) : typ =
         begin
         let e1_type = (typecheck ctx e1) in
         match e1_type with
-        | TBool -> TUnit
+        | TConst "bool" -> TConst "unit"
         | _ -> failwith ("While typechecking failed, e1 should be of type bool, "
             ^ "actual: " ^ (string_of_type e1_type))
         end
     | ENth (e1, e2) ->
-        if (not (type_equals (typecheck ctx e2) TInt)) then (failwith ("Nth typechecking failed, expects int type second"))
+        if (not (type_equals (typecheck ctx e2) (TConst "int"))) then (failwith ("Nth typechecking failed, expects int type second"))
         else
         begin
          match (typecheck ctx e1) with
-            | TTuple l -> (nth l (unpack_int_val (exp_to_value e2)))
+            | TApp (TConst "tuple", l) -> (nth l (unpack_int_val (exp_to_value e2)))
             | t -> failwith ("Nth typechecking failed, should take tuple first, "
                 ^ "actual: " ^ (string_of_type t))
         end

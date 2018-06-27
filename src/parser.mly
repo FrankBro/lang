@@ -111,14 +111,14 @@ exp:
   | EQUALS { OEquals } *)
 
 typ:
-  | TINT                               { TInt }
-  | TBOOL                              { TBool }
-  | TFLOAT                             { TFloat }
-  | t1=typ ARROW t2=typ                { TFun (t1, t2) }
-  | TUNIT                              { TUnit }
-  | LPAREN t1=typ TIMES t2=ttyp RPAREN { TTuple (t1 :: t2) }
-  | LSQUARE t=typ RSQUARE              { TList t }
-  | LSTHN t=typ GTTHN                  { TRef t }
+  | TINT                               { TConst "int" }
+  | TBOOL                              { TConst "bool" }
+  | TFLOAT                             { TConst "float" }
+  | t1=typ ARROW t2=typ                { TArrow (t1, t2) }
+  | TUNIT                              { TConst "unit" }
+  | LPAREN t1=typ TIMES t2=ttyp RPAREN { TApp (TConst "tuple", t1 :: t2) }
+  | LSQUARE t=typ RSQUARE              { TApp (TConst "list", [t]) }
+  | LSTHN t=typ GTTHN                  { TApp (TConst "ref", [t]) }
   | LPAREN t=typ RPAREN                { t }
 
 ttyp:

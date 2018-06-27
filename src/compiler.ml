@@ -14,7 +14,7 @@ let arg_list =
     ]
 
 let usage_msg =
-        "Usage: compiler [flag] [filename.arith]\nAvailable flags:"
+    "Usage: compiler [flag] [filename.arith]\nAvailable flags:"
 
 let main () =
     Arg.parse
