@@ -1,6 +1,7 @@
 # Compiler
 
 Based of https://github.com/sheltah22/compiler
+and https://github.com/tomprimozic/type-systems
 
 ## Overview
 This is a compiler for a toy language.
