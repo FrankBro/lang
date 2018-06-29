@@ -1,3 +1,0 @@
-let x : <(int * bool * unit)> = (ref (4, true, ())) in
-x := (1, true, ());
-!x

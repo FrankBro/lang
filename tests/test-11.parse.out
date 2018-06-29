@@ -1,1 +1,0 @@
-(let fact : int -> int = (fix f (n: int) : int -> (if (> n 0) (* n (f (- n 1))) 1)) in (fact 5))

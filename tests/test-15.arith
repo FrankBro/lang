@@ -1,3 +1,0 @@
-let negbool : bool -> bool =
-  fun (x: bool) : bool -> if x then false else true in
-negbool 4

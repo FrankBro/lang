@@ -1,7 +1,7 @@
 Name: Compiler
 Version: 0.1
 Synopsis: A compiler for a toy programming language
-Authors: Shelby Frazier
+Authors: Francois Brodeur
 License: MIT
 
 OASISFormat: 0.4
@@ -13,139 +13,17 @@ Executable "compiler"
   MainIs: compiler.ml
   CompiledObject: best
 
+Executable "test"
+  Path: src
+  MainIs: test.ml
+  CompiledObject: best
+  BuildDepends: oUnit
+
 Library "lang"
   Path: src
-  Modules: Lang, Lexer, Parser
+  Modules: Expr, Infer, Parser, Lexer, Core
 
-Test "test-plus"
-  TestTools: compiler
-  Command: $compiler tests/test-1.arith | diff tests/test-1.out -
-
-Test "test-arith"
-  TestTools: compiler
-  Command: $compiler tests/test-2.arith | diff tests/test-2.out -
-
-Test "test-if-outer"
-  TestTools: compiler
-  Command: $compiler tests/test-3.arith | diff tests/test-3.out -
-
-Test "test-if-inner"
-  TestTools: compiler
-  Command: $compiler tests/test-4.arith | diff tests/test-4.out -
-
-Test "test-if-lazy"
-  TestTools: compiler
-  Command: $compiler tests/test-5.arith | diff tests/test-5.out -
-
-Test "test-let"
-  TestTools: compiler
-  Command: $compiler tests/test-6.arith | diff tests/test-6.out -
-
-Test "test-fun"
-  TestTools: compiler
-  Command: $compiler tests/test-7.arith | diff tests/test-7.out -
-
-Test "test-lets-and-fun"
-  TestTools: compiler
-  Command: $compiler tests/test-8.arith | diff tests/test-8.out -
-
-Test "test-if-fun"
-  TestTools: compiler
-  Command: $compiler tests/test-9.arith | diff tests/test-9.out -
-
-Test "test-multi-params"
-  TestTools: compiler
-  Command: $compiler tests/test-10.arith | diff tests/test-10.out -
-
-Test "test-fix"
-  TestTools: compiler
-  Command: $compiler tests/test-11.arith | diff tests/test-11.out -
-
-Test "test-fix-multi-params"
-  TestTools: compiler
-  Command: $compiler tests/test-12.arith | diff tests/test-12.out -
-
-Test "test-tuples-fun"
-  TestTools: compiler
-  Command: $compiler tests/test-16.arith | diff tests/test-16.out -
-
-Test "test-lists-simple"
-  TestTools: compiler
-  Command: $compiler tests/test-17.arith | diff tests/test-17.out -
-
-Test "test-lists-complex"
-  TestTools: compiler
-  Command: $compiler tests/test-18.arith | diff tests/test-18.out -
-
-Test "test-refs-simple"
-  TestTools: compiler
-  Command: $compiler tests/test-19.arith | diff tests/test-19.out -
-
-Test "test-refs-complex"
-  TestTools: compiler
-  Command: $compiler tests/test-20.arith | diff tests/test-20.out -
-
-Test "test-while"
-  TestTools: compiler
-  Command: $compiler tests/test-21.arith | diff tests/test-21.out -
-
-Test "test-tuples-ref"
-  TestTools: compiler
-  Command: $compiler tests/test-22.arith | diff tests/test-22.out -
-
-Test "test-infer-let"
-  TestTools: compiler
-  Command: $compiler tests/test-23.arith | diff tests/test-23.out -
-
-Test "test-float-add"
-  TestTools: compiler
-  Command: $compiler tests/test-24.arith | diff tests/test-24.out -
-
-Test "test-plus-parse"
-  TestTools: compiler
-  Command: $compiler -parse tests/test-1.arith | diff tests/test-1.parse.out -
-
-Test "test-arith-parse"
-  TestTools: compiler
-  Command: $compiler -parse tests/test-2.arith | diff tests/test-2.parse.out -
-
-Test "test-if-outer-parse"
-  TestTools: compiler
-  Command: $compiler -parse tests/test-3.arith | diff tests/test-3.parse.out -
-
-Test "test-if-inner-parse"
-  TestTools: compiler
-  Command: $compiler -parse tests/test-4.arith | diff tests/test-4.parse.out -
-
-Test "test-if-lazy-parse"
-  TestTools: compiler
-  Command: $compiler -parse tests/test-5.arith | diff tests/test-5.parse.out -
-
-Test "test-let-parse"
-  TestTools: compiler
-  Command: $compiler -parse tests/test-6.arith | diff tests/test-6.parse.out -
-
-Test "test-fun-parse"
-  TestTools: compiler
-  Command: $compiler -parse tests/test-7.arith | diff tests/test-7.parse.out -
-
-Test "test-lets-and-fun-parse"
-  TestTools: compiler
-  Command: $compiler -parse tests/test-8.arith | diff tests/test-8.parse.out -
-
-Test "test-if-fun-parse"
-  TestTools: compiler
-  Command: $compiler -parse tests/test-9.arith | diff tests/test-9.parse.out -
-
-Test "test-multi-params-parse"
-  TestTools: compiler
-  Command: $compiler -parse tests/test-10.arith | diff tests/test-10.parse.out -
-
-Test "test-fix-parse"
-  TestTools: compiler
-  Command: $compiler -parse tests/test-11.arith | diff tests/test-11.parse.out -
-
-Test "test-fix-multi-params-parse"
-  TestTools: compiler
-  Command: $compiler -parse tests/test-12.arith | diff tests/test-12.parse.out -
+Test "test"
+  TestTools: test
+  Command: $test
 

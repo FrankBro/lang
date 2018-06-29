@@ -1,146 +1,90 @@
 %{
-  open Lang
+
+open Expr
+open Infer
+
+let replace_ty_constants_with_vars var_name_list ty =
+	let env = List.fold_left
+		(fun env var_name -> Env.extend env var_name (new_gen_var ()))
+		Env.empty var_name_list
+	in
+	let rec f ty = match ty with
+		| TConst name -> begin
+				try
+					Env.lookup env name
+				with Not_found -> ty
+			end
+		| TVar _ -> ty
+		| TApp(ty, ty_arg_list) ->
+				TApp(f ty, List.map f ty_arg_list)
+		| TArrow(param_ty_list, return_ty) ->
+				TArrow(List.map f param_ty_list, f return_ty)
+	in
+	f ty
+
 %}
 
+%token <string> IDENT
 %token <int> INT
-%token <float> FLOAT
-%token <bool> BOOL
-%token <string> NAME
-
-%token LPAREN     (* ( *)
-%token RPAREN     (* ) *)
-%token PLUS       (* + *)
-%token MINUS      (* - *)
-%token TIMES      (* * *)
-%token DIVIDE     (* / *)
-%token LEQ        (* <= *)
-%token GEQ        (* >= *)
-%token LSTHN      (* < *)
-%token GTTHN      (* > *)
-%token IF         (* if *)
-%token THEN       (* then *)
-%token ELSE       (* else *)
-%token LET        (* let *)
-%token EQUALS     (* = *)
-%token IN         (* in *)
-%token FUN        (* fun *)
-%token ARROW      (* -> *)
-%token FIX        (* fix *)
-%token COLON      (* : *)
-%token TINT       (* int *)
-%token TBOOL      (* bool *)
-%token TFLOAT     (* float *)
-%token UNIT       (* () *)
-%token TUNIT      (* unit *)
-%token COMMA      (* , *)
-%token LSQUARE    (* [ *)
-%token RSQUARE    (* ] *)
-%token EMPTYLIST  (* [] *)
-%token CONS       (* :: *)
-%token HEAD       (* hd *)
-%token TAIL       (* tl *)
-%token EMPTY      (* empty? *)
-%token REF        (* ref *)
-%token SET        (* := *)
-%token BANG       (* ! *)
-%token SEMI       (* ; *)
-%token WHILE
-%token DO
-%token END
-
+%token FUN LET IN FORALL
+%token LPAREN RPAREN LBRACKET RBRACKET
+%token ARROW EQUALS COMMA
 %token EOF
 
-%start <Lang.exp> prog
+%start expr_eof
+%type <Expr.expr> expr_eof
 
-%left LET IN
-%left SEMI
-%nonassoc WHILE DO END
-%left SET
-%left LSTHN GTTHN LEQ GEQ EQUALS
-%left PLUS MINUS
-%left DIVIDE TIMES
-%right CONS LSQUARE RSQUARE
-%nonassoc HEAD TAIL EMPTY
-%left COLON
-%nonassoc BANG
-%nonassoc REF
+%start ty_eof
+%type <Expr.ty> ty_eof
+%start ty_forall_eof
+%type <Expr.ty> ty_forall_eof
+
 %%
 
-prog:
-  | e=exp EOF  { e }
+expr_eof:
+	| expr EOF        { $1 }
 
-(* Look back at function application *)
+expr:
+	| simple_expr                         { $1 }
+	| LET IDENT EQUALS expr IN expr       { Let($2, $4, $6) }
+	| FUN ident_list ARROW expr           { Fun($2, $4) }
 
-exp:
-  | e=base_exp                                       { e }
-  | e1=exp SEMI e2=exp                               { ESequence (e1, e2) }
-  | WHILE e1=exp DO e2=exp END e3=exp                { ESequence ((EWhile (e1, e1, e2)), e3) }
-  | f=base_exp e=exp                                 { EFunCall (f, e) }
-  | e1=exp SET e2=exp                                { EAssign (e1, e2) }
-  | IF e1=exp THEN e2=exp ELSE e3=exp                { EIf (e1, e2, e3) }
-  | LET n=NAME COLON t=typ EQUALS e1=exp IN e2=exp   { ELet (EVar n, e1, e2, t) }
-  | LET n=NAME EQUALS e1=exp IN e2=exp               { EInferLet (EVar n, e1, e2) }
-  | e1=exp PLUS e2=exp                               { (EBinOp (OAdd, e1, e2)) }
-  | e1=exp MINUS e2=exp                              { (EBinOp (OSubtract, e1, e2)) }
-  | e1=exp TIMES e2=exp                              { (EBinOp (OMultiply, e1, e2)) }
-  | e1=exp DIVIDE e2=exp                             { (EBinOp (ODivide, e1, e2)) }
-  | e1=exp LEQ e2=exp                                { (EBinOp (OLessThanEq, e1, e2)) }
-  | e1=exp GEQ e2=exp                                { (EBinOp (OGreaterThanEq, e1, e2)) }
-  | e1=exp GTTHN e2=exp                              { (EBinOp (OGreaterThan, e1, e2)) }
-  | e1=exp LSTHN e2=exp                              { (EBinOp (OLessThan, e1, e2)) }
-  | e1=exp EQUALS e2=exp                             { (EBinOp (OEquals, e1, e2)) }
-(*   | PLUS   { OAdd }
-  | LSTHN  { OLessThan } *)
-(*  | e1=exp op=bin_op e2=exp                        { EBinOp (op, e1, e2) }*)
-  | BANG e=exp                                       { EBang e }
-  | HEAD e=exp                                       { EHead e }
-  | TAIL e=exp                                       { ETail e }
-  | EMPTY e=exp                                      { EEmpty e }
-  | REF e=exp                                        { ERef e }
-  | e1=exp LSQUARE e2=exp RSQUARE                    { ENth (e1, e2) }
+simple_expr:
+    | INT                                               { Int $1 }
+	| IDENT                                             { Var $1 }
+	| LPAREN expr RPAREN                                { $2 }
+	| simple_expr LPAREN expr_comma_list RPAREN         { Call($1, $3) }
+	| simple_expr LPAREN RPAREN                         { Call($1, []) }
 
-(*bin_op:
-  | PLUS   { OAdd }
-  | MINUS  { OSubtract }
-  | TIMES  { OMultiply }
-  | DIVIDE { ODivide }
-  | LEQ    { OLessThanEq }
-  | GEQ    { OGreaterThanEq }
-  | LSTHN  { OLessThan }
-  | GTTHN  { OGreaterThan }
-  | EQUALS { OEquals } *)
+ident_list:
+	| IDENT               { [$1] }
+	| IDENT ident_list    { $1 :: $2 }
 
-typ:
-  | TINT                               { TConst "int" }
-  | TBOOL                              { TConst "bool" }
-  | TFLOAT                             { TConst "float" }
-  | t1=typ ARROW t2=typ                { TArrow (t1, t2) }
-  | TUNIT                              { TConst "unit" }
-  | LPAREN t1=typ TIMES t2=ttyp RPAREN { TApp (TConst "tuple", t1 :: t2) }
-  | LSQUARE t=typ RSQUARE              { TApp (TConst "list", [t]) }
-  | LSTHN t=typ GTTHN                  { TApp (TConst "ref", [t]) }
-  | LPAREN t=typ RPAREN                { t }
+expr_comma_list:
+	| expr                          { [$1] }
+	| expr COMMA expr_comma_list    { $1 :: $3 }
 
-ttyp:
-  | t=typ                              { (t :: []) }
-  | t1=typ TIMES t2=ttyp               { (t1 :: t2) }
+ty_eof:
+	| ty EOF          { $1 }
 
-base_exp:
-  | FUN LPAREN n=NAME COLON t1=typ RPAREN
-    COLON t2=typ ARROW e=exp              { EVal (VFun (EVar n, e, t1, t2)) }
-  | FIX n1=NAME LPAREN n2=NAME COLON t1=typ RPAREN
-    COLON t2=typ ARROW e=exp              { EVal (VFix (EVar n1, EVar n2, e, t1, t2)) }
-  | e1=exp CONS e2=exp                    { EVal (VCons (e1, e2)) }
-  | EMPTYLIST COLON t=typ                 { EVal (VEmptyList t) }
-  | i=INT                                 { EVal (VLit (LInt i)) }
-  | b=BOOL                                { EVal (VLit (LBool b)) }
-  | f=FLOAT                               { EVal (VLit (LFloat f)) }
-  | n=NAME                                { EVar n }
-  | UNIT                                  { EVal VUnit }
-  | LPAREN e=exp RPAREN                   { e }
-  | LPAREN e=exp COMMA t=tuple RPAREN     { EVal (VTuple (e :: t)) }
+ty_forall_eof:
+	| ty_forall EOF   { $1 }
 
-tuple:
-  | e=exp                                 { (e :: []) }
-  | e=exp COMMA t=tuple                   { (e :: t) }
+ty_forall:
+	| ty                                        { $1 }
+	| FORALL LBRACKET ident_list RBRACKET ty    { replace_ty_constants_with_vars $3 $5 }
 
+ty:
+	| simple_ty                                         { $1 }
+	| LPAREN RPAREN ARROW ty                            { TArrow([], $4) }
+	| simple_ty ARROW ty                                { TArrow([$1], $3) }
+	| LPAREN ty COMMA ty_comma_list RPAREN ARROW ty     { TArrow($2 :: $4, $7) }
+
+simple_ty:
+	| IDENT                                         { TConst $1 }
+	| simple_ty LBRACKET ty_comma_list RBRACKET     { TApp($1, $3) }
+	| LPAREN ty RPAREN                              { $2 }
+	
+ty_comma_list:
+	| ty                        { [$1] }
+	| ty COMMA ty_comma_list    { $1 :: $3 }

@@ -1,1 +1,0 @@
-(((fun (x: int) : int -> int -> (fun (y: int) : int -> (+ x y))) 2) 3)

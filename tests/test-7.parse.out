@@ -1,1 +1,0 @@
-(let f : int -> int = (fun (x: int) : int -> (+ x 2)) in (f 2))
