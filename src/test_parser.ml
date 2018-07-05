@@ -23,7 +23,7 @@ let test_cases = [
 	("a = b", Fail);
 	("()", Fail);
 	("fun x, y -> y", Fail);
-    ("1", OK (Int 1));
+    ("1", OK (Value (Int 1)));
 	]
 
 

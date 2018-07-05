@@ -1,7 +1,10 @@
 type name = string
 
-type expr =
+type value =
     | Int of int
+
+type expr =
+    | Value of value
 	| Var of name                           (* variable *)
 	| Call of expr * expr list              (* application *)
 	| Fun of name list * expr               (* abstraction *)
@@ -21,11 +24,13 @@ and tvar =
 	| Link of ty
 	| Generic of id
 
-
+let string_of_value value : string =
+    match value with
+    | Int i -> string_of_int i
 
 let string_of_expr expr : string =
 	let rec f is_simple = function
-        | Int i -> string_of_int(i)
+        | Value v -> string_of_value v
 		| Var name -> name
 		| Call(fn_expr, arg_list) ->
 				f true fn_expr ^ "(" ^ String.concat ", " (List.map (f false) arg_list) ^ ")"

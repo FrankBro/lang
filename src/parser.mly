@@ -50,7 +50,7 @@ expr:
 	| FUN ident_list ARROW expr           { Fun($2, $4) }
 
 simple_expr:
-    | INT                                               { Int $1 }
+    | INT                                               { Value (Int $1) }
 	| IDENT                                             { Var $1 }
 	| LPAREN expr RPAREN                                { $2 }
 	| simple_expr LPAREN expr_comma_list RPAREN         { Call($1, $3) }

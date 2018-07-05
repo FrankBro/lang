@@ -125,9 +125,12 @@ let rec match_fun_ty num_params = function
 			param_ty_list, return_ty
 	| _ -> error "expected a function"
 
+let infer_value value =
+    match value with
+    | Int i -> TConst "int"
 
 let rec infer env level = function
-    | Int i -> TConst "int"
+    | Value v -> infer_value v
 	| Var name -> begin
 			try
 				instantiate level (Env.lookup env name)
