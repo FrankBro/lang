@@ -45,4 +45,3 @@ let make_single_test_case (code, expected_result) =
 let suite =
 	"test_parser" >::: List.map make_single_test_case test_cases
 
-

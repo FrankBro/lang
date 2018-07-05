@@ -86,3 +86,4 @@ let string_of_ty ty : string =
 		"forall[" ^ String.concat " " (List.sort String.compare var_names) ^ "] " ^ ty_str
 	else
 		ty_str
+

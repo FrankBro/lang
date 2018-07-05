@@ -22,3 +22,4 @@ let main () =
   usage_msg
 
 let _ = if !Sys.interactive then () else main ()
+

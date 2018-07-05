@@ -39,3 +39,4 @@ let core =
 	assume "choose_curry" "forall[a] a -> a -> a" ;
 
 	!core_ref
+
