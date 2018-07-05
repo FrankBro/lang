@@ -1,4 +1,6 @@
 _build/*
 compiler.native
 test.native
+setup.log
+tags
 
