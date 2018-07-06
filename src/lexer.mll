@@ -18,7 +18,7 @@ rule token = parse
 	| "forall"              { FORALL }
     | "true" | "false"      { BOOL (bool_of_string (Lexing.lexeme lexbuf)) }
 	| ident                 { IDENT (Lexing.lexeme lexbuf) }
-    | integer               { INT (int_of_string (Lexing.lexeme lexbuf)) }
+    | '-'? integer          { INT (int_of_string (Lexing.lexeme lexbuf)) }
 	| '('     { LPAREN }
 	| ')'     { RPAREN }
 	| '['     { LBRACKET }

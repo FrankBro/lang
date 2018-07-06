@@ -13,6 +13,7 @@ let test_cases = [
 	("let fun in", OK [LET; FUN; IN]);
 	(";", Fail);
     ("1 2", OK [INT 1; INT 2]);
+    ("-1", OK [INT (-1)]);
     ("true false", OK [BOOL true; BOOL false]);
 	]
 

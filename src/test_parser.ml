@@ -23,6 +23,7 @@ let test_cases = [
 	("()", Fail);
 	("fun x, y -> y", Fail);
     ("1", OK (Value (Int 1)));
+    ("-1", OK (Value (Int (-1))));
     ("true", OK (Value (Bool true)));
     ("false", OK (Value (Bool false)));
 ]
