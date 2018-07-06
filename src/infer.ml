@@ -125,17 +125,8 @@ let rec match_fun_ty num_params = function
 			param_ty_list, return_ty
 	| _ -> error "expected a function"
 
-let infer_value value =
-    match value with
+let rec infer_value env level = function
     | Int i -> TConst "int"
-
-let rec infer env level = function
-    | Value v -> infer_value v
-	| Var name -> begin
-			try
-				instantiate level (Env.lookup env name)
-			with Not_found -> error ("variable " ^ name ^ " not found")
-		end
 	| Fun(param_list, body_expr) ->
 			let param_ty_list = List.map (fun _ -> new_var level) param_list in
 			let fn_env = List.fold_left2
@@ -144,6 +135,14 @@ let rec infer env level = function
 			in
 			let return_ty = infer fn_env level body_expr in
 			TArrow(param_ty_list, return_ty)
+
+and infer env level = function
+    | Value v -> infer_value env level v
+	| Var name -> begin
+			try
+				instantiate level (Env.lookup env name)
+			with Not_found -> error ("variable " ^ name ^ " not found")
+		end
 	| Let(var_name, value_expr, body_expr) ->
 			let var_ty = infer env (level + 1) value_expr in
 			let generalized_ty = generalize level var_ty in

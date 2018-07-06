@@ -5,14 +5,13 @@ type result =
 	| OK of expr
 	| Fail
 
-
 let test_cases = [
 	("", Fail);
 	("a", OK (Var "a"));
 	("f(x, y)", OK (Call(Var "f", [Var "x"; Var "y"])));
 	("f(x)(y)", OK (Call(Call(Var "f", [Var "x"]), [Var "y"])));
 	("let f = fun x y -> g(x, y) in f(a, b)",
-		OK (Let("f", Fun(["x"; "y"], Call(Var "g", [Var "x"; Var "y"])),
+		OK (Let("f", Value (Fun(["x"; "y"], Call(Var "g", [Var "x"; Var "y"]))),
 			Call(Var "f", [Var "a"; Var "b"]))));
 	("let x = a in " ^
 	 "let y = b in " ^
@@ -24,9 +23,7 @@ let test_cases = [
 	("()", Fail);
 	("fun x, y -> y", Fail);
     ("1", OK (Value (Int 1)));
-	]
-
-
+]
 
 let string_of_result = function
 	| Fail -> "Fail"

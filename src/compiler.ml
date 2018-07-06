@@ -1,14 +1,11 @@
-(* compiler.ml*)
 open Pervasives
+open Eval
 open Expr
 
 let arg_list = []
 
 let usage_msg =
     "Usage: compiler [flag] [filename.arith]\nAvailable flags:"
-
-let eval _ = failwith "TODO"
-let string_of_value _ = failwith "TODO"
 
 let main () =
   Arg.parse

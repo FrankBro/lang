@@ -47,7 +47,7 @@ expr_eof:
 expr:
 	| simple_expr                         { $1 }
 	| LET IDENT EQUALS expr IN expr       { Let($2, $4, $6) }
-	| FUN ident_list ARROW expr           { Fun($2, $4) }
+	| FUN ident_list ARROW expr           { Value (Fun($2, $4)) }
 
 simple_expr:
     | INT                                               { Value (Int $1) }

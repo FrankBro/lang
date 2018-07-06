@@ -21,7 +21,7 @@ Executable "test"
 
 Library "lang"
   Path: src
-  Modules: Expr, Infer, Parser, Lexer, Core
+  Modules: Expr, Infer, Eval, Parser, Lexer, Core
 
 Test "test"
   TestTools: test
