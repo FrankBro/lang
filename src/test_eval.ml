@@ -9,7 +9,9 @@ type result =
 let ok value = OK value
 
 let test_cases = [
-    ("1", OK (Int 1))
+    ("1", OK (Int 1));
+    ("true", OK (Bool true));
+    ("false", OK (Bool false));
 ]
 
 let string_of_result = function

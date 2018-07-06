@@ -13,6 +13,8 @@ let test_cases = [
 	("id", OK "forall[a] a -> a");
 	("one", OK "int");
     ("1", OK "int");
+    ("true", OK "bool");
+    ("false", OK "bool");
 	("x", error "variable x not found");
 	("let x = x in x", error "variable x not found");
 	("let x = id in x", OK "forall[a] a -> a");

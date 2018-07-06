@@ -16,6 +16,7 @@ rule token = parse
 	| "let"                 { LET }
 	| "in"                  { IN }
 	| "forall"              { FORALL }
+    | "true" | "false"      { BOOL (bool_of_string (Lexing.lexeme lexbuf)) }
 	| ident                 { IDENT (Lexing.lexeme lexbuf) }
     | integer               { INT (int_of_string (Lexing.lexeme lexbuf)) }
 	| '('     { LPAREN }
@@ -38,6 +39,7 @@ let string_of_token = function
 	| FORALL -> "forall"
 	| IDENT ident -> ident
     | INT i -> string_of_int i
+    | BOOL b -> string_of_bool b
 	| LPAREN -> "("
 	| RPAREN -> ")"
 	| LBRACKET -> "["

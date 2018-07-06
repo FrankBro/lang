@@ -26,6 +26,7 @@ let replace_ty_constants_with_vars var_name_list ty =
 
 %token <string> IDENT
 %token <int> INT
+%token <bool> BOOL
 %token FUN LET IN FORALL
 %token LPAREN RPAREN LBRACKET RBRACKET
 %token ARROW EQUALS COMMA
@@ -50,6 +51,7 @@ expr:
 	| FUN ident_list ARROW expr           { Value (Fun($2, $4)) }
 
 simple_expr:
+    | BOOL                                              { Value (Bool $1) }
     | INT                                               { Value (Int $1) }
 	| IDENT                                             { Var $1 }
 	| LPAREN expr RPAREN                                { $2 }

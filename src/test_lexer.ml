@@ -5,7 +5,6 @@ type result =
 	| OK of token list
 	| Fail
 
-
 let test_cases = [
 	("", OK []);
 	("  \t\n\n\t\r\n\r", OK []);
@@ -13,11 +12,9 @@ let test_cases = [
 		OK [LPAREN; RPAREN; RPAREN; IN; COMMA; IDENT "let_"; IDENT "_1Ma"; ARROW; EQUALS; EQUALS]);
 	("let fun in", OK [LET; FUN; IN]);
 	(";", Fail);
-    ("1", OK [INT 1]);
+    ("1 2", OK [INT 1; INT 2]);
+    ("true false", OK [BOOL true; BOOL false]);
 	]
-
-
-
 
 let parse_all code =
 	let lexbuf = Lexing.from_string code in
@@ -40,7 +37,9 @@ let make_single_test_case (code, expected_result) =
 			with Lexer.Error ->
 				Fail
 		in
-			assert_equal ~printer:string_of_result expected_result result
+            if expected_result <> result then
+                Printf.printf "WTF: Expected: [%s], got [%s]" (string_of_result expected_result) (string_of_result result);
+            assert_equal ~printer:string_of_result expected_result result
 
 let suite =
 	"test_lexer" >::: List.map make_single_test_case test_cases
