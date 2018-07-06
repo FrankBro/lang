@@ -3,4 +3,13 @@ compiler.native
 test.native
 setup.log
 tags
+Makefile
+_tags
+configure
+myocamlbuild.ml
+setup.data
+setup.ml
+src/META
+src/lang.mldylib
+src/lang.mllib
 
