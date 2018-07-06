@@ -3,6 +3,7 @@ type name = string
 type value =
     | Bool of bool
     | Int of int
+    | Float of float
     | Fun of name list * expr               (* abstraction *)
 
 and expr =
@@ -30,6 +31,7 @@ let rec string_of_value_inner is_simple value : string =
     match value with
     | Bool b -> string_of_bool b
     | Int i -> string_of_int i
+    | Float f -> string_of_float f
     | Fun(param_list, body_expr) ->
         let fun_str =
             "fun " ^ String.concat " " param_list ^ " -> " ^ f false body_expr

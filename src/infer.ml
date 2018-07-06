@@ -128,6 +128,7 @@ let rec match_fun_ty num_params = function
 let rec infer_value env level = function
     | Bool _ -> TConst "bool"
     | Int _ -> TConst "int"
+    | Float _ -> TConst "float"
 	| Fun(param_list, body_expr) ->
 			let param_ty_list = List.map (fun _ -> new_var level) param_list in
 			let fn_env = List.fold_left2

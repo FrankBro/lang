@@ -13,6 +13,9 @@ let test_cases = [
     ("-1", OK (Int (-1)));
     ("true", OK (Bool true));
     ("false", OK (Bool false));
+    ("3.14", OK (Float 3.14));
+    ("-3.14", OK (Float (-3.14)));
+    ("1.", OK (Float 1.));
 ]
 
 let string_of_result = function

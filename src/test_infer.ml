@@ -16,6 +16,9 @@ let test_cases = [
     ("-1", OK "int");
     ("true", OK "bool");
     ("false", OK "bool");
+    ("3.14", OK "float");
+    ("-3.14", OK "float");
+    ("1.", OK "float");
 	("x", error "variable x not found");
 	("let x = x in x", error "variable x not found");
 	("let x = id in x", OK "forall[a] a -> a");

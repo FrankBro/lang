@@ -15,6 +15,9 @@ let test_cases = [
     ("1 2", OK [INT 1; INT 2]);
     ("-1", OK [INT (-1)]);
     ("true false", OK [BOOL true; BOOL false]);
+    ("3.14", OK [FLOAT 3.14]);
+    ("-3.14", OK [FLOAT (-3.14)]);
+    ("1.", OK [FLOAT 1.]);
 	]
 
 let parse_all code =
