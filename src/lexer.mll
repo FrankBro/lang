@@ -17,6 +17,7 @@ rule token = parse
 	| "in"                      { IN }
 	| "forall"                  { FORALL }
     | "true" | "false"          { BOOL (bool_of_string (Lexing.lexeme lexbuf)) }
+	| "match"                   { MATCH }
 	| ident                     { IDENT (Lexing.lexeme lexbuf) }
     | '-'? digit+               { INT (int_of_string (Lexing.lexeme lexbuf)) }
     | '-'? digit+ '.' digit*    { FLOAT (float_of_string (Lexing.lexeme lexbuf)) }
@@ -24,9 +25,15 @@ rule token = parse
 	| ')'                       { RPAREN }
 	| '['                       { LBRACKET }
 	| ']'                       { RBRACKET }
+	| '{'                       { LBRACE }
+	| '}'                       { RBRACE }
 	| '='                       { EQUALS }
 	| "->"                      { ARROW }
 	| ','                       { COMMA }
+	| '.'     { DOT }
+	| '-'     { MINUS }
+	| '|'     { PIPE }
+	| ':'     { COLON }
 	| eof                       { EOF }
 	| _                         { raise Error }
 
@@ -38,6 +45,7 @@ let string_of_token = function
 	| LET -> "let"
 	| IN -> "in"
 	| FORALL -> "forall"
+	| MATCH -> "match"
 	| IDENT ident -> ident
     | INT i -> string_of_int i
     | BOOL b -> string_of_bool b
@@ -46,9 +54,15 @@ let string_of_token = function
 	| RPAREN -> ")"
 	| LBRACKET -> "["
 	| RBRACKET -> "]"
+	| LBRACE -> "{"
+	| RBRACE -> "}"
 	| EQUALS -> "="
 	| ARROW -> "->"
 	| COMMA -> ","
+	| DOT -> "."
+	| MINUS -> "-"
+	| PIPE -> "|"
+	| COLON -> ":"
 	| EOF -> "<eof>"
 
 }

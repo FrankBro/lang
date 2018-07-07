@@ -41,8 +41,6 @@ let make_single_test_case (code, expected_result) =
 			with Lexer.Error ->
 				Fail
 		in
-            if expected_result <> result then
-                Printf.printf "WTF: Expected: [%s], got [%s]" (string_of_result expected_result) (string_of_result result);
             assert_equal ~printer:string_of_result expected_result result
 
 let suite =

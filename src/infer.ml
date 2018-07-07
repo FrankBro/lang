@@ -47,7 +47,12 @@ let occurs_check_adjust_levels tvar_id tvar_level ty =
 		| TArrow(param_ty_list, return_ty) ->
 				List.iter f param_ty_list ;
 				f return_ty
-		| TConst _ -> ()
+		| TRecord row -> f row
+		| TVariant row -> f row
+		| TRowExtend(label_ty_map, rest_ty) ->
+				LabelMap.iter (fun _ -> List.iter f) label_ty_map ;
+				f rest_ty
+		| TConst _ | TRowEmpty -> ()
 	in
 	f ty
 
@@ -69,7 +74,72 @@ let rec unify ty1 ty2 =
 		| ty, TVar ({contents = Unbound(id, level)} as tvar) ->
 				occurs_check_adjust_levels id level ty ;
 				tvar := Link ty
+		| TRecord row1, TRecord row2 -> unify row1 row2
+		| TVariant row1, TVariant row2 -> unify row1 row2
+		| TRowEmpty, TRowEmpty -> ()
+		| (TRowExtend _ as row1), (TRowExtend _ as row2) -> unify_rows row1 row2
+		| TRowEmpty, TRowExtend(label_ty_map, _) | TRowExtend(label_ty_map, _), TRowEmpty ->
+				let label, _ = LabelMap.choose label_ty_map in
+				error ("row does not contain label " ^ label)
 		| _, _ -> error ("cannot unify types " ^ string_of_ty ty1 ^ " and " ^ string_of_ty ty2)
+
+and unify_rows row1 row2 =
+	let label_ty_map1, rest_ty1 = match_row_ty row1 in
+	let label_ty_map2, rest_ty2 = match_row_ty row2 in
+
+	let rec unify_types ty_list1 ty_list2 = match (ty_list1, ty_list2) with
+		| (ty1 :: rest1, ty2 :: rest2) -> unify ty1 ty2 ; unify_types rest1 rest2
+		| _ -> (ty_list1, ty_list2)
+	in
+
+	(* `missing1` contains all the labels/field types that are in labels2 but not in labels1
+	   (and `missing2` vice-versa). *)
+	let rec unify_labels missing1 missing2 labels1 labels2 = match (labels1, labels2) with
+		| ([], []) -> (missing1, missing2)
+		| ([], _) -> (add_distinct_labels missing1 labels2, missing2)
+		| (_, []) -> (missing1, add_distinct_labels missing2 labels1)
+		| ((label1, ty_list1) :: rest1, (label2, ty_list2) :: rest2) -> begin
+				match compare_label label1 label2 with
+					| 0 ->
+							let missing1, missing2 = match unify_types ty_list1 ty_list2 with
+								| ([], []) -> (missing1, missing2)
+								| (ty_list1, []) -> (missing1, LabelMap.add label1 ty_list1 missing2)
+								| ([], ty_list2) -> (LabelMap.add label2 ty_list2 missing1, missing2)
+								| _ -> assert false
+							in
+							unify_labels missing1 missing2 rest1 rest2
+					| x when x < 0 ->
+							unify_labels missing1 (LabelMap.add label1 ty_list1 missing2) rest1 labels2
+					| x (* when x > 0 *) ->
+							unify_labels (LabelMap.add label2 ty_list2 missing1) missing2 labels1 rest2
+			end
+	in
+	let (missing1, missing2) =
+		unify_labels LabelMap.empty LabelMap.empty
+			(LabelMap.bindings label_ty_map1)
+			(LabelMap.bindings label_ty_map2)
+	in
+
+	match (LabelMap.is_empty missing1, LabelMap.is_empty missing2) with
+		| (true, true) -> unify rest_ty1 rest_ty2
+		| (true, false) -> unify rest_ty2 (TRowExtend(missing2, rest_ty1))
+		| (false, true) -> unify rest_ty1 (TRowExtend(missing1, rest_ty2))
+		| (false, false) ->
+				match rest_ty1 with
+					| TRowEmpty ->
+							(* will result in an error *)
+							unify rest_ty1 (TRowExtend(missing1, new_var 0))
+					| TVar ({contents = Unbound(_, level)} as tvar_ref) -> begin
+							let new_rest_row_var = new_var level in
+							unify rest_ty2 (TRowExtend(missing2, new_rest_row_var)) ;
+							match !tvar_ref with
+								| Link _ -> error "recursive row types"
+								| _ -> ()
+							;
+							unify rest_ty1 (TRowExtend(missing1, new_rest_row_var))
+						end
+					| _ -> assert false
+
 
 
 
@@ -81,7 +151,11 @@ let rec generalize level = function
 	| TArrow(param_ty_list, return_ty) ->
 			TArrow(List.map (generalize level) param_ty_list, generalize level return_ty)
 	| TVar {contents = Link ty} -> generalize level ty
-	| TVar {contents = Generic _} | TVar {contents = Unbound _} | TConst _ as ty -> ty
+	| TRecord row -> TRecord (generalize level row)
+	| TVariant row -> TVariant (generalize level row)
+	| TRowExtend(label_ty_map, rest_ty) ->
+			TRowExtend(LabelMap.map (List.map (generalize level)) label_ty_map, generalize level rest_ty)
+	| TVar {contents = Generic _} | TVar {contents = Unbound _} | TConst _ | TRowEmpty as ty -> ty
 
 let instantiate level ty =
 	let id_var_map = Hashtbl.create 10 in
@@ -101,6 +175,11 @@ let instantiate level ty =
 				TApp(f ty, List.map f ty_arg_list)
 		| TArrow(param_ty_list, return_ty) ->
 				TArrow(List.map f param_ty_list, f return_ty)
+		| TRecord row -> TRecord (f row)
+		| TVariant row -> TVariant (f row)
+		| TRowEmpty -> ty
+		| TRowExtend(label_ty_map, rest_ty) ->
+				TRowExtend(LabelMap.map (List.map f) label_ty_map, f rest_ty)
 	in
 	f ty
 
@@ -158,4 +237,63 @@ and infer env level = function
 				param_ty_list arg_list
 			;
 			return_ty
+	| RecordEmpty -> TRecord TRowEmpty
+	| RecordSelect(record_expr, label) ->
+			(* inlined code for Call of function with type "forall[a r] {label : a | r} -> a" *)
+			let rest_row_ty = new_var level in
+			let field_ty = new_var level in
+			let param_ty = TRecord (TRowExtend(LabelMap.singleton label [field_ty], rest_row_ty)) in
+			let return_ty = field_ty in
+			unify param_ty (infer env level record_expr) ;
+			return_ty
+	| RecordRestrict(record_expr, label) ->
+			(* inlined code for Call of function with type "forall[a r] {label : a | r} -> {r}" *)
+			let rest_row_ty = new_var level in
+			let field_ty = new_var level in
+			let param_ty = TRecord (TRowExtend(LabelMap.singleton label [field_ty], rest_row_ty)) in
+			let return_ty = TRecord rest_row_ty in
+			unify param_ty (infer env level record_expr) ;
+			return_ty
+	| RecordExtend(label_expr_map, record_expr) ->
+			let label_ty_map =
+				LabelMap.map
+					(fun arg_expr_list ->
+						List.map (fun arg_expr -> infer env level arg_expr) arg_expr_list
+						)
+					label_expr_map
+			in
+			let rest_row_ty = new_var level in
+			unify (TRecord rest_row_ty) (infer env level record_expr) ;
+			TRecord (TRowExtend(label_ty_map, rest_row_ty))
+	| Variant(label, expr) ->
+			(* inlined code for Call of function with type "forall [a r] a -> [label : a | r]" *)
+			let rest_row_ty = new_var level in
+			let variant_ty = new_var level in
+			let param_ty = variant_ty in
+			let return_ty = TVariant (TRowExtend(LabelMap.singleton label [variant_ty], rest_row_ty)) in
+			unify param_ty (infer env level expr) ;
+			return_ty
+	| Case(expr, cases, None) ->
+			let return_ty = new_var level in
+			let expr_ty = infer env level expr in
+			let cases_row = infer_cases env level return_ty TRowEmpty cases in
+			unify expr_ty (TVariant cases_row) ;
+			return_ty
+	| Case(expr, cases, Some (default_var_name, default_expr)) ->
+			let default_variant_ty = new_var level in
+			let return_ty =
+				infer (Env.extend env default_var_name (TVariant default_variant_ty)) level default_expr
+			in
+			let expr_ty = infer env level expr in
+			let cases_row = infer_cases env level return_ty default_variant_ty cases in
+			unify expr_ty (TVariant cases_row) ;
+			return_ty
+
+and infer_cases env level return_ty rest_row_ty cases = match cases with
+	| [] -> rest_row_ty
+	| (label, var_name, expr) :: other_cases ->
+			let variant_ty = new_var level in
+			unify return_ty (infer (Env.extend env var_name variant_ty) level expr) ;
+			let other_cases_row = infer_cases env level return_ty rest_row_ty other_cases in
+			TRowExtend(LabelMap.singleton label [variant_ty], other_cases_row)
 
