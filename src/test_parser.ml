@@ -29,6 +29,9 @@ let test_cases = [
     ("3.14", OK (Value (Float 3.14)));
     ("-3.14", OK (Value (Float (-3.14))));
     ("1.", OK (Value (Float 1.)));
+    ("let f = fun a -> a in f(1)", 
+        OK (Let("f", Value (Fun(["a"], Var "a")),
+            Call(Var "f", [Value (Int 1)]))));
 ]
 
 let string_of_result = function

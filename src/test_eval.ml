@@ -2,6 +2,9 @@ open OUnit2
 open Eval
 open Expr
 
+let (>>) f g x = g(f(x))
+let (|>!) x f = f x; x
+
 type result =
     | OK of value
     | Fail
@@ -17,6 +20,7 @@ let test_cases = [
     ("-3.14", OK (Float (-3.14)));
     ("1.", OK (Float 1.));
     ("let a = 1 in a", OK (Int 1));
+    ("let f = fun a -> a in f(1)", OK (Int 1));
 ]
 
 let string_of_result = function
