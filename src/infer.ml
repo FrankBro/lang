@@ -10,14 +10,11 @@ let next_id () =
 
 let reset_id () = current_id := 0
 
-
 let new_var level = TVar (ref (Unbound(next_id (), level)))
 let new_gen_var () = TVar (ref (Generic(next_id ())))
 
-
 exception Error of string
 let error msg = raise (Error msg)
-
 
 module Env = struct
 	module StringMap = Map.Make (String)
@@ -27,7 +24,6 @@ module Env = struct
 	let extend env name ty = StringMap.add name ty env
 	let lookup env name = StringMap.find name env
 end
-
 
 let occurs_check_adjust_levels tvar_id tvar_level ty =
 	let rec f = function
@@ -55,7 +51,6 @@ let occurs_check_adjust_levels tvar_id tvar_level ty =
 		| TConst _ | TRowEmpty -> ()
 	in
 	f ty
-
 
 let rec unify ty1 ty2 =
 	if ty1 == ty2 then () else
@@ -140,9 +135,6 @@ and unify_rows row1 row2 =
 						end
 					| _ -> assert false
 
-
-
-
 let rec generalize level = function
 	| TVar {contents = Unbound(id, other_level)} when other_level > level ->
 			TVar (ref (Generic id))
@@ -183,7 +175,6 @@ let instantiate level ty =
 	in
 	f ty
 
-
 let rec match_fun_ty num_params = function
 	| TArrow(param_ty_list, return_ty) ->
 			if List.length param_ty_list <> num_params then
@@ -216,27 +207,6 @@ let rec infer_value env level = function
 			in
 			let return_ty = infer fn_env level body_expr in
 			TArrow(param_ty_list, return_ty)
-
-and infer env level = function
-    | Value v -> infer_value env level v
-	| Var name -> begin
-			try
-				instantiate level (Env.lookup env name)
-			with Not_found -> error ("variable " ^ name ^ " not found")
-		end
-	| Let(var_name, value_expr, body_expr) ->
-			let var_ty = infer env (level + 1) value_expr in
-			let generalized_ty = generalize level var_ty in
-			infer (Env.extend env var_name generalized_ty) level body_expr
-	| Call(fn_expr, arg_list) ->
-			let param_ty_list, return_ty =
-				match_fun_ty (List.length arg_list) (infer env level fn_expr)
-			in
-			List.iter2
-				(fun param_ty arg_expr -> unify param_ty (infer env level arg_expr))
-				param_ty_list arg_list
-			;
-			return_ty
 	| RecordEmpty -> TRecord TRowEmpty
 	| RecordSelect(record_expr, label) ->
 			(* inlined code for Call of function with type "forall[a r] {label : a | r} -> a" *)
@@ -272,6 +242,27 @@ and infer env level = function
 			let param_ty = variant_ty in
 			let return_ty = TVariant (TRowExtend(LabelMap.singleton label [variant_ty], rest_row_ty)) in
 			unify param_ty (infer env level expr) ;
+			return_ty
+
+and infer env level = function
+    | Value v -> infer_value env level v
+	| Var name -> begin
+			try
+				instantiate level (Env.lookup env name)
+			with Not_found -> error ("variable " ^ name ^ " not found")
+		end
+	| Let(var_name, value_expr, body_expr) ->
+			let var_ty = infer env (level + 1) value_expr in
+			let generalized_ty = generalize level var_ty in
+			infer (Env.extend env var_name generalized_ty) level body_expr
+	| Call(fn_expr, arg_list) ->
+			let param_ty_list, return_ty =
+				match_fun_ty (List.length arg_list) (infer env level fn_expr)
+			in
+			List.iter2
+				(fun param_ty arg_expr -> unify param_ty (infer env level arg_expr))
+				param_ty_list arg_list
+			;
 			return_ty
 	| Case(expr, cases, None) ->
 			let return_ty = new_var level in

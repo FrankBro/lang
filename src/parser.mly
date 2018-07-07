@@ -16,7 +16,7 @@ let expr_record_extend label_expr_list rest_expr =
 				LabelMap.add label expr_list label_expr_map)
 			LabelMap.empty label_expr_list
 	in
-	RecordExtend(label_expr_map, rest_expr)
+	Value (RecordExtend(label_expr_map, rest_expr))
 
 let ty_row_extend label_ty_list rest_ty =
 	let label_ty_map =
@@ -83,7 +83,7 @@ expr:
 	| simple_expr                         { $1 }
 	| LET IDENT EQUALS expr IN expr       { Let($2, $4, $6) }
 	| FUN ident_list ARROW expr           { Value (Fun($2, $4)) }
-	| COLON IDENT simple_expr             { Variant($2, $3) }
+	| COLON IDENT simple_expr             { Value (Variant($2, $3)) }
 	| MATCH expr LBRACE match_case_list RBRACE      {
 			let cases, maybe_default_case = $4 in
 			Case($2, cases, maybe_default_case)
@@ -97,11 +97,11 @@ simple_expr:
 	| LPAREN expr RPAREN                                { $2 }
 	| simple_expr LPAREN expr_comma_list RPAREN         { Call($1, $3) }
 	| simple_expr LPAREN RPAREN                         { Call($1, []) }
-	| LBRACE RBRACE                                     { RecordEmpty }
+	| LBRACE RBRACE                                     { Value RecordEmpty }
 	| LBRACE record_label_expr_list PIPE expr RBRACE    { expr_record_extend $2 $4 }
-	| LBRACE record_label_expr_list RBRACE              { expr_record_extend $2 RecordEmpty }
-	| LBRACE expr MINUS IDENT RBRACE                    { RecordRestrict($2, $4) }
-	| simple_expr DOT IDENT                             { RecordSelect($1, $3) }
+	| LBRACE record_label_expr_list RBRACE              { expr_record_extend $2 (Value RecordEmpty) }
+	| LBRACE expr MINUS IDENT RBRACE                    { Value (RecordRestrict($2, $4)) }
+	| simple_expr DOT IDENT                             { Value (RecordSelect($1, $3)) }
 
 ident_list:
 	| IDENT               { [$1] }

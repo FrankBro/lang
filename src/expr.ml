@@ -18,17 +18,17 @@ type value =
     | Int of int
     | Float of float
     | Fun of name list * expr               (* abstraction *)
+	| RecordSelect of expr * name           (* selecting value of label: `r.a` *)
+	| RecordExtend of (expr list) LabelMap.t * expr    (* extending a record: `{a = 1, b = 2 | r}` *)
+	| RecordRestrict of expr * name         (* deleting a label: `{r - a}` *)
+	| RecordEmpty                           (* empty record: `{}` *)
+	| Variant of name * expr                (* new variant value: `:X a` *)
 
 and expr =
     | Value of value
     | Var of name                           (* variable *)
     | Call of expr * expr list              (* application *)
     | Let of name * expr * expr             (* let *)
-	| RecordSelect of expr * name           (* selecting value of label: `r.a` *)
-	| RecordExtend of (expr list) LabelMap.t * expr    (* extending a record: `{a = 1, b = 2 | r}` *)
-	| RecordRestrict of expr * name         (* deleting a label: `{r - a}` *)
-	| RecordEmpty                           (* empty record: `{}` *)
-	| Variant of name * expr                (* new variant value: `:X a` *)
 	| Case of expr * (name * name * expr) list * (name * expr) option
 			(* a pattern-matching case expression:
 					match e {
@@ -111,19 +111,6 @@ let rec string_of_value_inner is_simple value : string =
             "fun " ^ String.concat " " param_list ^ " -> " ^ f false body_expr
         in
         if is_simple then "(" ^ fun_str ^ ")" else fun_str
-
-and string_of_expr_inner is_simple expr : string =
-    let f = string_of_expr_inner in
-    match expr with
-    | Value v -> string_of_value_inner is_simple v
-    | Var name -> name
-    | Call(fn_expr, arg_list) ->
-        f true fn_expr ^ "(" ^ String.concat ", " (List.map (f false) arg_list) ^ ")"
-    | Let(var_name, value_expr, body_expr) ->
-        let let_str =
-            "let " ^ var_name ^ " = " ^ f false value_expr ^ " in " ^ f false body_expr
-        in
-        if is_simple then "(" ^ let_str ^ ")" else let_str
     | RecordEmpty -> "{}"
     | RecordSelect(record_expr, label) -> f true record_expr ^ "." ^ label
     | RecordRestrict(record_expr, label) -> "{" ^ f false record_expr ^ " - " ^ label ^ "}"
@@ -137,13 +124,26 @@ and string_of_expr_inner is_simple expr : string =
                         (LabelMap.bindings label_expr_map))
             in
             let rest_expr_str = match rest_expr with
-                | RecordEmpty -> ""
+                | Value RecordEmpty -> ""
                 | expr -> " | " ^ f false expr
             in
             "{" ^ label_expr_str ^ rest_expr_str ^ "}"
     | Variant(label, value) ->
             let variant_str = ":" ^ label ^ " " ^ f true value in
             if is_simple then "(" ^ variant_str ^ ")" else variant_str
+
+and string_of_expr_inner is_simple expr : string =
+    let f = string_of_expr_inner in
+    match expr with
+    | Value v -> string_of_value_inner is_simple v
+    | Var name -> name
+    | Call(fn_expr, arg_list) ->
+        f true fn_expr ^ "(" ^ String.concat ", " (List.map (f false) arg_list) ^ ")"
+    | Let(var_name, value_expr, body_expr) ->
+        let let_str =
+            "let " ^ var_name ^ " = " ^ f false value_expr ^ " in " ^ f false body_expr
+        in
+        if is_simple then "(" ^ let_str ^ ")" else let_str
     | Case(expr, cases, maybe_default_case) ->
             let cases_str_list = List.map
                 (fun (label, var_name, expr) ->

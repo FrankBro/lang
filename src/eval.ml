@@ -11,6 +11,7 @@ let rec eval_expr env (expr: expr) : value =
         let (value: value) = eval_expr env value_expr in
         let env = EvalEnv.add name value env in
         eval_expr env body_expr
+	| Case _ -> failwith "TODO"
 
 and eval_call env (fn_expr: expr) (arg_exprs: expr list) : value =
     let fn_value =
