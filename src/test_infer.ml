@@ -150,9 +150,7 @@ let test_cases = [
 	("let count1 = fun count -> fun x -> " ^
 	 " match x {:Cons a -> plus(one, count(a.tail)) | :Nil _ -> zero} in " ^
 	 "fix(count1)", error "recursive types");
-	]
-
-
+]
 
 let string_of_result = function
 	| Fail None -> "Fail"
